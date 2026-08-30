@@ -39,7 +39,7 @@ const rows = questions.map((q) => ({
   options: q.options,
   correct_option: q.correct_option,
   explanation: q.explanation,
-  source_name: q.source_name ?? null,
+  source: q.source_name ?? null,
   source_url: q.source_url ?? null,
   license: q.license ?? "CC-BY-SA",
   status: q.status ?? "approved",

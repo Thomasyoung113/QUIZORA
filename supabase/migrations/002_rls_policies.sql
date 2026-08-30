@@ -103,8 +103,6 @@ create policy questions_select_approved on public.questions
   using (status = 'approved');
 
 revoke select, insert, update, delete on public.questions from anon, authenticated;
-grant select on public.questions to anon, authenticated;
-revoke correct_option, explanation on public.questions from anon, authenticated;
 grant select (id, question, category, subcategory, difficulty, type, options, status, created_at, updated_at) on public.questions to anon, authenticated;
 
 -- -----------------------------------------------------------------------------
