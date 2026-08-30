@@ -44,7 +44,7 @@ export default function LegalPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-white">Your data, your call</h2>
           <p>
-            Want your data deleted or a copy of it? Email <a href="mailto:privacy@quizora.app" className="text-amber-400 underline underline-offset-2">privacy@quizora.app</a> and
+            Want your data deleted or a copy of it? Email <a href="mailto:devthomas113@gmail.com" className="text-amber-400 underline underline-offset-2">devthomas113@gmail.com</a> and
             we&apos;ll handle it within 30 days. You can also clear the guest cookies in your browser
             at any time — you&apos;ll just appear as a new player next game.
           </p>
