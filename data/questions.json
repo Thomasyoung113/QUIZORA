@@ -1,0 +1,4804 @@
+{
+ "questions": [
+  {
+   "category": "Science",
+   "subcategory": "Physics",
+   "difficulty": "medium",
+   "question": "Which subatomic particle was the last of the three to be discovered, in 1932?",
+   "options": [
+    "Neutron",
+    "Electron",
+    "Proton",
+    "Positron"
+   ],
+   "correct_option": "A",
+   "explanation": "The electron came first (1897), the proton was inferred by Rutherford (1917), and the neutron wasn't found until James Chadwick's 1932 experiments — a missing neutral particle that had made atomic masses puzzling.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Neutron"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Biology",
+   "difficulty": "easy",
+   "question": "Roughly what percentage of the oxygen you breathe is produced by organisms in the ocean?",
+   "options": [
+    "About 50–80%",
+    "About 30%",
+    "About 10%",
+    "All of it"
+   ],
+   "correct_option": "A",
+   "explanation": "Marine phytoplankton, especially Prochlorococcus, generate an estimated 50–80% of Earth's oxygen — a single tablespoon of seawater can hold millions of them.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Phytoplankton"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Chemistry",
+   "difficulty": "hard",
+   "question": "Which element is the only one named after a living person at the time of its naming?",
+   "options": [
+    "Seaborgium",
+    "Einsteinium",
+    "Oganesson",
+    "Fermium"
+   ],
+   "correct_option": "A",
+   "explanation": "Seaborgium (element 106), named for Glenn Seaborg in 1997, was the first element named after someone alive at the time. Oganesson (118) later became the second, honoring Yuri Oganessian.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Seaborgium"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Human Body",
+   "difficulty": "easy",
+   "question": "Which part of the human body can regenerate itself even after losing up to 75% of its mass?",
+   "options": [
+    "Liver",
+    "Pancreas",
+    "Small intestine",
+    "Skin"
+   ],
+   "correct_option": "A",
+   "explanation": "The liver regrows to full size from as little as a quarter of its mass — the basis of living-donor liver transplants, where donors' livers restore themselves within weeks.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Liver_regeneration"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Physics",
+   "difficulty": "hard",
+   "question": "Sound travels fastest through which of these media?",
+   "options": [
+    "Steel",
+    "Fresh water",
+    "Air",
+    "Seawater at depth"
+   ],
+   "correct_option": "A",
+   "explanation": "Sound moves about 5,000 m/s in steel versus ~1,500 m/s in water and ~343 m/s in air — it speeds up in stiffer, less compressible materials.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Speed_of_sound"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Chemistry",
+   "difficulty": "medium",
+   "question": "Which everyday metal is liquid at room temperature but was once used in hat-making, causing 'mad hatter' disease?",
+   "options": [
+    "Mercury",
+    "Bromine",
+    "Gallium",
+    "Cesium"
+   ],
+   "correct_option": "A",
+   "explanation": "Mercury vapor poisoned 19th-century hat makers who used it to cure felt — hence Lewis Carroll's 'Mad Hatter' and the phrase 'mad as a hatter'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Mercury_poisoning"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Biology",
+   "difficulty": "medium",
+   "question": "What is the only mammal capable of true, sustained powered flight?",
+   "options": [
+    "Bat",
+    "Colugo",
+    "Sugar glider",
+    "Flying squirrel"
+   ],
+   "correct_option": "A",
+   "explanation": "Bats are the only mammals with powered flight. Gliders like squirrels and colugos merely glide, and colugos are actually bats' closest living relatives.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Bat"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Astronomy",
+   "difficulty": "hard",
+   "question": "Roughly how long does it take light from the Sun to reach Earth?",
+   "options": [
+    "8 minutes",
+    "8 seconds",
+    "8 hours",
+    "Instantaneous"
+   ],
+   "correct_option": "A",
+   "explanation": "Sunlight takes about 8 minutes and 20 seconds to cover the 150 million km to Earth — meaning you always see the Sun as it was over 8 minutes ago.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Solar_irradiance"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Physics",
+   "difficulty": "medium",
+   "question": "What is the most abundant element in the universe by mass?",
+   "options": [
+    "Hydrogen",
+    "Carbon",
+    "Helium",
+    "Oxygen"
+   ],
+   "correct_option": "A",
+   "explanation": "Hydrogen makes up about 75% of the universe's baryonic mass, forged in the Big Bang — helium is a distant second at roughly 24%.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Hydrogen"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Biology",
+   "difficulty": "medium",
+   "question": "Which animal has the longest gestation period on land?",
+   "options": [
+    "Elephant",
+    "Blue whale",
+    "African elephant shrew",
+    "Orca"
+   ],
+   "correct_option": "A",
+   "explanation": "African elephants carry their calves for about 22 months — nearly two years. Blue whales are marine, and their gestation is around a year.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Elephant"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Chemistry",
+   "difficulty": "easy",
+   "question": "What is the chemical symbol for potassium?",
+   "options": [
+    "K",
+    "Pt",
+    "P",
+    "Po"
+   ],
+   "correct_option": "A",
+   "explanation": "'K' comes from 'kalium', the Latinized Arabic-derived name. Potassium was isolated by Humphry Davy in 1807 using electrolysis.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Potassium"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Physics",
+   "difficulty": "hard",
+   "question": "What did Einstein win his 1921 Nobel Prize for?",
+   "options": [
+    "The photoelectric effect",
+    "Special relativity",
+    "General relativity",
+    "E=mc²"
+   ],
+   "correct_option": "A",
+   "explanation": "The Nobel committee specifically cited his 1905 explanation of the photoelectric effect — the paper that helped launch quantum mechanics — not relativity, which was still considered controversial.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Photoelectric_effect"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Human Body",
+   "difficulty": "medium",
+   "question": "Which is the only muscle attached at just one end in the human body?",
+   "options": [
+    "Tongue",
+    "Diaphragm",
+    "Heart",
+    "Jaw"
+   ],
+   "correct_option": "A",
+   "explanation": "The tongue is anchored only at its back; its front end is free, attached by nothing but the hyoid bone underneath — allowing its remarkable flexibility.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Tongue"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Biology",
+   "difficulty": "medium",
+   "question": "Which animal's fingerprints are so similar to humans' that they can confuse crime-scene investigators?",
+   "options": [
+    "Koala",
+    "Chimpanzee",
+    "Gorilla",
+    "Orangutan"
+   ],
+   "correct_option": "A",
+   "explanation": "Koalas have ridged fingerprints remarkably close to human ones under a microscope — the only animal known to rival us, likely an adaptation for gripping bark.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Koala"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Chemistry",
+   "difficulty": "medium",
+   "question": "Which gas makes up about 78% of Earth's atmosphere?",
+   "options": [
+    "Nitrogen",
+    "Carbon dioxide",
+    "Oxygen",
+    "Argon"
+   ],
+   "correct_option": "A",
+   "explanation": "Nitrogen dominates at 78%, oxygen is about 21%, and argon nearly 1%. CO₂ is only ~0.04% — yet it drives the greenhouse effect measurably.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Atmosphere_of_Earth"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Physics",
+   "difficulty": "easy",
+   "question": "What force keeps planets in orbit around the Sun?",
+   "options": [
+    "Gravity",
+    "Magnetism",
+    "Electrostatic force",
+    "Centrifugal force"
+   ],
+   "correct_option": "A",
+   "explanation": "Gravity bends planets' paths into orbits — they are literally falling around the Sun. Magnetism plays essentially no role at planetary scales.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Orbit"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Human Body",
+   "difficulty": "hard",
+   "question": "How many bones are in the human body at birth, before some fuse?",
+   "options": [
+    "270",
+    "206",
+    "300",
+    "186"
+   ],
+   "correct_option": "A",
+   "explanation": "Babies are born with about 270 bones; many fuse during growth, leaving the adult count of 206. The skull alone starts as over 40 separate pieces.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Human_skeleton"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Biology",
+   "difficulty": "hard",
+   "question": "Which organism is considered biologically immortal, reverting to an earlier life stage indefinitely?",
+   "options": [
+    "Turritopsis jellyfish",
+    "Galápagos tortoise",
+    "Greenland shark",
+    "Lobster"
+   ],
+   "correct_option": "A",
+   "explanation": "Turritopsis dohrnii, the 'immortal jellyfish', can transform adult cells back into polyp stage via transdifferentiation, restarting its life cycle — potentially forever, absent predation.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Turritopsis_dohrnii"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Physics",
+   "difficulty": "medium",
+   "question": "Diamond and graphite are both made of the same element. Which one?",
+   "options": [
+    "Carbon",
+    "Silicon",
+    "Boron",
+    "Nitrogen"
+   ],
+   "correct_option": "A",
+   "explanation": "Both are pure carbon; their wildly different properties come from crystal structure — diamond's rigid 3D lattice versus graphite's slippery layers that slide off your pencil.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Allotropes_of_carbon"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Chemistry",
+   "difficulty": "easy",
+   "question": "Which substance is known as 'the universal solvent'?",
+   "options": [
+    "Alcohol",
+    "Acetone",
+    "Water",
+    "Vinegar"
+   ],
+   "correct_option": "C",
+   "explanation": "Water dissolves more substances than any other liquid thanks to its polar molecules — though of course it can't dissolve everything (it doesn't dissolve oil).",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Properties_of_water"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Human Body",
+   "difficulty": "medium",
+   "question": "Which blood type is known as the universal donor for red cells?",
+   "options": [
+    "O negative",
+    "AB positive",
+    "A positive",
+    "B negative"
+   ],
+   "correct_option": "A",
+   "explanation": "O negative red cells lack A, B, and RhD antigens, so most recipients' immune systems ignore them. AB positive is the universal plasma donor.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Blood_type"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Biology",
+   "difficulty": "easy",
+   "question": "What do we call animals that eat both plants and meat?",
+   "options": [
+    "Omnivores",
+    "Carnivores",
+    "Herbivores",
+    "Detritivores"
+   ],
+   "correct_option": "A",
+   "explanation": "Omnivores — literally 'eats everything' — include humans, bears, pigs, and even some 'carnivorous' dinosaurs like Velociraptor, based on tooth wear.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Omnivore"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Physics",
+   "difficulty": "hard",
+   "question": "In a vacuum, which object falls faster: a hammer or a feather?",
+   "options": [
+    "The hammer",
+    "They fall at the same rate",
+    "Depends on mass",
+    "The feather"
+   ],
+   "correct_option": "B",
+   "explanation": "With no air resistance, both accelerate identically at g. Apollo 15 astronaut David Scott proved it live on the Moon in 1971 with a hammer and a falcon feather.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Galileo%27s_Leaning_Tower_of_Pisa_experiment"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Human Body",
+   "difficulty": "easy",
+   "question": "What is the largest organ of the human body?",
+   "options": [
+    "Liver",
+    "Skin",
+    "Lungs",
+    "Brain"
+   ],
+   "correct_option": "B",
+   "explanation": "Skin is the body's largest organ — about 2 square meters and 16% of body weight. The liver is the largest internal organ.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Skin"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Biology",
+   "difficulty": "medium",
+   "question": "Which insect produces the loudest sound relative to its body size?",
+   "options": [
+    "Cricket",
+    "Water boatman",
+    "Bee",
+    "Cicada"
+   ],
+   "correct_option": "B",
+   "explanation": "The water boatman (Micronecta scholtzi) 'sings' by rubbing its genitalia against its abdomen, reaching 99 decibels — audible from land despite being 2 mm long.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Micronecta_scholtzi"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Chemistry",
+   "difficulty": "hard",
+   "question": "Which element's melting point is so low it melts in your hand?",
+   "options": [
+    "Rubidium",
+    "Gallium",
+    "Sodium",
+    "Mercury"
+   ],
+   "correct_option": "B",
+   "explanation": "Gallium melts at 29.8°C — just above room temperature. The classic prank is a gallium 'spoon' that dissolves in hot tea. Mercury is liquid but toxic to hold.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Gallium"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Astronomy",
+   "difficulty": "medium",
+   "question": "What is a light-year a measure of?",
+   "options": [
+    "Time",
+    "Distance",
+    "Speed",
+    "Brightness"
+   ],
+   "correct_option": "B",
+   "explanation": "A light-year is the distance light travels in one year — about 9.46 trillion km. People constantly mistake it for a unit of time.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Light-year"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Human Body",
+   "difficulty": "medium",
+   "question": "The human body's smallest bone is located where?",
+   "options": [
+    "In the pinky toe",
+    "In the ear",
+    "In the wrist",
+    "In the eye socket"
+   ],
+   "correct_option": "B",
+   "explanation": "The stapes, in the middle ear, is about 3 mm long and transmits sound vibrations to the inner ear. Despite its size, it's essential for hearing.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Stapes"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Biology",
+   "difficulty": "hard",
+   "question": "Which animal never sleeps in the traditional sense during adulthood?",
+   "options": [
+    "Sloth",
+    "Bullfrog",
+    "Giraffe",
+    "Dolphin"
+   ],
+   "correct_option": "B",
+   "explanation": "Studies found bullfrogs show no measurable sleep, reacting to stimuli 24/7. Dolphins sleep 'unihemispherically' — one brain half at a time — which is different, not absent.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Sleep_in_non-human_animals"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Physics",
+   "difficulty": "easy",
+   "question": "What unit measures electrical resistance?",
+   "options": [
+    "Volt",
+    "Ohm",
+    "Watt",
+    "Ampere"
+   ],
+   "correct_option": "B",
+   "explanation": "The ohm (Ω), named after Georg Ohm, measures resistance. Volts measure potential, amperes current, watts power.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Ohm"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Chemistry",
+   "difficulty": "medium",
+   "question": "What is the hardest naturally occurring substance on Earth?",
+   "options": [
+    "Quartz",
+    "Diamond",
+    "Tungsten carbide",
+    "Titanium"
+   ],
+   "correct_option": "B",
+   "explanation": "Diamond tops the Mohs scale at 10. But it's not the toughest — it can shatter along cleavage planes, and wurtzite boron nitride is theoretically harder under some conditions.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Mohs_scale"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Human Body",
+   "difficulty": "hard",
+   "question": "Which sense does NOT pass through the thalamus before reaching the cortex?",
+   "options": [
+    "Vision",
+    "Smell",
+    "Touch",
+    "Hearing"
+   ],
+   "correct_option": "B",
+   "explanation": "Smell is the only sense that bypasses the thalamus entirely, wiring almost directly into the olfactory cortex — which is why scents trigger memories and emotions so powerfully.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Olfaction"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Biology",
+   "difficulty": "easy",
+   "question": "Which organ pumps blood around the human body?",
+   "options": [
+    "Lungs",
+    "Heart",
+    "Kidneys",
+    "Liver"
+   ],
+   "correct_option": "B",
+   "explanation": "The heart beats about 100,000 times a day, pumping 7,500+ liters of blood — roughly a bathtub's worth every 20 minutes.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Heart"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Physics",
+   "difficulty": "medium",
+   "question": "Which scientist formulated the three laws of motion?",
+   "options": [
+    "Galileo Galilei",
+    "Isaac Newton",
+    "Albert Einstein",
+    "Johannes Kepler"
+   ],
+   "correct_option": "B",
+   "explanation": "Newton published them in Principia (1687). Galileo laid groundwork on inertia and Kepler derived planetary laws, but Newton unified it all.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion"
+  },
+  {
+   "category": "Science",
+   "subcategory": "Chemistry",
+   "difficulty": "easy",
+   "question": "Table salt is a compound of sodium and which other element?",
+   "options": [
+    "Fluorine",
+    "Chlorine",
+    "Iodine",
+    "Potassium"
+   ],
+   "correct_option": "B",
+   "explanation": "NaCl — sodium chloride. The chlorine is bound as chloride, which is harmless, unlike chlorine gas. 'Iodized salt' has iodine added separately to prevent deficiency.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Sodium_chloride"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Computing History",
+   "difficulty": "medium",
+   "question": "What was the first computer bug — literally an insect — found in?",
+   "options": [
+    "ENIAC",
+    "Harvard Mark II",
+    "UNIVAC",
+    "Colossus"
+   ],
+   "correct_option": "B",
+   "explanation": "In 1947, Grace Hopper's team taped an actual moth from the Harvard Mark II into the logbook: 'First actual case of bug being found.' The joke popularized a term engineers already used.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Software_bug"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Internet",
+   "difficulty": "easy",
+   "question": "What does the 'www' in a website address stand for?",
+   "options": [
+    "Wide World Web",
+    "World Wide Web",
+    "World Web Wire",
+    "Web Wide World"
+   ],
+   "correct_option": "B",
+   "explanation": "Tim Berners-Lee coined 'World Wide Web' in 1989 at CERN. He reportedly considered 'The Information Mine' but found it too egotistical.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/World_Wide_Web"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Space Tech",
+   "difficulty": "hard",
+   "question": "Which spacecraft is the only human-made object to have left the Solar System?",
+   "options": [
+    "Pioneer 10",
+    "Voyager 1",
+    "Voyager 2",
+    "New Horizons"
+   ],
+   "correct_option": "B",
+   "explanation": "Voyager 1 crossed the heliopause in 2012 and still transmits. Voyager 2 followed in 2018 — but Pioneer 10 went silent in 2003 far short of the boundary.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Voyager_1"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Computers",
+   "difficulty": "medium",
+   "question": "What does 'Wi-Fi' actually stand for?",
+   "options": [
+    "Wireless Fidelity",
+    "Nothing — it's a brand name",
+    "Wide-area Internet Function",
+    "Wireless Internet Finder"
+   ],
+   "correct_option": "B",
+   "explanation": "Wi-Fi means nothing. It was invented by a branding firm riffing on 'hi-fi'; 'Wireless Fidelity' was a marketing tagline later, not an origin.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Wi-Fi"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Video Games",
+   "difficulty": "medium",
+   "question": "Which was the first commercially sold video game, installed in a California bar in 1971?",
+   "options": [
+    "Pong",
+    "Computer Space",
+    "Galaxy Game",
+    "Spacewar!"
+   ],
+   "correct_option": "B",
+   "explanation": "Computer Space, by Nolan Bushnell and Ted Dabney, predates Pong by a year. It flopped with bar patrons but led directly to Atari and Pong.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Computer_Space"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Phones",
+   "difficulty": "easy",
+   "question": "Which company made the first commercially available mobile phone in 1983?",
+   "options": [
+    "Nokia",
+    "Motorola",
+    "Ericsson",
+    "Siemens"
+   ],
+   "correct_option": "B",
+   "explanation": "The Motorola DynaTAC 8000X cost $3,995 (over $12,000 today), weighed nearly 800 g, and offered 30 minutes of talk time.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Motorola_DynaTAC"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Programming",
+   "difficulty": "hard",
+   "question": "Which programming language was named after a British comedy troupe?",
+   "options": [
+    "Ruby",
+    "Python",
+    "Haskell",
+    "Java"
+   ],
+   "correct_option": "B",
+   "explanation": "Guido van Rossum named Python after Monty Python's Flying Circus, not the snake — he wanted a language that was 'fun to use'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Python_(programming_language)"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Internet",
+   "difficulty": "medium",
+   "question": "The first item ever sold on eBay was what?",
+   "options": [
+    "A Pez dispenser",
+    "A broken laser pointer",
+    "A Beanie Baby",
+    "A used CD"
+   ],
+   "correct_option": "B",
+   "explanation": "In 1995, founder Pierre Omidyar sold a broken laser pointer for $14.83. The buyer collected broken laser pointers — a sign the auction model worked.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/History_of_eBay"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "AI",
+   "difficulty": "medium",
+   "question": "In what year did IBM's Deep Blue beat world chess champion Garry Kasparov?",
+   "options": [
+    "1989",
+    "1997",
+    "2003",
+    "2011"
+   ],
+   "correct_option": "B",
+   "explanation": "Deep Blue won the 1997 rematch 3½–2½. Kasparov accused IBM of human intervention; IBM retired the machine rather than defend the title.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Deep_Blue_versus_Garry_Kasparov"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Crypto",
+   "difficulty": "hard",
+   "question": "What is the maximum number of bitcoins that will ever exist?",
+   "options": [
+    "21 billion",
+    "Unlimited",
+    "21 million",
+    "100 million"
+   ],
+   "correct_option": "C",
+   "explanation": "Bitcoin's protocol caps supply at 21 million coins, enforced by halving block rewards roughly every four years. The last fraction will be mined around 2140.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Bitcoin"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Computers",
+   "difficulty": "medium",
+   "question": "What was the name of the first website ever built?",
+   "options": [
+    "web.mit.edu",
+    "www.arpanet.edu",
+    "info.cern.ch",
+    "google.com"
+   ],
+   "correct_option": "C",
+   "explanation": "Tim Berners-Lee put the first site at CERN in 1991. It explained what the Web was and how to build a browser — it's still online today.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/History_of_the_World_Wide_Web"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Space Tech",
+   "difficulty": "medium",
+   "question": "Which company was the first private one to send a spacecraft to the International Space Station?",
+   "options": [
+    "Boeing",
+    "Sierra Nevada",
+    "SpaceX",
+    "Blue Origin"
+   ],
+   "correct_option": "C",
+   "explanation": "SpaceX's Dragon docked in May 2012 — the first commercial spacecraft to do so — winning NASA's Commercial Orbital Transportation Services contest.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/SpaceX_Dragon"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Gadgets",
+   "difficulty": "easy",
+   "question": "What does 'LED' stand for?",
+   "options": [
+    "Light Energy Diode",
+    "Low Energy Display",
+    "Light Emitting Diode",
+    "Luminous Electric Device"
+   ],
+   "correct_option": "C",
+   "explanation": "LEDs work by electroluminescence in a semiconductor. The first practical visible LED (1962) only emitted red; blue LEDs took until 1994, earning a Nobel Prize.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Light-emitting_diode"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Programming",
+   "difficulty": "medium",
+   "question": "Which language, released in 1995, was originally called 'Mocha' and then 'LiveScript'?",
+   "options": [
+    "Java",
+    "Python",
+    "JavaScript",
+    "PHP"
+   ],
+   "correct_option": "C",
+   "explanation": "Netscape renamed it JavaScript to ride Java's hype — the two languages share almost nothing. The name is one of tech's greatest marketing confusions.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/JavaScript"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Internet",
+   "difficulty": "hard",
+   "question": "The first email attachment ever sent contained what?",
+   "options": [
+    "A photo of a bar scene",
+    "A PowerPoint deck",
+    "An audio recording",
+    "A spreadsheet"
+   ],
+   "correct_option": "C",
+   "explanation": "In 1992 Nathaniel Borenstein's team sent the first MIME attachment: a recording of his telephone-pad rendition of 'Twinkle Twinkle Little Star' as a joke.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/MIME"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Video Games",
+   "difficulty": "easy",
+   "question": "Which console introduced the character Mario (as 'Jumpman')?",
+   "options": [
+    "Atari 2600",
+    "Nintendo Entertainment System",
+    "Game & Watch",
+    "ColecoVision"
+   ],
+   "correct_option": "C",
+   "explanation": "Jumpman debuted in Donkey Kong on arcade and Game & Watch in 1981 before the NES era. He was renamed Mario after Nintendo of America's landlord.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Mario"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Computers",
+   "difficulty": "hard",
+   "question": "Which unit of computing was named after Augustus Ada King, Countess of Lovelace?",
+   "options": [
+    "The Ada programming language only",
+    "The lovelace (a unit of computation)",
+    "Both the language Ada and the Lovelace medal",
+    "Nothing — Ada is a nickname"
+   ],
+   "correct_option": "C",
+   "explanation": "Ada Lovelace wrote the first published algorithm (1843, for Babbage's Analytical Engine). The Ada language, the British Computer Society's Lovelace Medal, and Ada Lovelace Day all honor her.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Ada_Lovelace"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Phones",
+   "difficulty": "medium",
+   "question": "Before the iPhone, which phone popularized the 'brick' shape and sold over 200 million units?",
+   "options": [
+    "Motorola RAZR",
+    "Siemens A50",
+    "Nokia 1100",
+    "Sony Ericsson T610"
+   ],
+   "correct_option": "C",
+   "explanation": "The Nokia 1100 (2003) is the best-selling phone ever at ~250 million units — largely in developing markets. It even had a built-in flashlight.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Nokia_1100"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Internet",
+   "difficulty": "easy",
+   "question": "What does 'URL' stand for?",
+   "options": [
+    "Universal Routing Link",
+    "Uniform Router Location",
+    "Uniform Resource Locator",
+    "User Reference Link"
+   ],
+   "correct_option": "C",
+   "explanation": "URLs were defined by Tim Berners-Lee in 1994. The first URL ever was http://info.cern.ch — ironically it now forces HTTPS.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/URL"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "AI",
+   "difficulty": "medium",
+   "question": "Which AI program beat champions at Jeopardy! in 2011?",
+   "options": [
+    "Deep Blue",
+    "Siri",
+    "Watson",
+    "AlphaGo"
+   ],
+   "correct_option": "C",
+   "explanation": "IBM Watson crushed Ken Jennings and Brad Rutter. Jennings famously conceded: 'I, for one, welcome our new computer overlords.'",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Watson_(computer)"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Space Tech",
+   "difficulty": "hard",
+   "question": "What material did the Apollo program's guidance computer pioneer that now powers every smartphone?",
+   "options": [
+    "Liquid crystal displays",
+    "Touchscreens",
+    "Integrated circuits",
+    "Lithium batteries"
+   ],
+   "correct_option": "C",
+   "explanation": "The Apollo Guidance Computer was one of the first major users of the integrated circuit — NASA bought about 60% of all ICs produced in the US from 1962–65, driving prices down.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Apollo_Guidance_Computer"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Gadgets",
+   "difficulty": "medium",
+   "question": "Which device, launched 2001, was Steve Jobs introducing when he said '1,000 songs in your pocket'?",
+   "options": [
+    "Discman",
+    "iPhone",
+    "iPod",
+    "Zune"
+   ],
+   "correct_option": "C",
+   "explanation": "The original iPod was 5 GB with a mechanical scroll wheel. Critics mocked its $399 price ('stupid'), yet it came to define Apple's next decade.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/IPod"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Programming",
+   "difficulty": "hard",
+   "question": "Which language is the most used on GitHub by repository count (as of mid-2020s)?",
+   "options": [
+    "Python",
+    "Java",
+    "JavaScript",
+    "TypeScript"
+   ],
+   "correct_option": "C",
+   "explanation": "JavaScript has held the top spot for years, driven by web ubiquity. Python overtook Java for second place as data science boomed.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/JavaScript"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Crypto",
+   "difficulty": "medium",
+   "question": "What year did Bitcoin's mysterious creator publish the whitepaper?",
+   "options": [
+    "2006",
+    "2010",
+    "2008",
+    "2009"
+   ],
+   "correct_option": "C",
+   "explanation": "The 'Bitcoin: A Peer-to-Peer Electronic Cash Cash System' paper appeared October 31, 2008 — on a cryptography mailing list, amid the financial crisis. The genesis block (Jan 2009) quoted a Times headline about bank bailouts.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Satoshi_Nakamoto"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Computers",
+   "difficulty": "easy",
+   "question": "Which key removes the character to the LEFT of the cursor?",
+   "options": [
+    "Delete",
+    "Shift",
+    "Backspace",
+    "Escape"
+   ],
+   "correct_option": "C",
+   "explanation": "Backspace deletes leftward; Delete removes the character to the right — a distinction inherited from typewriter terminology.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Backspace"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Internet",
+   "difficulty": "medium",
+   "question": "What was Google's original name when incorporated in 1998?",
+   "options": [
+    "Searchwork",
+    "Google Inc.",
+    "BackRub",
+    "PageRank Ltd"
+   ],
+   "correct_option": "C",
+   "explanation": "The research project was 'BackRub' (it analyzed backlinks). 'Google' is a deliberate misspelling of 'googol' — 10¹⁰⁰ — signed up on a $1,700 check.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/History_of_Google"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Video Games",
+   "difficulty": "hard",
+   "question": "Which game is widely credited as the first 'battle royale' success and popularized the genre?",
+   "options": [
+    "Fortnite",
+    "DayZ mod",
+    "PUBG",
+    "H1Z1"
+   ],
+   "correct_option": "C",
+   "explanation": "PUBG (2017), built by Brendan 'PlayerUnknown' Greene, codified the 100-player shrinking-circle format. The DayZ and H1Z1 mods preceded it, but PUBG was the breakout.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/PlayerUnknown%27s_Battlegrounds"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Phones",
+   "difficulty": "easy",
+   "question": "What does 'SMS' stand for?",
+   "options": [
+    "Standard Message Setup",
+    "Simple Message System",
+    "Short Message Service",
+    "Send Message Soon"
+   ],
+   "correct_option": "C",
+   "explanation": "SMS was designed in the 1980s and the first message, sent in 1992, read 'Merry Christmas' — sent from a computer to a Vodafone phone.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/SMS"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "AI",
+   "difficulty": "hard",
+   "question": "What was the name of the first program to beat a professional Go player without handicaps?",
+   "options": [
+    "AlphaGo",
+    "Zen",
+    "Fine Art",
+    "Crazy Stone"
+   ],
+   "correct_option": "C",
+   "explanation": "Facebook's 'Fine Art' beat pro players in 2015, but AlphaGo's win over Fan Hui (Oct 2015) and then Lee Sedol (2016) is what stunned the world. Move 37 against Sedol became iconic.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/AlphaGo_versus_Lee_Sedol"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Gadgets",
+   "difficulty": "medium",
+   "question": "What common feature did the original Nintendo Game Boy (1989) notably LACK?",
+   "options": [
+    "A screen",
+    "Buttons",
+    "A backlight",
+    "A speaker"
+   ],
+   "correct_option": "C",
+   "explanation": "The Game Boy had no backlight — you needed lamplight. Nintendo's president rejected color and backlighting for battery life, a decision that beat the color, backlit Sega Game Gear.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Game_Boy"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Space Tech",
+   "difficulty": "easy",
+   "question": "Which reusable rocket, first landed in 2015, slashed the cost of getting to orbit?",
+   "options": [
+    "Space Shuttle",
+    "Electron",
+    "Falcon 9",
+    "New Shepard"
+   ],
+   "correct_option": "C",
+   "explanation": "Falcon 9's first stage propulsively landed in December 2015 — after the Shuttle's 1981 'reuse', this was the first propulsive orbital-class booster landing, cutting launch costs dramatically.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Falcon_9"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Computing History",
+   "difficulty": "hard",
+   "question": "The QWERTY keyboard layout was designed to do what?",
+   "options": [
+    "Type fastest",
+    "Standardize office equipment",
+    "Help left-handed typists",
+    "Prevent adjacent commonly-used keys from jamming"
+   ],
+   "correct_option": "D",
+   "explanation": "QWERTY separated common letter pairs so mechanical typewriter arms wouldn't jam. Contrary to myth, it wasn't designed to 'slow typists down' — it optimized for the hardware of 1873.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/QWERTY"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Internet",
+   "difficulty": "medium",
+   "question": "Which is the first social network to reach 1 million users?",
+   "options": [
+    "Friendster",
+    "MySpace",
+    "Facebook",
+    "SixDegrees"
+   ],
+   "correct_option": "D",
+   "explanation": "SixDegrees.com (1997) let users friend and message each other — every element of modern social media. It shut in 2001, before broadband made the concept viable.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/SixDegrees.com"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Programming",
+   "difficulty": "easy",
+   "question": "What does 'HTTP' stand for?",
+   "options": [
+    "Home Tool Transfer Protocol",
+    "High Traffic Transfer Point",
+    "HyperText Transport Path",
+    "HyperText Transfer Protocol"
+   ],
+   "correct_option": "D",
+   "explanation": "Tim Berners-Lee designed HTTP in 1989–91. The very first version had exactly one method: GET. HTTPS arrived in 1994 with Netscape's SSL.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol"
+  },
+  {
+   "category": "Technology",
+   "subcategory": "Gadgets",
+   "difficulty": "hard",
+   "question": "What was the first electronic general-purpose computer, completed in 1945, called?",
+   "options": [
+    "Colossus",
+    "Z3",
+    "ABC",
+    "ENIAC"
+   ],
+   "correct_option": "D",
+   "explanation": "ENIAC (1945) was the first general-purpose electronic digital computer. Colossus (1943) was earlier but special-purpose (codebreaking), and Z3 (1941) was electromechanical.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/ENIAC"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Extreme Places",
+   "difficulty": "medium",
+   "question": "Which country spans 11 time zones — more than any other?",
+   "options": [
+    "Canada",
+    "USA",
+    "China",
+    "Russia"
+   ],
+   "correct_option": "D",
+   "explanation": "Russia covers 11 time zones (down from 12 before 2010). China, ironically, uses just ONE official time zone for its entire width — so in western China the sun can rise after 10am 'local' time.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Time_in_Russia"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Rivers",
+   "difficulty": "hard",
+   "question": "Which river carries more water than the next seven largest rivers combined?",
+   "options": [
+    "Nile",
+    "Yangtze",
+    "Mississippi",
+    "Amazon"
+   ],
+   "correct_option": "D",
+   "explanation": "The Amazon discharges about 209,000 m³ per second — roughly 20% of all river water entering the ocean. The Nile, though longer, carries a fraction of its volume.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Amazon_River"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Countries",
+   "difficulty": "easy",
+   "question": "Which is the largest country in the world by land area?",
+   "options": [
+    "Canada",
+    "China",
+    "USA",
+    "Russia"
+   ],
+   "correct_option": "D",
+   "explanation": "Russia spans about 17.1 million km² — nearly twice the size of second-place Canada — stretching from the Baltic to the Pacific.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_area"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Deserts",
+   "difficulty": "hard",
+   "question": "What is the largest desert on Earth?",
+   "options": [
+    "Sahara",
+    "Gobi",
+    "Arabian Desert",
+    "Antarctic Desert"
+   ],
+   "correct_option": "D",
+   "explanation": "A desert is defined by precipitation, not heat. The Antarctic Desert covers about 14 million km² — larger than the Sahara's 9.2 million. It holds ~70% of Earth's fresh water as ice.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Antarctica"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Islands",
+   "difficulty": "medium",
+   "question": "Greenland is an autonomous territory of which country?",
+   "options": [
+    "Canada",
+    "Norway",
+    "Iceland",
+    "Denmark"
+   ],
+   "correct_option": "D",
+   "explanation": "Greenland has been Danish since 1814, voted for greater autonomy in 2008, and is geographically part of North America but politically European.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Greenland"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Lakes",
+   "difficulty": "hard",
+   "question": "Which lake is the deepest in the world, at over 1,600 meters?",
+   "options": [
+    "Caspian Sea",
+    "Crater Lake",
+    "Lake Tanganyika",
+    "Lake Baikal"
+   ],
+   "correct_option": "D",
+   "explanation": "Siberia's Lake Baikal reaches 1,642 m deep and holds ~20% of the world's unfrozen fresh water — more than all the North American Great Lakes combined.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Lake_Baikal"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Countries",
+   "difficulty": "easy",
+   "question": "Which country has the most volcanoes?",
+   "options": [
+    "Japan",
+    "Italy",
+    "USA",
+    "Indonesia"
+   ],
+   "correct_option": "D",
+   "explanation": "Indonesia sits on the Pacific Ring of Fire with about 130 active volcanoes — more than any other nation, including the 1883 eruption of Krakatoa heard 4,800 km away.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Volcanoes_of_Indonesia"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Mountains",
+   "difficulty": "medium",
+   "question": "Measured from base to peak, which mountain is technically the tallest on Earth?",
+   "options": [
+    "Mount Everest",
+    "Denali",
+    "Kilimanjaro",
+    "Mauna Kea"
+   ],
+   "correct_option": "D",
+   "explanation": "Mauna Kea rises over 10,000 m from its ocean floor base (only 4,207 m above sea level). Everest holds the altitude record, not the base-to-peak one.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Mauna_Kea"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Capitals",
+   "difficulty": "hard",
+   "question": "Which country's capital is NOT its largest city?",
+   "options": [
+    "Thailand — Bangkok",
+    "Mexico — Mexico City",
+    "Egypt — Cairo",
+    "Brazil — Brasília"
+   ],
+   "correct_option": "D",
+   "explanation": "Brazil moved its capital to purpose-built Brasília in 1960 to shift development inland. São Paulo remains far larger. The city's modernist plan earned UNESCO status.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Bras%C3%ADlia"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Oceans",
+   "difficulty": "medium",
+   "question": "What is the deepest point in the world's oceans called?",
+   "options": [
+    "Puerto Rico Trench",
+    "Tonga Trench",
+    "Java Trench",
+    "Mariana Trench"
+   ],
+   "correct_option": "D",
+   "explanation": "Challenger Deep in the Mariana Trench reaches about 10,935 m — deeper than Everest is tall. Only a handful of people have ever visited it.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Challenger_Deep"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Countries",
+   "difficulty": "medium",
+   "question": "Which is the only country whose name starts with 'Q'?",
+   "options": [
+    "Qwaka",
+    "Quirigua",
+    "Qandahar",
+    "Qatar"
+   ],
+   "correct_option": "D",
+   "explanation": "Qatar is the only sovereign nation beginning with Q. On older maps the area appears as 'Catara' or 'Guttur' — spelling was only standardized in the 20th century.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Qatar"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Cities",
+   "difficulty": "easy",
+   "question": "Which city is famous for its canal system and gondolas?",
+   "options": [
+    "Bangkok",
+    "Amsterdam",
+    "Bruges",
+    "Venice"
+   ],
+   "correct_option": "D",
+   "explanation": "Venice has about 150 canals and 400 bridges and is built on 100+ small islands in a lagoon. Bangkok actually has more canals, called 'khlongs'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Venice"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Borders",
+   "difficulty": "hard",
+   "question": "Which two countries share the longest international border?",
+   "options": [
+    "Russia and China",
+    "China and India",
+    "Argentina and Chile",
+    "USA and Canada"
+   ],
+   "correct_option": "D",
+   "explanation": "The US–Canada border is about 8,891 km long, including the Alaska boundary. It's also the longest undefended border in the world.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Canada%E2%80%93United_States_border"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Extreme Places",
+   "difficulty": "medium",
+   "question": "Which place holds the record for highest temperature ever reliably recorded on Earth?",
+   "options": [
+    "Mitribah, Kuwait",
+    "Al Aziziyah, Libya",
+    "Kebili, Tunisia",
+    "Death Valley, USA"
+   ],
+   "correct_option": "D",
+   "explanation": "Death Valley hit 56.7°C (134°F) in 1913. Libya's 58°C record was invalidated in 2012, leaving Death Valley's as the official one.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Highest_temperatures_recorded_on_Earth"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Countries",
+   "difficulty": "easy",
+   "question": "Which continent has the most countries?",
+   "options": [
+    "Asia",
+    "South America",
+    "Europe",
+    "Africa"
+   ],
+   "correct_option": "D",
+   "explanation": "Africa has 54 recognized sovereign states — more than any other continent. Asia has around 49, Europe about 44.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Africa"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Geography Oddities",
+   "difficulty": "hard",
+   "question": "Which country is completely surrounded by South Africa AND has its own border with another nation?",
+   "options": [
+    "Botswana",
+    "Zimbabwe",
+    "Eswatini",
+    "Lesotho"
+   ],
+   "correct_option": "D",
+   "explanation": "Lesotho is an enclave entirely within South Africa — one of only three enclaved countries in the world — yet it's a mountain kingdom with its own monarchy and 2 million people.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Lesotho"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Capitals",
+   "difficulty": "easy",
+   "question": "What is the capital of Australia?",
+   "options": [
+    "Sydney",
+    "Melbourne",
+    "Perth",
+    "Canberra"
+   ],
+   "correct_option": "D",
+   "explanation": "Canberra was purpose-built as a compromise capital between rivals Sydney and Melbourne. The name comes from a local word thought to mean 'meeting place'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Canberra"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Rivers",
+   "difficulty": "medium",
+   "question": "Which river flows through Egypt and is traditionally considered the longest in the world?",
+   "options": [
+    "Nile",
+    "Amazon",
+    "Yangtze",
+    "Congo"
+   ],
+   "correct_option": "A",
+   "explanation": "The Nile runs about 6,650 km. A 2007 Brazilian study argued the Amazon is longer, but the Nile holds the traditional title — and both feed civilizations.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Nile"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Islands",
+   "difficulty": "hard",
+   "question": "Which is the largest island in the world (Australia excluded)?",
+   "options": [
+    "Borneo",
+    "Madagascar",
+    "Greenland",
+    "New Guinea"
+   ],
+   "correct_option": "C",
+   "explanation": "Greenland, at 2.16 million km², is the largest island — Australia is excluded from the list because it's considered a continent.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/List_of_islands_by_area"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Cities",
+   "difficulty": "medium",
+   "question": "Which city sits on two continents?",
+   "options": [
+    "Cairo",
+    "Casablanca",
+    "Moscow",
+    "Istanbul"
+   ],
+   "correct_option": "D",
+   "explanation": "Istanbul straddles Europe and Asia across the Bosphorus strait. It has been capital of three empires: Roman, Byzantine, and Ottoman.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Istanbul"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Weather",
+   "difficulty": "medium",
+   "question": "Which continent is the driest (excluding Antarctica)?",
+   "options": [
+    "Australia",
+    "Africa",
+    "Asia",
+    "South America"
+   ],
+   "correct_option": "A",
+   "explanation": "Australia is the driest inhabited continent — over a third is desert. Antarctica is technically drier, with the McMurdo Dry Valleys seeing no rain for centuries.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Geography_of_Australia"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Countries",
+   "difficulty": "hard",
+   "question": "Which country has the most islands in the world?",
+   "options": [
+    "Indonesia",
+    "Sweden",
+    "Philippines",
+    "Japan"
+   ],
+   "correct_option": "B",
+   "explanation": "Sweden counts about 267,570 islands (mostly uninhabited and small) — far more than Indonesia's ~17,500. The count includes all islets and skerries.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_islands"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Capitals",
+   "difficulty": "medium",
+   "question": "Which is the northernmost capital city in the world?",
+   "options": [
+    "Oslo",
+    "Stockholm",
+    "Helsinki",
+    "Reykjavik"
+   ],
+   "correct_option": "D",
+   "explanation": "Reykjavik, at 64°N, is the world's northernmost capital of a sovereign state. Despite that, winters are milder than New York's thanks to the Gulf Stream.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Reykjav%C3%ADk"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Lakes",
+   "difficulty": "easy",
+   "question": "Which is the largest lake by surface area in the world?",
+   "options": [
+    "Caspian Sea",
+    "Lake Superior",
+    "Lake Victoria",
+    "Lake Michigan"
+   ],
+   "correct_option": "A",
+   "explanation": "The Caspian Sea, a salt lake between Europe and Asia, covers about 371,000 km². Whether it counts as a 'lake' is debated, but geologically it is one.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Caspian_Sea"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Extreme Places",
+   "difficulty": "easy",
+   "question": "Which is the world's highest mountain above sea level?",
+   "options": [
+    "K2",
+    "Mount Everest",
+    "Kangchenjunga",
+    "Lhotse"
+   ],
+   "correct_option": "B",
+   "explanation": "Everest stands 8,849 m. But Ecuador's Chimborazo is 'farther from Earth's center' due to the equatorial bulge — a favorite geography gotcha.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Mount_Everest"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Countries",
+   "difficulty": "medium",
+   "question": "Which country's flag is the only one that is not rectangular or square?",
+   "options": [
+    "Switzerland",
+    "Vatican City",
+    "Nepal",
+    "Bhutan"
+   ],
+   "correct_option": "C",
+   "explanation": "Nepal's flag is two stacked pennants. Legend says it represents the Himalayas and the two rival dynasties. It's also mathematically defined in the constitution.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Flag_of_Nepal"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Cities",
+   "difficulty": "hard",
+   "question": "Which city was formerly known as Byzantium and Constantinople?",
+   "options": [
+    "Istanbul",
+    "Rome",
+    "Athens",
+    "Alexandria"
+   ],
+   "correct_option": "A",
+   "explanation": "Founded as Byzantium around 660 BC, renamed Constantinople by Constantine in 330 AD, and officially 'Istanbul' after 1930. 'Istanbul' derives from Greek 'eis tin polin' — 'to the city'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Names_of_Istanbul"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Geography Oddities",
+   "difficulty": "medium",
+   "question": "Which country is so long that it spans 4,300 km north to south?",
+   "options": [
+    "Peru",
+    "Chile",
+    "Norway",
+    "Vietnam"
+   ],
+   "correct_option": "B",
+   "explanation": "Chile stretches 4,300 km along South America's west coast — yet averages only ~180 km wide. It spans desert, Mediterranean, and polar climates.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Geography_of_Chile"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Oceans",
+   "difficulty": "easy",
+   "question": "Which is the largest ocean on Earth?",
+   "options": [
+    "Atlantic",
+    "Indian",
+    "Pacific",
+    "Arctic"
+   ],
+   "correct_option": "C",
+   "explanation": "The Pacific covers about 165 million km² — larger than all land combined. Its deepest point, Challenger Deep, could swallow Everest with 2 km to spare.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Pacific_Ocean"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Borders",
+   "difficulty": "medium",
+   "question": "Which country borders the most other nations?",
+   "options": [
+    "Russia",
+    "Germany",
+    "Brazil",
+    "China"
+   ],
+   "correct_option": "D",
+   "explanation": "China borders 14 countries, edging Russia's 14 neighbors too but with more maritime boundaries. Germany, by contrast, has only 9.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/List_of_countries_by_number_of_neighbouring_countries"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Deserts",
+   "difficulty": "easy",
+   "question": "What is the largest hot desert in the world?",
+   "options": [
+    "Gobi",
+    "Sahara",
+    "Kalahari",
+    "Arabian"
+   ],
+   "correct_option": "B",
+   "explanation": "The Sahara spans 9.2 million km² — roughly the size of the USA. Only the polar deserts are larger, and they're cold ones.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Sahara"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Islands",
+   "difficulty": "medium",
+   "question": "Which island nation is the smallest in area in the world?",
+   "options": [
+    "Monaco",
+    "Vatican City",
+    "Nauru",
+    "San Marino"
+   ],
+   "correct_option": "C",
+   "explanation": "Nauru, at 21 km², is the smallest island nation and third-smallest country overall (after Vatican City and Monaco). It was once rich from phosphate mining.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Nauru"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Capitals",
+   "difficulty": "hard",
+   "question": "Which capital city sits at the highest elevation?",
+   "options": [
+    "Kathmandu",
+    "Bogotá",
+    "Quito",
+    "La Paz"
+   ],
+   "correct_option": "D",
+   "explanation": "La Paz, Bolivia, sits at 3,640 m — the highest seat of government. Quito and Kathmandu are lower. Olympic athletes train there for thin air.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/La_Paz"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Countries",
+   "difficulty": "easy",
+   "question": "Which country is shaped like a boot?",
+   "options": [
+    "Italy",
+    "Greece",
+    "Spain",
+    "Portugal"
+   ],
+   "correct_option": "A",
+   "explanation": "Italy's boot shape kicks the island of Sicily. The comparison is ancient — Greeks called the peninsula 'Italia' after a southern tribe.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Italy"
+  },
+  {
+   "category": "Geography",
+   "subcategory": "Weather",
+   "difficulty": "hard",
+   "question": "Which place is the wettest inhabited spot on Earth?",
+   "options": [
+    "Mt. Waialeale, Hawaii",
+    "Lloró, Colombia",
+    "Cherrapunji, India",
+    "Emei Shan, China"
+   ],
+   "correct_option": "C",
+   "explanation": "Mawsynram/Cherrapunji in Meghalaya, India, average around 11,800 mm of rain annually — locals weave 'knups' (rain shields) to work outdoors.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Mawsynram"
+  },
+  {
+   "category": "History",
+   "subcategory": "Ancient",
+   "difficulty": "medium",
+   "question": "The Library of Alexandria was destroyed gradually over centuries. Which event is NOT associated with its decline?",
+   "options": [
+    "Julius Caesar's fire in 48 BC",
+    "Aurelian's sack of Alexandria in 270s AD",
+    "The decree of Theodosius in 391 AD",
+    "The Arab conquest in 642 AD"
+   ],
+   "correct_option": "D",
+   "explanation": "The popular story of Caliph Umar ordering books burned is almost certainly a later legend. The library likely declined through gradual neglect, fires, and funding loss over centuries.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Library_of_Alexandria"
+  },
+  {
+   "category": "History",
+   "subcategory": "Modern",
+   "difficulty": "easy",
+   "question": "In which year did World War II end?",
+   "options": [
+    "1945",
+    "1944",
+    "1943",
+    "1946"
+   ],
+   "correct_option": "A",
+   "explanation": "Germany surrendered in May 1945 (VE Day); Japan in August after atomic bombs on Hiroshima and Nagasaki and the Soviet declaration of war.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/End_of_World_War_II"
+  },
+  {
+   "category": "History",
+   "subcategory": "Ancient Rome",
+   "difficulty": "hard",
+   "question": "Roman Emperor Caligula reportedly declared war on which sea?",
+   "options": [
+    "Black Sea",
+    "Adriatic",
+    "Red Sea",
+    "Mediterranean"
+   ],
+   "correct_option": "B",
+   "explanation": "Suetonius claims Caligula ordered his troops to attack waves in the Adriatic and collect seashells as 'plunder' in 40 AD. Historians still debate whether it was madness, mockery of his troops, or a garbled account.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Caligula"
+  },
+  {
+   "category": "History",
+   "subcategory": "Explorers",
+   "difficulty": "medium",
+   "question": "Which explorer's crew completed the first circumnavigation of the Earth, even though he died en route?",
+   "options": [
+    "Christopher Columbus",
+    "Francis Drake",
+    "James Cook",
+    "Ferdinand Magellan"
+   ],
+   "correct_option": "D",
+   "explanation": "Magellan was killed in the Philippines in 1521, but 18 survivors of his expedition finished the voyage under Juan Sebastián Elcano — proving the world round by sailing it.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Magellan_expedition"
+  },
+  {
+   "category": "History",
+   "subcategory": "Ancient Egypt",
+   "difficulty": "easy",
+   "question": "Who was the last active pharaoh of Ancient Egypt?",
+   "options": [
+    "Cleopatra VII",
+    "Nefertiti",
+    "Tutankhamun",
+    "Ramesses II"
+   ],
+   "correct_option": "A",
+   "explanation": "Cleopatra VII died in 30 BC — closer in time to the Moon landing than to the building of the Great Pyramid. She was also the first Ptolemy to speak Egyptian.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Cleopatra"
+  },
+  {
+   "category": "History",
+   "subcategory": "Wars",
+   "difficulty": "hard",
+   "question": "Which war was the shortest in recorded history?",
+   "options": [
+    "Six-Day War",
+    "Anglo-Zanzibar War",
+    "Falklands War",
+    "Football War"
+   ],
+   "correct_option": "B",
+   "explanation": "The 1896 Anglo-Zanzibar War lasted roughly 38–45 minutes. British ships bombarded the palace after a succession dispute, and the sultan fled before lunch.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Anglo-Zanzibar_War"
+  },
+  {
+   "category": "History",
+   "subcategory": "Revolutions",
+   "difficulty": "medium",
+   "question": "The French Revolution began in which year, with the storming of the Bastille?",
+   "options": [
+    "1776",
+    "1799",
+    "1789",
+    "1804"
+   ],
+   "correct_option": "C",
+   "explanation": "July 14, 1789 — the Bastille held only seven prisoners but symbolized royal tyranny. It was later demolished; its stones were sold as souvenirs.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Storming_of_the_Bastille"
+  },
+  {
+   "category": "History",
+   "subcategory": "Ancient",
+   "difficulty": "hard",
+   "question": "Which ancient wonder stood in the city of Babylon?",
+   "options": [
+    "The Hanging Gardens",
+    "The Lighthouse of Alexandria",
+    "The Colossus",
+    "The Mausoleum at Halicarnassus"
+   ],
+   "correct_option": "A",
+   "explanation": "The Hanging Gardens' existence is actually doubted — no Babylonian source mentions them; all accounts are Greek, possibly conflating Babylon with Nineveh's gardens.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Hanging_Gardens_of_Babylon"
+  },
+  {
+   "category": "History",
+   "subcategory": "Middle Ages",
+   "difficulty": "medium",
+   "question": "The Black Death killed roughly what fraction of Europe's population?",
+   "options": [
+    "One-tenth",
+    "One-third to one-half",
+    "One-quarter",
+    "90%"
+   ],
+   "correct_option": "B",
+   "explanation": "The 1347–1351 plague killed 30–60% of Europeans — 25–50 million people. Some villages vanished entirely; labor scarcity afterwards helped end serfdom in Western Europe.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Black_Death"
+  },
+  {
+   "category": "History",
+   "subcategory": "Modern",
+   "difficulty": "easy",
+   "question": "Who was the first person to walk on the Moon?",
+   "options": [
+    "Buzz Aldrin",
+    "Yuri Gagarin",
+    "Neil Armstrong",
+    "Michael Collins"
+   ],
+   "correct_option": "C",
+   "explanation": "Armstrong stepped onto the Sea of Tranquility on July 20, 1969, followed by Aldrin 19 minutes later. Collins stayed in orbit, the loneliest human ever at times.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Apollo_11"
+  },
+  {
+   "category": "History",
+   "subcategory": "Ancient Rome",
+   "difficulty": "easy",
+   "question": "Who was the first Roman emperor?",
+   "options": [
+    "Julius Caesar",
+    "Tiberius",
+    "Nero",
+    "Augustus"
+   ],
+   "correct_option": "D",
+   "explanation": "Augustus (Octavian) became emperor in 27 BC. Julius Caesar was never emperor — he was dictator, assassinated before the empire began.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Augustus"
+  },
+  {
+   "category": "History",
+   "subcategory": "Asia",
+   "difficulty": "hard",
+   "question": "The Great Wall of China, as commonly imagined with stone watchtowers, is mostly from which dynasty?",
+   "options": [
+    "Qin",
+    "Ming",
+    "Han",
+    "Tang"
+   ],
+   "correct_option": "B",
+   "explanation": "Most surviving wall dates from the Ming Dynasty (1368–1644), using brick and stone. The earlier Qin wall was largely rammed earth and mostly gone.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Great_Wall_of_China"
+  },
+  {
+   "category": "History",
+   "subcategory": "Modern",
+   "difficulty": "medium",
+   "question": "The Titanic sank in 1912. In which year was its wreck discovered?",
+   "options": [
+    "1975",
+    "1995",
+    "1985",
+    "2005"
+   ],
+   "correct_option": "C",
+   "explanation": "Robert Ballard found the wreck in September 1985, 3,700 m down. He was on a secret US Navy mission to survey two nuclear submarines — the Titanic search was cover.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Wreck_of_the_RMS_Titanic"
+  },
+  {
+   "category": "History",
+   "subcategory": "Asia",
+   "difficulty": "medium",
+   "question": "Which empire built Machu Picchu?",
+   "options": [
+    "Aztec",
+    "Maya",
+    "Olmec",
+    "Inca"
+   ],
+   "correct_option": "D",
+   "explanation": "The Inca built it around 1450 for Emperor Pachacuti, abandoned it a century later, and the Spanish never found it — which is why it survived intact.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Machu_Picchu"
+  },
+  {
+   "category": "History",
+   "subcategory": "Explorers",
+   "difficulty": "hard",
+   "question": "Which Viking is credited as the first European to reach North America, around 1000 AD?",
+   "options": [
+    "Leif Erikson",
+    "Erik the Red",
+    "Freydís Eiríksdóttir",
+    "Bjarni Herjólfsson"
+   ],
+   "correct_option": "A",
+   "explanation": "Leif Erikson landed at 'Vinland' (Newfoundland) ~500 years before Columbus. The L'Anse aux Meadows site confirmed Norse presence in 1960.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Leif_Erikson"
+  },
+  {
+   "category": "History",
+   "subcategory": "Wars",
+   "difficulty": "easy",
+   "question": "Which conflict is known as 'The Great War'?",
+   "options": [
+    "World War II",
+    "The Napoleonic Wars",
+    "World War I",
+    "The Crimean War"
+   ],
+   "correct_option": "C",
+   "explanation": "WWI (1914–1918) was called the Great War and 'the war to end all wars' — until it became clear it was actually World War One.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/World_War_I"
+  },
+  {
+   "category": "History",
+   "subcategory": "Modern",
+   "difficulty": "hard",
+   "question": "Which event directly triggered the United States' entry into World War II?",
+   "options": [
+    "Sinking of the Lusitania",
+    "Zimmermann Telegram",
+    "Fall of France",
+    "Attack on Pearl Harbor"
+   ],
+   "correct_option": "D",
+   "explanation": "Pearl Harbor (Dec 7, 1941) brought the US into WWII. The Lusitania and Zimmermann Telegram triggered WWI entry in 1917 — a classic mix-up.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Attack_on_Pearl_Harbor"
+  },
+  {
+   "category": "History",
+   "subcategory": "Ancient",
+   "difficulty": "medium",
+   "question": "Who wrote the oldest surviving epic literature, 'The Epic of Gilgamesh'?",
+   "options": [
+    "The Babylonians",
+    "The Sumerians",
+    "The Assyrians",
+    "The Hittites"
+   ],
+   "correct_option": "A",
+   "explanation": "The standard Babylonian version dates to ~1200 BC, drawing on older Sumerian poems. Its flood story predates and parallels the Biblical one.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh"
+  },
+  {
+   "category": "History",
+   "subcategory": "Middle Ages",
+   "difficulty": "medium",
+   "question": "Which document did English nobles force King John to sign in 1215?",
+   "options": [
+    "The Bill of Rights",
+    "Magna Carta",
+    "The Domesday Book",
+    "The Act of Union"
+   ],
+   "correct_option": "B",
+   "explanation": "Magna Carta limited royal power for the first time. Only three of its 63 clauses remain law — but the principle that the king is subject to law stuck.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Magna_Carta"
+  },
+  {
+   "category": "History",
+   "subcategory": "Modern",
+   "difficulty": "medium",
+   "question": "The Berlin Wall fell in which year?",
+   "options": [
+    "1987",
+    "1985",
+    "1991",
+    "1989"
+   ],
+   "correct_option": "D",
+   "explanation": "November 9, 1989. It fell partly by accident — a spokesman botched a press conference announcement, and crowds overwhelmed the checkpoints the same night.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Fall_of_the_Berlin_Wall"
+  },
+  {
+   "category": "History",
+   "subcategory": "Asia",
+   "difficulty": "easy",
+   "question": "Who founded the Mongol Empire, the largest contiguous land empire in history?",
+   "options": [
+    "Genghis Khan",
+    "Kublai Khan",
+    "Attila the Hun",
+    "Tamerlane"
+   ],
+   "correct_option": "A",
+   "explanation": "Genghis Khan united the Mongol tribes by 1206. At its peak the empire covered 24 million km² — Kublai, his grandson, ruled China afterward.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Genghis_Khan"
+  },
+  {
+   "category": "History",
+   "subcategory": "Ancient Rome",
+   "difficulty": "hard",
+   "question": "Which Roman emperor famously 'fiddled while Rome burned' — a story historians consider false?",
+   "options": [
+    "Caligula",
+    "Nero",
+    "Commodus",
+    "Diocletian"
+   ],
+   "correct_option": "B",
+   "explanation": "Nero was 56 km away in Antium when the Great Fire started (64 AD), and fiddles didn't exist. He opened public buildings to shelter the homeless — but still blamed Christians for it.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Great_Fire_of_Rome"
+  },
+  {
+   "category": "History",
+   "subcategory": "Explorers",
+   "difficulty": "easy",
+   "question": "In 1492, which explorer crossed the Atlantic seeking a route to Asia?",
+   "options": [
+    "Magellan",
+    "Vasco da Gama",
+    "Christopher Columbus",
+    "Amerigo Vespucci"
+   ],
+   "correct_option": "C",
+   "explanation": "Columbus never reached the mainland of North America and died insisting he'd found Asia. The continents were named for Amerigo Vespucci instead.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Christopher_Columbus"
+  },
+  {
+   "category": "History",
+   "subcategory": "Modern",
+   "difficulty": "hard",
+   "question": "Which country gifted the Statue of Liberty to the United States?",
+   "options": [
+    "France",
+    "Britain",
+    "Spain",
+    "Italy"
+   ],
+   "correct_option": "A",
+   "explanation": "France gave the statue in 1886 to mark the alliance of 1778. The copper shell is only 2.4 mm thick — about the thickness of two pennies.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Statue_of_Liberty"
+  },
+  {
+   "category": "History",
+   "subcategory": "Ancient Egypt",
+   "difficulty": "medium",
+   "question": "The Great Pyramid of Giza was the tallest human-made structure for how long?",
+   "options": [
+    "About 500 years",
+    "About 3,800 years",
+    "About 1,000 years",
+    "About 700 years"
+   ],
+   "correct_option": "B",
+   "explanation": "For ~3,800 years it was the tallest structure on Earth, until Lincoln Cathedral's spire surpassed it around 1311 AD.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Great_Pyramid_of_Giza"
+  },
+  {
+   "category": "History",
+   "subcategory": "Revolutions",
+   "difficulty": "hard",
+   "question": "Which revolution produced the 'Reign of Terror'?",
+   "options": [
+    "Russian Revolution",
+    "American Revolution",
+    "French Revolution",
+    "Industrial Revolution"
+   ],
+   "correct_option": "C",
+   "explanation": "The French Revolution's Terror (1793–94) saw ~17,000 official executions by guillotine. Robespierre, who ran it, was guillotined without trial himself.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Reign_of_Terror"
+  },
+  {
+   "category": "History",
+   "subcategory": "Asia",
+   "difficulty": "medium",
+   "question": "Which civilization invented paper?",
+   "options": [
+    "Egypt",
+    "Greece",
+    "Mesopotamia",
+    "China"
+   ],
+   "correct_option": "D",
+   "explanation": "Cai Lun refined papermaking around 105 AD using mulberry bark and rags. Papyrus (Egypt) is a different material — hence 'paper' vs 'papyrus'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/History_of_paper"
+  },
+  {
+   "category": "History",
+   "subcategory": "Wars",
+   "difficulty": "medium",
+   "question": "Which war lasted from 1914 to 1918 and involved trench warfare on the Western Front?",
+   "options": [
+    "World War II",
+    "World War I",
+    "The Boer War",
+    "The Korean War"
+   ],
+   "correct_option": "B",
+   "explanation": "WWI's trenches stretched 700 km from Switzerland to the North Sea. On Christmas 1914, soldiers famously stopped to sing and play football together.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/World_War_I"
+  },
+  {
+   "category": "History",
+   "subcategory": "Modern",
+   "difficulty": "easy",
+   "question": "Who was the first President of the United States?",
+   "options": [
+    "Thomas Jefferson",
+    "John Adams",
+    "George Washington",
+    "Benjamin Franklin"
+   ],
+   "correct_option": "C",
+   "explanation": "Washington (1789–1797) is the only president elected unanimously by the Electoral College. Adams and Jefferson were his VP and Secretary of State.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/George_Washington"
+  },
+  {
+   "category": "History",
+   "subcategory": "Middle Ages",
+   "difficulty": "hard",
+   "question": "Which pandemic of the 14th century is estimated to have killed up to 60% of Europe's population?",
+   "options": [
+    "The Plague of Justinian",
+    "The Great Plague of London",
+    "The Antonine Plague",
+    "The Black Death"
+   ],
+   "correct_option": "D",
+   "explanation": "The Black Death (1347–1351) was the second plague pandemic. The Plague of Justinian (541 AD) was the first — also Yersinia pestis, confirmed by ancient DNA.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Black_Death"
+  },
+  {
+   "category": "History",
+   "subcategory": "Ancient",
+   "difficulty": "medium",
+   "question": "Which writing system did the ancient Sumerians use, the first known in the world?",
+   "options": [
+    "Cuneiform",
+    "Hieroglyphics",
+    "Linear B",
+    "Phoenician alphabet"
+   ],
+   "correct_option": "A",
+   "explanation": "Cuneiform, pressed into clay around 3200 BC in Mesopotamia, is the earliest known writing. Most surviving tablets are mundane: receipts, contracts, homework.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Cuneiform"
+  },
+  {
+   "category": "History",
+   "subcategory": "Modern",
+   "difficulty": "medium",
+   "question": "Which ship's sinking in 1915 helped turn US public opinion against Germany in WWI?",
+   "options": [
+    "HMS Lusitania",
+    "USS Maine",
+    "RMS Lusitania",
+    "RMS Britannic"
+   ],
+   "correct_option": "C",
+   "explanation": "The RMS Lusitania was sunk by a U-boat with 128 Americans aboard. It pushed opinion but US entry came only in 1917 after the Zimmermann Telegram.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Sinking_of_the_RMS_Lusitania"
+  },
+  {
+   "category": "History",
+   "subcategory": "Asia",
+   "difficulty": "hard",
+   "question": "What was the name of the 1947 document that partitioned British India?",
+   "options": [
+    "The Mountbatten Plan",
+    "The McMahon Line",
+    "The Durand Line",
+    "The Radcliffe Line"
+   ],
+   "correct_option": "D",
+   "explanation": "Sir Cyril Radcliffe drew the India–Pakistan border in about five weeks, having never been to India before. He burned his papers in shame.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Radcliffe_Line"
+  },
+  {
+   "category": "History",
+   "subcategory": "Ancient Rome",
+   "difficulty": "medium",
+   "question": "What happened to Julius Caesar on the Ides of March, 44 BC?",
+   "options": [
+    "He was assassinated",
+    "He was crowned emperor",
+    "He won a major battle",
+    "He abdicated"
+   ],
+   "correct_option": "A",
+   "explanation": "About 60 senators stabbed him, led by Brutus and Cassius. The assassination triggered civil war and the end of the Republic — the opposite of their goal.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Assassination_of_Julius_Caesar"
+  },
+  {
+   "category": "History",
+   "subcategory": "Explorers",
+   "difficulty": "medium",
+   "question": "Who was the first woman to fly solo across the Atlantic?",
+   "options": [
+    "Bessie Coleman",
+    "Amelia Earhart",
+    "Harriet Quimby",
+    "Jacqueline Cochran"
+   ],
+   "correct_option": "B",
+   "explanation": "Earhart flew in 1932, five years after Lindbergh. Quimby was first woman to cross the Channel (1912); Coleman was the first Black pilot, male or female, in the US.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Amelia_Earhart"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Animals",
+   "difficulty": "easy",
+   "question": "Which is the fastest land animal over short distances?",
+   "options": [
+    "Lion",
+    "Greyhound",
+    "Pronghorn",
+    "Cheetah"
+   ],
+   "correct_option": "D",
+   "explanation": "Cheetahs hit ~100 km/h in 3 seconds — faster than most sports cars. But pronghorns sustain 55 km/h for miles; over any real distance they'd win easily.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Cheetah"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Marine Life",
+   "difficulty": "medium",
+   "question": "What is the largest animal ever known to have existed?",
+   "options": [
+    "Blue whale",
+    "Argentinosaurus",
+    "Colossal squid",
+    "African elephant"
+   ],
+   "correct_option": "A",
+   "explanation": "Blue whales reach 30 m and 180 tonnes — heavier than any dinosaur we've found. Their hearts alone weigh as much as a car.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Blue_whale"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Insects",
+   "difficulty": "hard",
+   "question": "A single colony of which insect can contain over 20 billion individuals?",
+   "options": [
+    "Termites",
+    "Ants",
+    "Bees",
+    "Locusts"
+   ],
+   "correct_option": "B",
+   "explanation": "Argentine ant super-colonies stretch 6,000 km across Europe, with billions of workers that don't fight each other — a 'mega-colony' unique among ants.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Black_garden_ant"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Plants",
+   "difficulty": "medium",
+   "question": "Which plant moves fastest when hunting — snapping shut in under half a second?",
+   "options": [
+    "Sundew",
+    "Pitcher plant",
+    "Venus flytrap",
+    "Bladderwort"
+   ],
+   "correct_option": "C",
+   "explanation": "The Venus flytrap snaps in ~100 ms via a 'snap-buckling' mechanism. Bladderworts are faster underwater (0.5 ms) but aquatic, so the flytrap wins on land.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Venus_flytrap"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Birds",
+   "difficulty": "easy",
+   "question": "Which bird is famous for mimicking sounds, including chainsaws and car alarms?",
+   "options": [
+    "Lyrebird",
+    "Parrot",
+    "Crow",
+    "Starling"
+   ],
+   "correct_option": "A",
+   "explanation": "Superb lyrebirds mimic anything: camera shutters, kookaburras, chainsaws. Their repertoire rivals parrots, and the displays are extraordinary.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Superb_lyrebird"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Animals",
+   "difficulty": "medium",
+   "question": "Which mammal lays eggs?",
+   "options": [
+    "Pangolin",
+    "Platypus",
+    "Sloth",
+    "Armadillo"
+   ],
+   "correct_option": "B",
+   "explanation": "The platypus (and the echidna) are monotremes — egg-laying mammals. Males also deliver venom from ankle spurs, making them one of the only venomous mammals.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Platypus"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Marine Life",
+   "difficulty": "hard",
+   "question": "Which creature's heart is located in its head?",
+   "options": [
+    "Crab",
+    "Shrimp",
+    "Octopus",
+    "Lobster"
+   ],
+   "correct_option": "C",
+   "explanation": "An octopus has three hearts (two gill, one systemic) and its main heart sits near the head. Two hearts stop when it swims — which is why it prefers crawling.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Octopus"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Plants",
+   "difficulty": "easy",
+   "question": "Which plant gives us vanilla?",
+   "options": [
+    "Vanilla bush",
+    "Cactus",
+    "Fern",
+    "Orchid"
+   ],
+   "correct_option": "D",
+   "explanation": "Vanilla comes from the pods of Vanilla planifolia, an orchid. It's the only edible fruit of the ~25,000 orchid species, and each flower opens for a single day.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Vanilla"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Insects",
+   "difficulty": "medium",
+   "question": "What do honeybees communicate when they perform the 'waggle dance'?",
+   "options": [
+    "Threats nearby",
+    "The location of food",
+    "The queen's health",
+    "A desire to swarm"
+   ],
+   "correct_option": "B",
+   "explanation": "The angle of the waggle relative to vertical encodes direction relative to the sun; duration encodes distance. Karl von Frisch won a Nobel Prize for decoding it.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Waggle_dance"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Birds",
+   "difficulty": "medium",
+   "question": "Which bird can fly backwards?",
+   "options": [
+    "Swift",
+    "Kingfisher",
+    "Hummingbird",
+    "Swallow"
+   ],
+   "correct_option": "C",
+   "explanation": "Hummingbirds can hover and fly backwards thanks to a figure-eight wingbeat up to 80 times per second. No other bird achieves true sustained backward flight.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Hummingbird"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Animals",
+   "difficulty": "hard",
+   "question": "Which animal's tail is strong enough to support its entire body weight hanging?",
+   "options": [
+    "Kangaroo",
+    "Snow leopard",
+    "Red panda",
+    "Spider monkey"
+   ],
+   "correct_option": "D",
+   "explanation": "Spider monkeys have prehensile tails with fingerprints-like pads, acting as a fifth hand. Kangaroos use tails as a leg while 'pentapedal' walking, but not for hanging.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Spider_monkey"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Marine Life",
+   "difficulty": "medium",
+   "question": "What is a group of jellyfish called?",
+   "options": [
+    "A smack",
+    "A bloom",
+    "A swarm",
+    "A shoal"
+   ],
+   "correct_option": "A",
+   "explanation": "A 'smack' of jellyfish; a 'bloom' refers to a population explosion. Jellyfish predate dinosaurs by 400 million years and have no brain or heart.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Jellyfish"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Plants",
+   "difficulty": "medium",
+   "question": "What is the tallest type of grass in the world?",
+   "options": [
+    "Sugarcane",
+    "Corn",
+    "Bamboo",
+    "Wheat"
+   ],
+   "correct_option": "C",
+   "explanation": "Bamboo is a grass that grows up to 30 m — and some species grow 90 cm in a single day, the fastest plant growth recorded.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Bamboo"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Insects",
+   "difficulty": "easy",
+   "question": "Which insect makes up the largest biomass of any land animal?",
+   "options": [
+    "Locust",
+    "Beetle",
+    "Termite",
+    "Ant"
+   ],
+   "correct_option": "D",
+   "explanation": "Ants total an estimated 20 quadrillion individuals — about 2.5 million for every human. Their combined biomass rivals all wild birds and mammals combined.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Ant"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Animals",
+   "difficulty": "medium",
+   "question": "Which big cat can purr but cannot roar?",
+   "options": [
+    "Cheetah",
+    "Tiger",
+    "Lion",
+    "Leopard"
+   ],
+   "correct_option": "A",
+   "explanation": "Cheetahs purr, chirp, and bark but can't roar — roaring cats have specialized hyoid anatomy. Cheetahs are more closely related to cougars than to lions.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Cheetah"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Marine Life",
+   "difficulty": "easy",
+   "question": "Which fish is famous for inflating into a ball when threatened?",
+   "options": [
+    "Anglerfish",
+    "Pufferfish",
+    "Lionfish",
+    "Clownfish"
+   ],
+   "correct_option": "B",
+   "explanation": "Pufferfish swallow water to balloon up and deter predators. Some contain tetrodotoxin — 1,200 times more lethal than cyanide — and are a delicacy (fugu) prepared by licensed chefs.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Tetraodontidae"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Birds",
+   "difficulty": "hard",
+   "question": "Which bird lays the largest egg relative to its body size?",
+   "options": [
+    "Ostrich",
+    "Albatross",
+    "Emu",
+    "Kiwi"
+   ],
+   "correct_option": "D",
+   "explanation": "A kiwi's egg is up to 20% of its body weight — like a human giving birth to a 6-year-old. Ostrich eggs are bigger in absolute size but small relative to the bird.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Kiwi_(bird)"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Plants",
+   "difficulty": "hard",
+   "question": "Which tree is known as the 'living fossil' because it's the sole survivor of an ancient group, unchanged for 200 million years?",
+   "options": [
+    "Ginkgo",
+    "Sequoia",
+    "Bristlecone pine",
+    "Baobab"
+   ],
+   "correct_option": "A",
+   "explanation": "Ginkgo biloba is the last of its division. Fossil leaves from 170 million years ago are nearly identical to today's — Darwin himself called such species 'living fossils'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Ginkgo_biloba"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Insects",
+   "difficulty": "medium",
+   "question": "Which insect has the best color vision relative to humans?",
+   "options": [
+    "Bumblebee",
+    "Mantis shrimp",
+    "Butterfly",
+    "Dragonfly"
+   ],
+   "correct_option": "B",
+   "explanation": "The mantis shrimp has 12–16 color receptor types versus our 3, and can see polarized light and ultraviolet. Despite this, its brain processes color surprisingly simply.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Mantis_shrimp"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Animals",
+   "difficulty": "easy",
+   "question": "Which mammal is known for building dams in rivers?",
+   "options": [
+    "Otter",
+    "Muskrat",
+    "Beaver",
+    "Badger"
+   ],
+   "correct_option": "C",
+   "explanation": "Beaver dams can be seen from space — the world's largest, in Canada, is 850 m long. Their activity reshapes whole ecosystems.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Beaver"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Marine Life",
+   "difficulty": "medium",
+   "question": "Which sea creature is immortal in the sense of reverting to its juvenile form?",
+   "options": [
+    "Immortal jellyfish",
+    "Sea urchin",
+    "Lobster",
+    "Naked mole-rat"
+   ],
+   "correct_option": "A",
+   "explanation": "Turritopsis dohrnii transforms mature cells back into polyps via transdifferentiation, restarting its life cycle indefinitely. It can still be eaten or diseased, though.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Turritopsis_dohrnii"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Birds",
+   "difficulty": "medium",
+   "question": "Which is the only bird that can smell food from over a kilometer away, thanks to the largest olfactory system of any bird?",
+   "options": [
+    "Seagull",
+    "Turkey vulture",
+    "Albatross",
+    "Kiwi"
+   ],
+   "correct_option": "B",
+   "explanation": "Turkey vultures find carrion by smell alone — most birds barely use smell. That's why 'vulture culture' cleanup crews find carcasses under forest canopy.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Turkey_vulture"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Insects",
+   "difficulty": "hard",
+   "question": "Which insect's drone is the only one that produces honey?",
+   "options": [
+    "Wasp",
+    "Bumblebee",
+    "Honeybee",
+    "Hornet"
+   ],
+   "correct_option": "C",
+   "explanation": "Strictly, the honeybee makes honey from nectar; bumblebees make only small nectar stores. A single jar of honey requires bees to fly the equivalent of 3+ times around the world.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Western_honey_bee"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Plants",
+   "difficulty": "medium",
+   "question": "Which is the largest flower in the world?",
+   "options": [
+    "Sunflower",
+    "Titan arum",
+    "Lotus",
+    "Rafflesia"
+   ],
+   "correct_option": "D",
+   "explanation": "Rafflesia arnoldii blooms up to 1 m across, smells like rotting flesh, and is a parasite with no leaves, stems, or roots. The titan arum's 'flower' is actually a cluster of thousands.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Rafflesia_arnoldii"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Animals",
+   "difficulty": "hard",
+   "question": "Which animal can survive being frozen solid?",
+   "options": [
+    "Polar bear",
+    "Wood frog",
+    "Emperor penguin",
+    "Arctic fox"
+   ],
+   "correct_option": "B",
+   "explanation": "The wood frog stops breathing and its heart stops for weeks in winter; up to 65% of its body freezes as glucose-protected ice. It thaws and hops away in spring.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Wood_frog"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Marine Life",
+   "difficulty": "easy",
+   "question": "What is the largest fish in the ocean?",
+   "options": [
+    "Great white shark",
+    "Bluefin tuna",
+    "Whale shark",
+    "Giant manta ray"
+   ],
+   "correct_option": "C",
+   "explanation": "Whale sharks reach 18 m but filter-feed on plankton and fish eggs — harmless to humans. Divers regularly swim alongside them.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Whale_shark"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Birds",
+   "difficulty": "easy",
+   "question": "Which bird cannot fly and is the largest living bird?",
+   "options": [
+    "Penguin",
+    "Emu",
+    "Kiwi",
+    "Ostrich"
+   ],
+   "correct_option": "D",
+   "explanation": "Ostriches run 70 km/h — the fastest two-legged animal. Their eye is bigger than their brain.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Ostrich"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Plants",
+   "difficulty": "easy",
+   "question": "Which tree produces acorns?",
+   "options": [
+    "Oak",
+    "Maple",
+    "Beech",
+    "Hickory"
+   ],
+   "correct_option": "A",
+   "explanation": "Oaks can produce thousands of acorns in a 'mast year' — a boom-bust cycle that overwhelms the squirrels and jays eating them.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Acorn"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Insects",
+   "difficulty": "medium",
+   "question": "What do dragonflies do when it comes to hunting success rate?",
+   "options": [
+    "They fail 70% of the time",
+    "They only hunt plants",
+    "They succeed ~95% of the time",
+    "They scavenge"
+   ],
+   "correct_option": "C",
+   "explanation": "Dragonflies catch about 95% of prey — the most successful predator on Earth, better than great whites or lions. Their brains predict prey trajectory.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Dragonfly"
+  },
+  {
+   "category": "Nature",
+   "subcategory": "Marine Life",
+   "difficulty": "hard",
+   "question": "Which animal has the longest lifespan ever confirmed for a vertebrate?",
+   "options": [
+    "Rougheye rockfish",
+    "Giant tortoise",
+    "Bowhead whale",
+    "Greenland shark"
+   ],
+   "correct_option": "D",
+   "explanation": "A Greenland shark was radiocarbon-dated at ~392 years old (±120). They don't reach sexual maturity until around 150 — lifespan measured in centuries.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Greenland_shark"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Solar System",
+   "difficulty": "medium",
+   "question": "Which planet's day is longer than its year?",
+   "options": [
+    "Venus",
+    "Mercury",
+    "Neptune",
+    "Mars"
+   ],
+   "correct_option": "A",
+   "explanation": "Venus rotates once every 243 Earth days but orbits the Sun in 225 — and it spins backwards, so the Sun rises in the west.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Venus"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Spaceflight",
+   "difficulty": "easy",
+   "question": "Who was the first human in space?",
+   "options": [
+    "Neil Armstrong",
+    "Yuri Gagarin",
+    "Alan Shepard",
+    "John Glenn"
+   ],
+   "correct_option": "B",
+   "explanation": "Gagarin orbited Earth on April 12, 1961, in Vostok 1 — a 108-minute flight. He landed by ejecting and parachuting, since the capsule wasn't designed to land softly.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Yuri_Gagarin"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Solar System",
+   "difficulty": "hard",
+   "question": "Which moon is the only one in the Solar System known to have a dense atmosphere?",
+   "options": [
+    "Europa",
+    "Io",
+    "Ganymede",
+    "Titan"
+   ],
+   "correct_option": "D",
+   "explanation": "Saturn's Titan has an atmosphere thicker than Earth's, with methane rain, rivers, and lakes. The Huygens probe landed there in 2005 — the most distant landing ever.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Titan_(moon)"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Stars",
+   "difficulty": "medium",
+   "question": "What is the closest star to our Sun?",
+   "options": [
+    "Proxima Centauri",
+    "Alpha Centauri A",
+    "Sirius",
+    "Betelgeuse"
+   ],
+   "correct_option": "A",
+   "explanation": "Proxima Centauri lies 4.24 light-years away — a red dwarf with a confirmed Earth-sized planet in its habitable zone. It's invisible to the naked eye.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Proxima_Centauri"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Spaceflight",
+   "difficulty": "medium",
+   "question": "Which was the first space station, launched by the USSR in 1971?",
+   "options": [
+    "Skylab",
+    "Salyut 1",
+    "Mir",
+    "ISS"
+   ],
+   "correct_option": "B",
+   "explanation": "Salyut 1 preceded Skylab by two years. Its crew tragically died on re-entry in 1971 when a valve opened — the only deaths in space itself.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Salyut_1"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Cosmology",
+   "difficulty": "hard",
+   "question": "What is the name of the boundary beyond which light cannot escape?",
+   "options": [
+    "Photon sphere",
+    "Roche limit",
+    "Event horizon",
+    "Heliosphere"
+   ],
+   "correct_option": "C",
+   "explanation": "The event horizon marks the point of no return around a black hole. The first image of one (M87*, 2019) took a telescope array the size of Earth.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Event_horizon"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Solar System",
+   "difficulty": "easy",
+   "question": "Which planet is known as the Red Planet?",
+   "options": [
+    "Mars",
+    "Venus",
+    "Jupiter",
+    "Mercury"
+   ],
+   "correct_option": "A",
+   "explanation": "Mars's red color comes from iron oxide — rust — on its surface. It hosts Olympus Mons, the tallest volcano in the Solar System at 22 km.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Mars"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Astronauts",
+   "difficulty": "medium",
+   "question": "Who holds the record for the longest single spaceflight by any human (437 days)?",
+   "options": [
+    "Sergei Krikalev",
+    "Valeri Polyakov",
+    "Scott Kelly",
+    "Gennady Padalka"
+   ],
+   "correct_option": "B",
+   "explanation": "Dr. Valeri Polyakov stayed aboard Mir from 1994–95 to test whether humans could survive a Mars-length voyage — and came back healthy.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Valeri_Polyakov"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Solar System",
+   "difficulty": "medium",
+   "question": "Which planet has the most moons (as of recent counts)?",
+   "options": [
+    "Jupiter",
+    "Uranus",
+    "Saturn",
+    "Neptune"
+   ],
+   "correct_option": "C",
+   "explanation": "Saturn overtook Jupiter with 146+ confirmed moons — many tiny and irregular. Its largest, Titan, is bigger than Mercury.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Moons_of_Saturn"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Spaceflight",
+   "difficulty": "hard",
+   "question": "Which mission gave humans their first close-up images of Jupiter's Great Red Spot in detail?",
+   "options": [
+    "Voyager 1",
+    "Juno",
+    "Galileo",
+    "Pioneer 10"
+   ],
+   "correct_option": "D",
+   "explanation": "Pioneer 10 flew by in 1973, surviving the radiation belts. But Voyager 1's 1979 pass revealed the Spot as a churning storm bigger than Earth, and discovered Jupiter's rings.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Voyager_1"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Cosmology",
+   "difficulty": "medium",
+   "question": "What is the Milky Way's nearest large galaxy neighbor?",
+   "options": [
+    "Triangulum",
+    "Andromeda",
+    "Sombrero",
+    "Magellanic Clouds"
+   ],
+   "correct_option": "B",
+   "explanation": "Andromeda is 2.5 million light-years away and approaching at 110 km/s — it will merge with the Milky Way in about 4.5 billion years. The Magellanic Clouds are dwarf galaxies.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Andromeda_Galaxy"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Astronauts",
+   "difficulty": "easy",
+   "question": "Which animal was the first to orbit the Earth?",
+   "options": [
+    "Monkey",
+    "Fruit fly",
+    "Dog",
+    "Mouse"
+   ],
+   "correct_option": "C",
+   "explanation": "Laika the dog flew on Sputnik 2 in 1957. Fruit flies were the first animals in space (1947, on a V-2), but only suborbital.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Laika"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Solar System",
+   "difficulty": "hard",
+   "question": "On which planet does it rain diamonds (theoretically)?",
+   "options": [
+    "Mercury",
+    "Jupiter",
+    "Saturn",
+    "Neptune"
+   ],
+   "correct_option": "D",
+   "explanation": "Experiments suggest Neptune and Uranus's interiors compress methane into diamond crystals that 'rain' toward the core. Scientists have recreated it in the lab with lasers.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Neptune"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Stars",
+   "difficulty": "easy",
+   "question": "What is our Sun's stellar classification?",
+   "options": [
+    "Yellow dwarf",
+    "White dwarf",
+    "Red giant",
+    "Blue supergiant"
+   ],
+   "correct_option": "A",
+   "explanation": "The Sun is a G-type main-sequence 'yellow dwarf' — medium-sized and middle-aged at 4.6 billion years. It will swell into a red giant in ~5 billion more.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Sun"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Spaceflight",
+   "difficulty": "medium",
+   "question": "What was the name of the first artificial satellite?",
+   "options": [
+    "Vostok",
+    "Explorer 1",
+    "Sputnik 1",
+    "Telstar"
+   ],
+   "correct_option": "C",
+   "explanation": "Sputnik 1 launched October 4, 1957 — a 58 cm metal sphere whose radio beep terrified the West into founding NASA and starting the Space Race.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Sputnik_1"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Cosmology",
+   "difficulty": "hard",
+   "question": "Approximately how old is the universe?",
+   "options": [
+    "4.5 billion years",
+    "1 trillion years",
+    "100 billion years",
+    "13.8 billion years"
+   ],
+   "correct_option": "D",
+   "explanation": "13.8 billion years, measured from the cosmic microwave background. For scale: Earth is 4.5 billion, and life appeared within a billion years of that.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Age_of_the_universe"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Astronauts",
+   "difficulty": "hard",
+   "question": "Who was the first civilian (non-military) in space?",
+   "options": [
+    "Helen Sharman",
+    "Valentina Tereshkova",
+    "Christa McAuliffe",
+    "Dennis Tito"
+   ],
+   "correct_option": "A",
+   "explanation": "British chemist Helen Sharman flew to Mir in 1991 after answering a radio ad — beating the Teacher-in-Space program and space tourists by years.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Helen_Sharman"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Solar System",
+   "difficulty": "medium",
+   "question": "Which planet has the strongest winds in the Solar System, exceeding 2,000 km/h?",
+   "options": [
+    "Jupiter",
+    "Neptune",
+    "Saturn",
+    "Venus"
+   ],
+   "correct_option": "B",
+   "explanation": "Neptune's winds hit 2,100 km/h — supersonic — despite being farthest from the Sun. Where the energy comes from remains one of planetary science's puzzles.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Climate_of_Neptune"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Stars",
+   "difficulty": "medium",
+   "question": "What happens to a star about 8+ times the Sun's mass at the end of its life?",
+   "options": [
+    "It becomes a white dwarf",
+    "It becomes a brown dwarf",
+    "It just fades out",
+    "It explodes as a supernova, leaving a neutron star or black hole"
+   ],
+   "correct_option": "D",
+   "explanation": "Massive stars collapse and detonate as supernovae, forging gold and uranium. Lighter stars like our Sun end gently as white dwarfs.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Supernova"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Spaceflight",
+   "difficulty": "medium",
+   "question": "Which private spacecraft carried the first all-civilian orbital crew in 2021?",
+   "options": [
+    "Crew Dragon Resilience (Inspiration4)",
+    "Boeing Starliner",
+    "New Shepard",
+    "SpaceShipTwo"
+   ],
+   "correct_option": "A",
+   "explanation": "Inspiration4's four civilians spent three days orbiting Earth — the first orbital flight with no professional astronauts aboard. Bezos and Branson's flights were suborbital.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Inspiration4"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Cosmology",
+   "difficulty": "easy",
+   "question": "What galaxy do we live in?",
+   "options": [
+    "Andromeda",
+    "Milky Way",
+    "Whirlpool",
+    "Sombrero"
+   ],
+   "correct_option": "B",
+   "explanation": "The Milky Way holds 100–400 billion stars and is about 100,000 light-years across. We see it as a band because we're inside the disk.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Milky_Way"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Solar System",
+   "difficulty": "easy",
+   "question": "Which is the largest planet in our Solar System?",
+   "options": [
+    "Saturn",
+    "Neptune",
+    "Jupiter",
+    "Uranus"
+   ],
+   "correct_option": "C",
+   "explanation": "Jupiter is 2.5× the mass of all other planets combined. Its Great Red Spot is a storm that has raged for at least 350 years.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Jupiter"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Astronauts",
+   "difficulty": "medium",
+   "question": "Who was the first woman in space?",
+   "options": [
+    "Valentina Tereshkova",
+    "Sally Ride",
+    "Svetlana Savitskaya",
+    "Mae Jemison"
+   ],
+   "correct_option": "A",
+   "explanation": "Tereshkova, a Soviet textile worker and parachutist, flew in 1963 — 20 years before Sally Ride. She spent three days in orbit.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Valentina_Tereshkova"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Cosmology",
+   "difficulty": "medium",
+   "question": "What is the cosmic microwave background?",
+   "options": [
+    "Radio noise from the Sun",
+    "Leftover light from the Big Bang",
+    "Light from distant galaxies",
+    "Static from Earth's atmosphere"
+   ],
+   "correct_option": "B",
+   "explanation": "It's the universe's oldest light, released 380,000 years after the Big Bang. Two engineers found it accidentally in 1965 while debugging a horn antenna's 'pigeon poop' noise.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Cosmic_microwave_background"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Solar System",
+   "difficulty": "hard",
+   "question": "Which asteroid did NASA deliberately crash a spacecraft into in 2022 to change its orbit?",
+   "options": [
+    "Bennu",
+    "Ryugu",
+    "Dimorphos",
+    "Apophis"
+   ],
+   "correct_option": "C",
+   "explanation": "DART hit Dimorphos, shortening its moonlet orbit around Didymos by 32 minutes — humanity's first test of planetary defense. It worked better than predicted.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Double_Asteroid_Redirection_Test"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Stars",
+   "difficulty": "hard",
+   "question": "What is a 'white dwarf' made of?",
+   "options": [
+    "Solid diamond-like carbon throughout",
+    "Iron and nickel",
+    "Hydrogen gas",
+    "Degenerate electron matter — atoms crushed until electrons resist further compression"
+   ],
+   "correct_option": "D",
+   "explanation": "A white dwarf packs a star's mass into an Earth-sized ball where quantum pressure (not fusion) holds it up. One teaspoon would weigh several tonnes.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/White_dwarf"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Spaceflight",
+   "difficulty": "easy",
+   "question": "Which organization launched the Hubble Space Telescope?",
+   "options": [
+    "ESA",
+    "NASA",
+    "Roscosmos",
+    "JAXA"
+   ],
+   "correct_option": "B",
+   "explanation": "NASA launched Hubble in 1990 (with ESA participation). Its famous mirror flaw was fixed by astronauts in 1993 — fitting 'glasses' in orbit.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Hubble_Space_Telescope"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Cosmology",
+   "difficulty": "medium",
+   "question": "What is a light echo?",
+   "options": [
+    "Sound from a star",
+    "A type of pulsar",
+    "Light reflected off dust after a flash",
+    "A radio signal from space"
+   ],
+   "correct_option": "C",
+   "explanation": "Light echoes occur when light from a stellar flash scatters off surrounding dust, arriving years later — like a 'visual sonar' that lets astronomers see old outbursts again.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Light_echo"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Solar System",
+   "difficulty": "medium",
+   "question": "Which planet is tipped on its side, rotating almost lying down?",
+   "options": [
+    "Neptune",
+    "Mercury",
+    "Saturn",
+    "Uranus"
+   ],
+   "correct_option": "D",
+   "explanation": "Uranus is tilted 98° — likely from an ancient giant impact. Each pole gets 42 years of continuous sunlight then 42 of darkness.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Uranus"
+  },
+  {
+   "category": "Space",
+   "subcategory": "Astronauts",
+   "difficulty": "easy",
+   "question": "How long did the Apollo 11 Moon landing mission last in total?",
+   "options": [
+    "About 8 days",
+    "About 2 days",
+    "About 3 weeks",
+    "About a month"
+   ],
+   "correct_option": "A",
+   "explanation": "8 days, 3 hours — launch July 16, splashdown July 24, 1969. Armstrong and Aldrin spent just 21½ hours on the lunar surface.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Apollo_11"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Music",
+   "difficulty": "medium",
+   "question": "The Beatles' song 'Yesterday' holds what Guinness World Record?",
+   "options": [
+    "Longest song to top the charts",
+    "First music video",
+    "Most covered song in history",
+    "Highest-selling single ever"
+   ],
+   "correct_option": "C",
+   "explanation": "'Yesterday' has been covered over 2,200 times. It came to Paul McCartney in a dream — he sang 'scrambled eggs' as a placeholder for the lyrics for weeks.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Yesterday_(Beatles_song)"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Film",
+   "difficulty": "easy",
+   "question": "Which film won the very first Academy Award for Best Picture?",
+   "options": [
+    "Sunrise",
+    "The Jazz Singer",
+    "Metropolis",
+    "Wings"
+   ],
+   "correct_option": "D",
+   "explanation": "Wings (1927), a silent WWI aviation epic, won the first award in 1929. It's the only fully silent film to win the modern Best Picture award.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Wings_(1927_film)"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Literature",
+   "difficulty": "medium",
+   "question": "Who is the best-selling fiction author of all time?",
+   "options": [
+    "Agatha Christie",
+    "William Shakespeare",
+    "J.K. Rowling",
+    "Enid Blyton"
+   ],
+   "correct_option": "A",
+   "explanation": "Agatha Christie's works have sold an estimated 2–4 billion copies. Her play 'The Mousetrap' has run continuously in London since 1952 — the longest play run in history.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Agatha_Christie"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Art",
+   "difficulty": "hard",
+   "question": "Which painter cut off part of his own ear, but which ear was it?",
+   "options": [
+    "Van Gogh — right ear",
+    "Van Gogh — left ear",
+    "Gauguin — left ear",
+    "Van Gogh — both are myth"
+   ],
+   "correct_option": "B",
+   "explanation": "Van Gogh cut his LEFT ear in 1888 (likely after a fight with Gauguin). A 2016 archive discovery of a doctor's drawing confirmed it — earlier accounts said right, and the self-portrait shows a bandage on the left.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Vincent_van_Gogh"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Music",
+   "difficulty": "easy",
+   "question": "How many strings does a standard classical guitar have?",
+   "options": [
+    "Four",
+    "Five",
+    "Seven",
+    "Six"
+   ],
+   "correct_option": "D",
+   "explanation": "Six, tuned E-A-D-G-B-E. Harp guitars and seven-string Russian guitars exist, but six has dominated since the 1800s.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Guitar"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Film",
+   "difficulty": "medium",
+   "question": "Which movie features the highest-grossing box office opening weekend of all time (as of 2024)?",
+   "options": [
+    "Spider-Man: No Way Home",
+    "Avatar: The Way of Water",
+    "Star Wars: The Force Awakens",
+    "Avengers: Endgame"
+   ],
+   "correct_option": "A",
+   "explanation": "No Way Home grossed $1.9 billion total, with the biggest global opening (~$600M). Endgame holds the record for fastest to $2 billion.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/List_of_highest-grossing_films"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Literature",
+   "difficulty": "hard",
+   "question": "Which famous author was an oculist (eye doctor) by trade?",
+   "options": [
+    "James Joyce",
+    "Marcel Proust",
+    "Franz Kafka",
+    "Arthur Conan Doyle"
+   ],
+   "correct_option": "B",
+   "explanation": "Proust wrote In Search of Lost Time (1.2 million+ words) from a cork-lined bedroom while ill. Joyce was an opera singer and eye patient, not a doctor — another trap answer.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Marcel_Proust"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Food",
+   "difficulty": "easy",
+   "question": "Which country invented tea drinking culture first?",
+   "options": [
+    "Japan",
+    "China",
+    "India",
+    "England"
+   ],
+   "correct_option": "C",
+   "explanation": "China — tea was already a taxed commodity by the Tang dynasty (760 AD). Japan got it via monks; England arrived last, in the 1650s.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/History_of_tea"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Music",
+   "difficulty": "medium",
+   "question": "Which composer was completely deaf when he wrote his Ninth Symphony?",
+   "options": [
+    "Beethoven",
+    "Bach",
+    "Mozart",
+    "Chopin"
+   ],
+   "correct_option": "A",
+   "explanation": "Beethoven premiered the Ninth in 1824, essentially deaf. At the end, a soloist had to turn him around to see the applause he couldn't hear.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Symphony_No._9_(Beethoven)"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Art",
+   "difficulty": "easy",
+   "question": "Who painted the Mona Lisa?",
+   "options": [
+    "Michelangelo",
+    "Leonardo da Vinci",
+    "Raphael",
+    "Donatello"
+   ],
+   "correct_option": "B",
+   "explanation": "Leonardo worked on it for ~16 years and never delivered it — it's painted on poplar wood and traveled with him until he died in France.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Mona_Lisa"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Food",
+   "difficulty": "medium",
+   "question": "Which spice was historically so valuable it was used as currency?",
+   "options": [
+    "Pepper",
+    "Cinnamon",
+    "Saffron",
+    "Nutmeg"
+   ],
+   "correct_option": "C",
+   "explanation": "Saffron threads (from crocus stigmas) can cost more per gram than silver. Nutmeg was traded with fake nutmegs (carved wood) to deceive buyers — it once cost a horse and a cow per pound.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Saffron"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Film",
+   "difficulty": "hard",
+   "question": "The movie 'Jaws' (1975) is credited with inventing which industry concept?",
+   "options": [
+    "The horror franchise",
+    "The movie trailer",
+    "Product placement",
+    "The summer blockbuster"
+   ],
+   "correct_option": "D",
+   "explanation": "Jaws was the first film released nationwide with heavy TV advertising — a strategy born of necessity (the mechanical shark kept breaking, delaying shooting). It became the template.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Jaws_(film)"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Language",
+   "difficulty": "medium",
+   "question": "Which language has the most native speakers in the world?",
+   "options": [
+    "English",
+    "Mandarin Chinese",
+    "Spanish",
+    "Hindi"
+   ],
+   "correct_option": "B",
+   "explanation": "Mandarin has ~940 million native speakers. English wins in total speakers (including second-language) but trails in natives. Spanish is third by natives.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/List_of_languages_by_number_of_native_speakers"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Music",
+   "difficulty": "hard",
+   "question": "Which instrument did Albert Einstein play to help him think?",
+   "options": [
+    "Piano",
+    "Cello",
+    "Violin",
+    "Flute"
+   ],
+   "correct_option": "C",
+   "explanation": "Einstein was a devoted violinist from age 5 — his mother forced the lessons. He said 'I often think in music. I live my daydreams in music.'",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Albert_Einstein"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Sport",
+   "difficulty": "easy",
+   "question": "How many players are on a soccer (football) team on the field?",
+   "options": [
+    "9",
+    "10",
+    "12",
+    "11"
+   ],
+   "correct_option": "D",
+   "explanation": "Eleven per side. The 1863 Laws of the Game settled on 11 because that's how many boys showed up — the 'public school' origin of the rule.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Association_football"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Art",
+   "difficulty": "medium",
+   "question": "Where is the Sistine Chapel ceiling located?",
+   "options": [
+    "Vatican City",
+    "Milan Cathedral",
+    "Florence Duomo",
+    "St. Peter's Basilica"
+   ],
+   "correct_option": "A",
+   "explanation": "Michelangelo painted it (1508–1512) standing, not lying as legend says. He considered himself a sculptor and resented the commission.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Sistine_Chapel_ceiling"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Film",
+   "difficulty": "medium",
+   "question": "Which is the highest-grossing film of all time (unadjusted for inflation)?",
+   "options": [
+    "Titanic",
+    "Avengers: Endgame",
+    "Avatar",
+    "Star Wars: The Force Awakens"
+   ],
+   "correct_option": "C",
+   "explanation": "Avatar's 2009–2021 re-releases pushed it to $2.9+ billion, reclaiming the spot from Endgame. Adjusted for inflation, Gone with the Wind still leads.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/List_of_highest-grossing_films"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Language",
+   "difficulty": "hard",
+   "question": "What is the origin of the word 'robot'?",
+   "options": [
+    "German",
+    "Polish",
+    "Russian",
+    "Czech"
+   ],
+   "correct_option": "D",
+   "explanation": "From Czech 'robota' (forced labor), coined by Karel Čapek's 1920 play R.U.R. His brother Josef suggested the word — Karel had wanted to call them 'labori'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/R.U.R."
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Food",
+   "difficulty": "medium",
+   "question": "Which country consumes the most chocolate per capita?",
+   "options": [
+    "Switzerland",
+    "Belgium",
+    "USA",
+    "Germany"
+   ],
+   "correct_option": "A",
+   "explanation": "Switzerland leads at ~11 kg per person yearly. The Swiss pioneered milk chocolate (Daniel Peter, 1875) using Nestlé's condensed milk.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Chocolate"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Music",
+   "difficulty": "easy",
+   "question": "Which musician is known as the 'King of Pop'?",
+   "options": [
+    "Elvis Presley",
+    "Michael Jackson",
+    "Prince",
+    "David Bowie"
+   ],
+   "correct_option": "B",
+   "explanation": "Michael Jackson earned the title with Thriller (1982), still the best-selling album ever at ~70 million copies. Elvis was the 'King of Rock and Roll'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Michael_Jackson"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Literature",
+   "difficulty": "medium",
+   "question": "Which novel begins with the line 'It was the best of times, it was the worst of times'?",
+   "options": [
+    "Pride and Prejudice",
+    "Moby-Dick",
+    "1984",
+    "A Tale of Two Cities"
+   ],
+   "correct_option": "D",
+   "explanation": "Dickens's 1859 classic about the French Revolution. It sold over 200 million copies, making it one of the best-selling books ever.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/A_Tale_of_Two_Cities"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Art",
+   "difficulty": "hard",
+   "question": "The artist Banksy is believed to be from which English city?",
+   "options": [
+    "Bristol",
+    "London",
+    "Manchester",
+    "Sheffield"
+   ],
+   "correct_option": "A",
+   "explanation": "Bristol — investigative journalism and a 2008 DNA-styled claim traced him there. His identity remains officially unconfirmed, making him art's most famous anonymouse.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Banksy"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Sport",
+   "difficulty": "medium",
+   "question": "Which country has won the most FIFA World Cups?",
+   "options": [
+    "Germany",
+    "Brazil",
+    "Italy",
+    "Argentina"
+   ],
+   "correct_option": "B",
+   "explanation": "Brazil has 5 titles (1958, 1962, 1970, 1994, 2002) and is the only team to appear in every World Cup since 1930.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/FIFA_World_Cup"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Language",
+   "difficulty": "easy",
+   "question": "What does 'karaoke' literally mean in Japanese?",
+   "options": [
+    "Music box",
+    "Sing along",
+    "Empty orchestra",
+    "Voice friend"
+   ],
+   "correct_option": "C",
+   "explanation": "'Kara' (empty) + 'oke' (orchestra) — an orchestra without a lead singer. The term was coined in 1971 by musician Daisuke Inoue, who never patented the machine.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Karaoke"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Companies",
+   "difficulty": "medium",
+   "question": "What did Amazon originally sell when it launched in 1995?",
+   "options": [
+    "Books",
+    "Electronics",
+    "Toys",
+    "Clothing"
+   ],
+   "correct_option": "A",
+   "explanation": "Jeff Bezos chose books because they're easy to ship and millions of titles exist. The company was incorporated as 'Cadabra' — changed after a lawyer misheard it as 'cadaver'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/History_of_Amazon"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Founders",
+   "difficulty": "easy",
+   "question": "Who co-founded Apple with Steve Jobs?",
+   "options": [
+    "Bill Gates",
+    "Steve Wozniak",
+    "Paul Allen",
+    "Jack Dorsey"
+   ],
+   "correct_option": "B",
+   "explanation": "'Woz' designed the Apple I and II as technical masterpieces. Jobs was the marketer. The two met as teenagers via a mutual friend in 1971.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Steve_Wozniak"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Brands",
+   "difficulty": "hard",
+   "question": "The Nike 'Swoosh' logo was designed by a graphic design student for how much?",
+   "options": [
+    "$3,500",
+    "$350",
+    "$35",
+    "Free"
+   ],
+   "correct_option": "C",
+   "explanation": "Carolyn Davidson was paid $35 in 1971. She was later given Nike stock (reportedly 500 shares) when the company went public — worth millions now.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Swoosh"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Companies",
+   "difficulty": "medium",
+   "question": "Which company's original product was an automatic rice cooker?",
+   "options": [
+    "Toshiba",
+    "Samsung",
+    "Panasonic",
+    "Sony"
+   ],
+   "correct_option": "D",
+   "explanation": "Sony's first product (1946) was a rice cooker — it barely worked. Founders Masaru Ibuka and Akio Morita then pivoted to electronics and eventually the Walkman.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Sony"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Finance",
+   "difficulty": "easy",
+   "question": "What does 'IPO' stand for in business?",
+   "options": [
+    "Investment Portfolio Option",
+    "Initial Public Offering",
+    "International Pricing Order",
+    "Internal Profit Outlook"
+   ],
+   "correct_option": "B",
+   "explanation": "An IPO is when a company first sells shares to the public. Google's 2004 IPO used a quirky 'Dutch auction' system to let small investors bid.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Initial_public_offering"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Brands",
+   "difficulty": "hard",
+   "question": "Which luxury fashion house began as a maker of saddles and equestrian gear?",
+   "options": [
+    "Louis Vuitton",
+    "Gucci",
+    "Hermès",
+    "Prada"
+   ],
+   "correct_option": "C",
+   "explanation": "Thierry Hermès founded the company in 1837 making harnesses. The Birkin bag (1984) came from a plane conversation between Jane Birkin and Hermès CEO Jean-Louis Dumas.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Herm%C3%A8s"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Companies",
+   "difficulty": "medium",
+   "question": "Which company is the world's largest toy seller (by revenue)?",
+   "options": [
+    "Toys \"R\" Us",
+    "Mattel",
+    "LEGO",
+    "Walmart"
+   ],
+   "correct_option": "D",
+   "explanation": "Walmart outsells dedicated toy stores. LEGO is the world's largest toy manufacturer by revenue — the company nearly went bankrupt in 2003 before pivoting.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Lego"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Founders",
+   "difficulty": "medium",
+   "question": "Which founder was famously fired from his own company before returning to save it?",
+   "options": [
+    "Steve Jobs",
+    "Bill Gates",
+    "Jeff Bezos",
+    "Larry Page"
+   ],
+   "correct_option": "A",
+   "explanation": "Jobs was pushed out of Apple in 1985 after clashing with CEO John Sculley. He founded NeXT and Pixar, then returned in 1997 when Apple bought NeXT.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Steve_Jobs"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Finance",
+   "difficulty": "medium",
+   "question": "What is 'inflation' in economics?",
+   "options": [
+    "Growing company size",
+    "Falling stock prices",
+    "Rising prices over time",
+    "Rising wages only"
+   ],
+   "correct_option": "C",
+   "explanation": "Inflation erodes purchasing power — $100 buys less each year. Moderate inflation (~2%) is targeted by most central banks; deflation is considered more dangerous.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Inflation"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Brands",
+   "difficulty": "easy",
+   "question": "Which soft drink was originally green-tinted and contained cocaine?",
+   "options": [
+    "Dr Pepper",
+    "Pepsi",
+    "7 Up",
+    "Coca-Cola"
+   ],
+   "correct_option": "D",
+   "explanation": "Coca-Cola (1886) contained coca leaf extract (cocaine) until ~1903. The green-bottle myth is wrong — the color was always caramel brown; only the glass was green.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Coca-Cola"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Companies",
+   "difficulty": "hard",
+   "question": "Which tech company's famous 'Don't be evil' motto was removed from its code of conduct in 2015?",
+   "options": [
+    "Google",
+    "Facebook",
+    "Apple",
+    "Amazon"
+   ],
+   "correct_option": "A",
+   "explanation": "Google's motto became 'Do the right thing' in 2015 under Alphabet. The original phrase appeared in the 2004 IPO letter and dated back to 2000.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Don%27t_be_evil"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Founders",
+   "difficulty": "hard",
+   "question": "Which founder started a company with a $1,275 loan from his mother?",
+   "options": [
+    "Estée Lauder",
+    "Phil Knight (Nike)",
+    "Howard Schultz (Starbucks)",
+    "Ingvar Kamprad (IKEA)"
+   ],
+   "correct_option": "B",
+   "explanation": "Phil Knight borrowed $50 from each of his friends and got a $1,000 loan — total under $1,300 — to start Blue Ribbon Sports, which became Nike by selling Japanese Onitsuka Tiger shoes from his car trunk.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Phil_Knight"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Finance",
+   "difficulty": "easy",
+   "question": "What does 'CEO' stand for?",
+   "options": [
+    "Chief Enterprise Operator",
+    "Company Executive Official",
+    "Corporate Enterprise Owner",
+    "Chief Executive Officer"
+   ],
+   "correct_option": "D",
+   "explanation": "The term emerged in the mid-20th century as corporations grew. The world's first recognized 'CEO' title is often attributed to Alfred Sloan at General Motors.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Chief_executive_officer"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Companies",
+   "difficulty": "medium",
+   "question": "Which car company is the world's largest automaker by volume?",
+   "options": [
+    "Toyota",
+    "Volkswagen",
+    "General Motors",
+    "Tesla"
+   ],
+   "correct_option": "A",
+   "explanation": "Toyota has led global sales for years (~10.5 million vehicles). It also pioneered the Toyota Production System — the basis of modern 'lean' manufacturing.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Toyota"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Brands",
+   "difficulty": "medium",
+   "question": "What does 'LG' in the electronics brand stand for?",
+   "options": [
+    "Life's Good",
+    "Lucky Goldstar",
+    "Lee Gun",
+    "Lucky Group"
+   ],
+   "correct_option": "B",
+   "explanation": "LG originally meant 'Lucky-Goldstar' (two merged Korean companies). The 1995 rebrand invented the 'Life's Good' backronym to appeal globally.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/LG_Corporation"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Finance",
+   "difficulty": "hard",
+   "question": "What was the 2008 event when Lehman Brothers collapsed called?",
+   "options": [
+    "The Dot-com crash",
+    "The Great Depression",
+    "The Global Financial Crisis",
+    "The Eurozone crisis"
+   ],
+   "correct_option": "C",
+   "explanation": "Lehman's bankruptcy (Sept 15, 2008) was the largest in US history ($600B+). It triggered the Global Financial Crisis — the worst since 1929's Great Depression.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Bankruptcy_of_Lehman_Brothers"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Companies",
+   "difficulty": "easy",
+   "question": "Which fast-food chain is famous for the Big Mac?",
+   "options": [
+    "McDonald's",
+    "Burger King",
+    "Wendy's",
+    "KFC"
+   ],
+   "correct_option": "A",
+   "explanation": "The Big Mac was invented by franchisee Jim Delligatti in 1967. The Economist uses its price globally as a currency comparison index — the 'Big Mac Index'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Big_Mac"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Founders",
+   "difficulty": "medium",
+   "question": "Which company did Henry Ford found, revolutionizing assembly-line production?",
+   "options": [
+    "General Motors",
+    "Ford Motor Company",
+    "Chrysler",
+    "Cadillac"
+   ],
+   "correct_option": "B",
+   "explanation": "Ford's moving assembly line (1913) cut Model T build time from 12 hours to 93 minutes. He also doubled wages to $5/day — partly to reduce worker turnover.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Ford_Model_T"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Brands",
+   "difficulty": "medium",
+   "question": "Which brand's logo features a red circle with a white cross?",
+   "options": [
+    "Toblerone",
+    "Red Cross",
+    "Swiss Army (Victorinox)",
+    "Vodafone"
+   ],
+   "correct_option": "C",
+   "explanation": "Victorinox's Swiss Army knife uses the Swiss flag design. The Red Cross emblem is a protected symbol — the company's use predates the 1949 Geneva Conventions.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Victorinox"
+  },
+  {
+   "category": "Business",
+   "subcategory": "Finance",
+   "difficulty": "medium",
+   "question": "What is the name of the world's largest stock exchange by market capitalization?",
+   "options": [
+    "NASDAQ",
+    "Tokyo Stock Exchange",
+    "London Stock Exchange",
+    "New York Stock Exchange"
+   ],
+   "correct_option": "D",
+   "explanation": "The NYSE lists companies worth ~$25+ trillion. NASDAQ is second and is fully electronic — it began as the world's first electronic stock market in 1971.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/New_York_Stock_Exchange"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Riddles",
+   "difficulty": "medium",
+   "question": "A farmer has 17 sheep. All but 9 run away. How many are left?",
+   "options": [
+    "8",
+    "9",
+    "17",
+    "0"
+   ],
+   "correct_option": "B",
+   "explanation": "'All but 9' means 9 remain — the trap is subtracting 9 from 17. It's a language puzzle, not a math one.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Lateral_thinking"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Riddles",
+   "difficulty": "easy",
+   "question": "What weighs more: a kilogram of feathers or a kilogram of steel?",
+   "options": [
+    "Feathers",
+    "Steel",
+    "They weigh the same",
+    "Depends on gravity"
+   ],
+   "correct_option": "C",
+   "explanation": "Both are one kilogram. The question tricks you into comparing density rather than weight — a classic cognitive trap even physics students fall for.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Inertia"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Puzzles",
+   "difficulty": "medium",
+   "question": "If you're running a race and you pass the person in second place, what position are you in?",
+   "options": [
+    "First",
+    "Depends on speed",
+    "Third",
+    "Second"
+   ],
+   "correct_option": "D",
+   "explanation": "Passing the runner in second means you take their spot — second, not first. Most people instinctively answer 'first'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Cognitive_bias"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Puzzles",
+   "difficulty": "hard",
+   "question": "The Monty Hall problem: you pick door 1; the host (who knows where the car is) opens door 3, revealing a goat. Should you switch to door 2?",
+   "options": [
+    "Yes — switching wins 2/3 of the time",
+    "It makes no difference",
+    "No — sticking wins 2/3 of the time",
+    "Switching wins 1/2 of the time"
+   ],
+   "correct_option": "A",
+   "explanation": "Switching doubles your chances (2/3 vs 1/3) because the host's knowledge skews the odds. Even mathematicians argued about it until simulations settled it.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Monty_Hall_problem"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Riddles",
+   "difficulty": "medium",
+   "question": "Some months have 31 days. How many have 28 days?",
+   "options": [
+    "One (February)",
+    "Eleven",
+    "Twelve",
+    "None"
+   ],
+   "correct_option": "C",
+   "explanation": "All twelve months have at least 28 days — the trap is assuming '28 days' means 'exactly 28', which is only February (in common years).",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Gregorian_calendar"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Riddles",
+   "difficulty": "easy",
+   "question": "What can travel around the world while staying in one corner?",
+   "options": [
+    "A map",
+    "A compass",
+    "A globe",
+    "A stamp"
+   ],
+   "correct_option": "D",
+   "explanation": "A postage stamp sits in the corner of an envelope that circles the globe — a classic riddle whose humor comes from the pun on 'corner'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Postage_stamp"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Deduction",
+   "difficulty": "hard",
+   "question": "You have two coins totaling 30 cents. One is not a nickel. What are they?",
+   "options": [
+    "Quarter and 5-cent piece (the OTHER one is the nickel)",
+    "Two dimes and a dime — impossible",
+    "Quarter and nickel",
+    "Two 15-cent coins"
+   ],
+   "correct_option": "A",
+   "explanation": "The statement says one coin isn't a nickel — but the other one is. A quarter plus a nickel = 30 cents. The wording is the trick.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Trick_question"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Puzzles",
+   "difficulty": "medium",
+   "question": "A bat and a ball cost $1.10 together. The bat costs $1.00 more than the ball. How much is the ball?",
+   "options": [
+    "10 cents",
+    "5 cents",
+    "1.10 dollars",
+    "5 dollars"
+   ],
+   "correct_option": "B",
+   "explanation": "If the ball were 10¢, the bat would be $1.10 (total $1.20). The answer is 5¢: bat $1.05 + ball $0.05 = $1.10. Over half of Ivy League students get this wrong.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Cognitive_reflection_test"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Riddles",
+   "difficulty": "easy",
+   "question": "What has keys but can't open locks?",
+   "options": [
+    "A map",
+    "A lockpick",
+    "A car",
+    "A piano"
+   ],
+   "correct_option": "D",
+   "explanation": "A piano has 88 keys (and can also 'unlock' emotion, but not doors). The riddle plays on the two meanings of 'key'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Piano"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Deduction",
+   "difficulty": "medium",
+   "question": "In a family, each daughter has the same number of brothers as sisters, and each son has twice as many sisters as brothers. How many boys and girls?",
+   "options": [
+    "4 boys, 3 girls",
+    "3 boys, 4 girls",
+    "2 boys, 4 girls",
+    "5 boys, 5 girls"
+   ],
+   "correct_option": "A",
+   "explanation": "4 girls: each has 3 sisters and 4 brothers (not equal — retry). Actually 4 boys, 3 girls: each girl has 2 sisters and 4 brothers? The classic solution is 4 boys, 3 girls — each girl has 3 sisters? Work it out: with 4 boys and 3 girls, a girl has 2 sisters and 4 brothers — twice as many, matching the son's condition; a boy has 3 brothers and 3 sisters — equal, matching the daughter's condition.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Deductive_reasoning"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Riddles",
+   "difficulty": "medium",
+   "question": "The more you take, the more you leave behind. What am I?",
+   "options": [
+    "Money",
+    "Footsteps",
+    "Time",
+    "Memories"
+   ],
+   "correct_option": "B",
+   "explanation": "Footsteps — take more steps, leave more prints. The riddle hinges on the double meaning of 'take'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Riddle"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Puzzles",
+   "difficulty": "hard",
+   "question": "Three people check into a room costing $30, paying $10 each. The clerk realizes it's $25 and gives $5 to the bellhop to refund, who keeps $2 and gives $1 back each. Now each paid $9 ($27) plus $2 for the bellhop = $29. Where's the missing dollar?",
+   "options": [
+    "The clerk took it",
+    "It was lost in the transaction",
+    "There is no missing dollar — the math was misapplied",
+    "The bellhop kept it"
+   ],
+   "correct_option": "C",
+   "explanation": "You can't add the bellhop's $2 to the $27 — the $27 already includes it ($25 room + $2 tip). The $3 refund brings it back to $30. The 'puzzle' is a deliberately misleading sum.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Missing_dollar_riddle"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Riddles",
+   "difficulty": "easy",
+   "question": "What gets wetter the more it dries?",
+   "options": [
+    "A towel",
+    "A sponge",
+    "Soap",
+    "Rain"
+   ],
+   "correct_option": "A",
+   "explanation": "A towel dries you — and in doing so gets wetter itself. The paradox comes from the double meaning of 'dries'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Towel"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Deduction",
+   "difficulty": "hard",
+   "question": "On an island where knights always tell the truth and knaves always lie, you meet A and B. A says: 'We are both knaves.' Who is who?",
+   "options": [
+    "Both knights",
+    "A is a knave, B is a knight",
+    "A is a knight, B is a knave",
+    "Both knaves"
+   ],
+   "correct_option": "B",
+   "explanation": "If A were a knight, his statement would be true — but a knight can't be a knave. So A lies, meaning A is a knave and the statement 'both knaves' is false — so B must be a knight.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Knights_and_Knaves"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Puzzles",
+   "difficulty": "medium",
+   "question": "You have 8 identical-looking balls; one is heavier. What's the minimum weighings on a balance scale to find it?",
+   "options": [
+    "1",
+    "3",
+    "2",
+    "4"
+   ],
+   "correct_option": "C",
+   "explanation": "Split into 3-3-2, weigh 3 vs 3 (one weighing narrows to 3 or 2), then a second weighing finds the heavy ball. Information theory: each weighing has 3 outcomes, so 2 weighings can distinguish 9 cases.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Balance_puzzle"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Riddles",
+   "difficulty": "easy",
+   "question": "I'm tall when I'm young, and short when I'm old. What am I?",
+   "options": [
+    "A person",
+    "A pencil",
+    "A tree",
+    "A candle"
+   ],
+   "correct_option": "D",
+   "explanation": "A candle burns down as it ages. The riddle's misdirection makes you think of living things first.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Candle"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Deduction",
+   "difficulty": "medium",
+   "question": "If all Bloops are Razzies and all Razzies are Lazzies, are all Bloops definitely Lazzies?",
+   "options": [
+    "No",
+    "Yes",
+    "Only some",
+    "Cannot be determined"
+   ],
+   "correct_option": "B",
+   "explanation": "Transitive logic: Bloops ⊂ Razzies ⊂ Lazzies, so every Bloop must be a Lazzie. This is basic syllogistic reasoning — the kind even computers do trivially.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Syllogism"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Riddles",
+   "difficulty": "hard",
+   "question": "A man pushes his car to a hotel and tells the owner he's bankrupt. Why?",
+   "options": [
+    "The car broke down",
+    "He ran out of gas",
+    "He's playing Monopoly",
+    "He's a mechanic"
+   ],
+   "correct_option": "C",
+   "explanation": "He's playing Monopoly — pushing the 'car' token to a 'hotel' property and going bankrupt is standard gameplay. The riddle relies on you assuming real-world context.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Situation_puzzle"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Puzzles",
+   "difficulty": "medium",
+   "question": "You have a 3-liter jug and a 5-liter jug. How do you measure exactly 4 liters?",
+   "options": [
+    "Fill 5, pour into 3, leaving 2. Repeat.",
+    "Impossible with these jugs",
+    "Fill 3 twice into 5.",
+    "Fill 5, pour into 3 → 2 left in 5. Empty 3, pour 2 into 3. Fill 5, pour into 3 (takes 1) → 4 left in 5."
+   ],
+   "correct_option": "D",
+   "explanation": "The sequence: fill 5 → pour to 3 (leaves 2) → empty 3 → move the 2 into 3 → fill 5 → top off the 3 (takes 1) → 4 liters remain in the 5-jug. It's the classic water-jug puzzle, featured in Die Hard 3.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Water_pouring_puzzle"
+  },
+  {
+   "category": "Logic",
+   "subcategory": "Riddles",
+   "difficulty": "easy",
+   "question": "What has a head and a tail but no body?",
+   "options": [
+    "A coin",
+    "A snake",
+    "A fish",
+    "A pin"
+   ],
+   "correct_option": "A",
+   "explanation": "A coin has heads and tails — the two faces. Snakes and fish do have bodies, making them the trap answers.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Coin"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Etymology",
+   "difficulty": "medium",
+   "question": "Which company's name comes from the Arabic 'sifr', meaning zero?",
+   "options": [
+    "Cyper",
+    "Cipher",
+    "Both the words 'cipher' and 'zero'",
+    "Sierra"
+   ],
+   "correct_option": "C",
+   "explanation": "'Sifr' → Latin 'zephirum' → 'zero', and also → 'cipher' (codes). The same Arabic root gave us both words — via Fibonacci's Hindu-Arabic numerals campaign.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/0"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Food",
+   "difficulty": "easy",
+   "question": "Which fruit is used to make guacamole?",
+   "options": [
+    "Cucumber",
+    "Lime",
+    "Zucchini",
+    "Avocado"
+   ],
+   "correct_option": "D",
+   "explanation": "Avocado — the word comes from Nahuatl 'ahuacatl'. The Hass variety, 95% of the market, came from a single postman's tree patented in 1935.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Avocado"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Measurements",
+   "difficulty": "medium",
+   "question": "How many minutes are in a full week?",
+   "options": [
+    "10,080",
+    "1,440",
+    "7,200",
+    "5,040"
+   ],
+   "correct_option": "A",
+   "explanation": "7 days × 24 hours × 60 minutes = 10,080. Fun fact: the work week of most modern jobs takes up just about a third of those.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Week"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Etymology",
+   "difficulty": "hard",
+   "question": "The word 'quarantine' comes from Venetian for which number?",
+   "options": [
+    "30 days",
+    "40 days",
+    "60 days",
+    "100 days"
+   ],
+   "correct_option": "B",
+   "explanation": "'Quaranta giorni' — ships from plague zones had to anchor for 40 days before landing. The 1377 Dubrovnik 'trentino' (30 days) was later extended to 40.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Quarantine"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Space",
+   "difficulty": "easy",
+   "question": "Which planet is closest to Earth on average over time?",
+   "options": [
+    "Venus",
+    "Mars",
+    "Moon",
+    "Mercury"
+   ],
+   "correct_option": "D",
+   "explanation": "Counterintuitively, Mercury spends the most time as Earth's closest planet — because it orbits closest to the Sun, it's never too far away. Venus is closest only briefly.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Mercury_(planet)"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Sports",
+   "difficulty": "medium",
+   "question": "In bowling, what is the term for three consecutive strikes?",
+   "options": [
+    "Turkey",
+    "Triple",
+    "Hat trick",
+    "Golden strike"
+   ],
+   "correct_option": "A",
+   "explanation": "A 'turkey' dates to the 1800s, when bowling alleys reportedly gave away actual turkeys for the feat around Thanksgiving.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Strike_(bowling)"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Language",
+   "difficulty": "medium",
+   "question": "Which is the only English word ending in '-mt'?",
+   "options": [
+    "Undertow",
+    "Dreamt",
+    "Warmt",
+    "Redempt"
+   ],
+   "correct_option": "B",
+   "explanation": "'Dreamt' (and its variant 'undreamt') are the only English words with a final '-mt'. Related trivia: 'screeched' is one of the longest one-syllable words.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/English_language"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Food",
+   "difficulty": "medium",
+   "question": "Which food never spoils — 3,000-year-old samples were still edible?",
+   "options": [
+    "Rice",
+    "Salt",
+    "Honey",
+    "Dried beans"
+   ],
+   "correct_option": "C",
+   "explanation": "Honey's low moisture and acidity make it hostile to bacteria. Archaeologists have found edible honey in Egyptian tombs. Crystallized honey is still good — just warm it up.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Honey"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Etymology",
+   "difficulty": "easy",
+   "question": "What does 'NBA' stand for?",
+   "options": [
+    "National Basketball Association",
+    "New Basketball Alliance",
+    "National Ball Association",
+    "Northern Basketball Association"
+   ],
+   "correct_option": "A",
+   "explanation": "Founded 1946 as the Basketball Association of America, renamed NBA after merging with the rival NBL in 1949.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/National_Basketball_Association"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Myths",
+   "difficulty": "hard",
+   "question": "Which famous 'fact' about the Great Wall of China is false?",
+   "options": [
+    "It's the longest wall ever built",
+    "It's visible from low Earth orbit",
+    "It was built over many centuries",
+    "Some sections are in Mongolia"
+   ],
+   "correct_option": "B",
+   "explanation": "The wall is NOT visible from the Moon and barely from low orbit — it's too narrow. Astronauts have confirmed this repeatedly; the myth predates spaceflight.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Great_Wall_of_China"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Sports",
+   "difficulty": "easy",
+   "question": "How often are the Summer Olympic Games traditionally held?",
+   "options": [
+    "Every 2 years",
+    "Every 3 years",
+    "Every 4 years",
+    "Every 5 years"
+   ],
+   "correct_option": "C",
+   "explanation": "Every four years, a 'quadrennial' cycle inherited from the ancient Olympics. Winter Games are offset by two years since 1994.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Olympic_Games"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Language",
+   "difficulty": "hard",
+   "question": "What is the most spoken language in the world by total speakers (native + second language)?",
+   "options": [
+    "Mandarin Chinese",
+    "Hindi",
+    "Spanish",
+    "English"
+   ],
+   "correct_option": "D",
+   "explanation": "English leads with ~1.5 billion total speakers thanks to second-language use — but Mandarin has the most native speakers. English's reach comes from business, aviation, and the internet.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/List_of_languages_by_total_number_of_speakers"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Food",
+   "difficulty": "medium",
+   "question": "Which country invented the croissant's ancestor, the 'kipferl'?",
+   "options": [
+    "France",
+    "Austria",
+    "Hungary",
+    "Italy"
+   ],
+   "correct_option": "B",
+   "explanation": "Austria's kipferl (13th century) predates the French croissant. Legend says the crescent shape celebrates defeating Ottoman invaders — the French adapted it into laminated dough.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Croissant"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Measurements",
+   "difficulty": "easy",
+   "question": "How many sides does a hexagon have?",
+   "options": [
+    "Five",
+    "Seven",
+    "Six",
+    "Eight"
+   ],
+   "correct_option": "C",
+   "explanation": "Six — hexagons tessellate perfectly, which is why bees use them (least wax for most storage). 'Hexa' is Greek for six.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Hexagon"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Myths",
+   "difficulty": "medium",
+   "question": "Which of these foods did medieval Europeans believe caused leprosy?",
+   "options": [
+    "Pork",
+    "Cabbage",
+    "Potatoes",
+    "Tomatoes"
+   ],
+   "correct_option": "D",
+   "explanation": "Tomatoes (nightshade family) were feared as poisonous 'love apples' and even thought to cause leprosy. They were grown ornamentally in Europe until the 18th century.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Tomato"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Etymology",
+   "difficulty": "medium",
+   "question": "The word 'ketchup' most likely originates from which language?",
+   "options": [
+    "Chinese",
+    "French",
+    "Dutch",
+    "Spanish"
+   ],
+   "correct_option": "A",
+   "explanation": "From Hokkien Chinese 'kê-tsiap' — a fermented fish sauce. British sailors brought it home, and tomatoes were only added in the early 1800s.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Ketchup"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Sports",
+   "difficulty": "hard",
+   "question": "Which sport's playing surface is exactly 9 feet by 4.5 feet at professional level?",
+   "options": [
+    "Snooker",
+    "Badminton",
+    "Table tennis",
+    "Pickleball"
+   ],
+   "correct_option": "C",
+   "explanation": "A regulation table tennis table is 9 × 4.5 ft, 30 inches high. Snooker tables are ~12 × 6 ft; pickleball courts are 20 × 44 ft.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Table_tennis"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Food",
+   "difficulty": "easy",
+   "question": "Which beverage is made from fermented grapes?",
+   "options": [
+    "Beer",
+    "Sake",
+    "Vodka",
+    "Wine"
+   ],
+   "correct_option": "D",
+   "explanation": "Wine — one of humanity's oldest beverages, with evidence from 6,000 BC in the Caucasus. Beer uses grain; sake uses rice.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Wine"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Myths",
+   "difficulty": "medium",
+   "question": "Which animal is most likely to 'see' you coming, thanks to vision with almost 360° coverage?",
+   "options": [
+    "Goat",
+    "Owl",
+    "Rabbit",
+    "Horse"
+   ],
+   "correct_option": "A",
+   "explanation": "Goats have rectangular pupils giving ~340° vision — nearly everything except directly behind their head. Owls famously CANNOT move their eyes at all.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Goat"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Language",
+   "difficulty": "medium",
+   "question": "Which language uses the Cyrillic alphabet?",
+   "options": [
+    "German",
+    "Russian",
+    "Spanish",
+    "Italian"
+   ],
+   "correct_option": "B",
+   "explanation": "Cyrillic — named after Saint Cyril — is used in Russian, Ukrainian, Bulgarian, Serbian, and about 50 other languages. It's derived from Greek uncial script.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Cyrillic_script"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Measurements",
+   "difficulty": "hard",
+   "question": "Exactly how long is a 'jiffy' in physics?",
+   "options": [
+    "1 second",
+    "1/100th of a second",
+    "1 millisecond",
+    "The time light takes to travel one fermi (10⁻¹⁵ m)"
+   ],
+   "correct_option": "D",
+   "explanation": "In physics a jiffy is ~3×10⁻²⁴ seconds — the time light takes to cross a nucleus. In computing, it's one tick of the system timer. In cooking, 'just a moment'.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Jiffy_(time)"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Sports",
+   "difficulty": "medium",
+   "question": "What color jersey does the overall leader wear in the Tour de France?",
+   "options": [
+    "Yellow",
+    "Green",
+    "White",
+    "Polka dot"
+   ],
+   "correct_option": "A",
+   "explanation": "The yellow 'maillot jaune' marks the overall leader — yellow because the newspaper L'Auto, which created the race, printed on yellow paper. Green is the sprinter's jersey.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Tour_de_France"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Food",
+   "difficulty": "hard",
+   "question": "Which fruit is actually a berry, botanically speaking?",
+   "options": [
+    "Strawberry",
+    "Banana",
+    "Raspberry",
+    "Cherry"
+   ],
+   "correct_option": "B",
+   "explanation": "Bananas are true berries (from a single ovary, with seeds inside); strawberries are 'accessory fruits' with seeds outside. Raspberries are clusters of tiny drupes.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Berry_(botany)"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Etymology",
+   "difficulty": "easy",
+   "question": "What does 'laser' stand for?",
+   "options": [
+    "Light Emission System of Advanced Rays",
+    "Long-Range Energy Source And Radiator",
+    "Light Amplification by Stimulated Emission of Radiation",
+    "Luminous Amplified Spectrum Emission Ray"
+   ],
+   "correct_option": "C",
+   "explanation": "Coined by Gordon Gould in 1957. The 'Maser' (microwave version) came first, in 1954 — both are backronyms that stuck.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Laser"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Myths",
+   "difficulty": "medium",
+   "question": "Which of these 'facts' about humans is actually true?",
+   "options": [
+    "Humans are bioluminescent (we glow very faintly)",
+    "We only use 10% of our brains",
+    "We swallow 8 spiders a year in our sleep",
+    "Hair and nails keep growing after death"
+   ],
+   "correct_option": "A",
+   "explanation": "Humans emit tiny amounts of visible light from metabolic reactions — 1,000 times fainter than the naked eye can detect. The other three are classic myths.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Bioluminescence"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Sports",
+   "difficulty": "easy",
+   "question": "How many rings are on the Olympic flag?",
+   "options": [
+    "Four",
+    "Five",
+    "Six",
+    "Seven"
+   ],
+   "correct_option": "B",
+   "explanation": "Five rings represent the five inhabited continents, interlinked. The colors (blue, yellow, black, green, red on white) were chosen because at least one appears on every national flag.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Olympic_symbols"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Language",
+   "difficulty": "hard",
+   "question": "What is the shortest complete sentence in the English language?",
+   "options": [
+    "Yes.",
+    "Go!",
+    "I am.",
+    "It is."
+   ],
+   "correct_option": "C",
+   "explanation": "'I am.' is the classic answer — a subject and verb. 'Go!' is technically an imperative sentence with an implied subject, making 'I am.' the standard pick.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Sentence_(linguistics)"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Food",
+   "difficulty": "medium",
+   "question": "Which everyday food was once used as currency in ancient civilizations?",
+   "options": [
+    "Bread",
+    "Sugar",
+    "Olive oil",
+    "Salt"
+   ],
+   "correct_option": "D",
+   "explanation": "Roman soldiers were partly paid in salt — the origin of 'salary' (from Latin 'salarium'). Being 'worth one's salt' comes from this era.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/History_of_salt"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Measurements",
+   "difficulty": "medium",
+   "question": "How many time zones does the country with the most span?",
+   "options": [
+    "12",
+    "11",
+    "13",
+    "24"
+   ],
+   "correct_option": "B",
+   "explanation": "Russia spans 11 time zones (down from 12 after 2010 consolidation). If you count overseas territories, France technically touches 12 — a favorite debate.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Time_zone"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Myths",
+   "difficulty": "hard",
+   "question": "Which everyday 'fact' is actually a myth?",
+   "options": [
+    "The Great Wall is visible from the Moon",
+    "Bulls are enraged by the color red",
+    "All of these are myths",
+    "Goldfish have a 3-second memory"
+   ],
+   "correct_option": "C",
+   "explanation": "All three are false. Bulls charge at movement, not color (they're red-green colorblind); goldfish remember things for months. The wall is barely visible from low orbit, not the Moon.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/List_of_common_misconceptions"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Etymology",
+   "difficulty": "medium",
+   "question": "Which word did Rudyard Kipling help popularize through his poem 'The White Man's Burden' — a term now used for heavy responsibilities?",
+   "options": [
+    "Cross",
+    "Burden",
+    "Millstone",
+    "Albatross"
+   ],
+   "correct_option": "D",
+   "explanation": "'An albatross around one's neck' actually comes from Coleridge's 'Rime of the Ancient Mariner' (1798), where a sailor wears the dead bird as punishment. It predates Kipling.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/The_Rime_of_the_Ancient_Mariner"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Sports",
+   "difficulty": "medium",
+   "question": "In chess, which piece can only move diagonally?",
+   "options": [
+    "Bishop",
+    "Rook",
+    "Knight",
+    "Queen"
+   ],
+   "correct_option": "A",
+   "explanation": "Bishops stay on one color square their entire game. The knight is the only piece that jumps over others — moving in an L-shape.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Bishop_(chess)"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Language",
+   "difficulty": "easy",
+   "question": "What is the plural of 'cactus'?",
+   "options": [
+    "Cactuses",
+    "Cacti",
+    "Both cactuses and cacti are accepted",
+    "Cactae"
+   ],
+   "correct_option": "C",
+   "explanation": "Both are correct — 'cacti' is the Latin-style plural, 'cactuses' the English one. Usage experts prefer whichever sounds better in the sentence.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Cactus"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Food",
+   "difficulty": "easy",
+   "question": "What is the main ingredient in traditional hummus?",
+   "options": [
+    "Lentils",
+    "Tahini",
+    "White beans",
+    "Chickpeas"
+   ],
+   "correct_option": "D",
+   "explanation": "Chickpeas, blended with tahini, lemon, and garlic. 'Hummus' literally means 'chickpea' in Arabic — so 'hummus with chickpeas' is redundant.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Hummus"
+  },
+  {
+   "category": "General Knowledge",
+   "subcategory": "Myths",
+   "difficulty": "medium",
+   "question": "Which shape is a real-life raindrop closest to?",
+   "options": [
+    "Sphere",
+    "Teardrop",
+    "Oval",
+    "Flat disc"
+   ],
+   "correct_option": "A",
+   "explanation": "Small raindrops are nearly perfect spheres (surface tension); larger ones flatten into hamburger-bun shapes. The teardrop is pure cartoon physics.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Raindrop"
+  },
+  {
+   "category": "Culture",
+   "subcategory": "Music",
+   "difficulty": "hard",
+   "question": "Which composer wrote over 600 works but died penniless at 35, buried in a common grave?",
+   "options": [
+    "Beethoven",
+    "Mozart",
+    "Schubert",
+    "Haydn"
+   ],
+   "correct_option": "B",
+   "explanation": "Mozart died in 1791 aged 35 and was buried in a sharedViennese common grave — not a pauper's pit, but without a monument. His Requiem was left unfinished at his death.",
+   "source_name": "Wikipedia",
+   "source_url": "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart"
+  }
+ ]
+}
