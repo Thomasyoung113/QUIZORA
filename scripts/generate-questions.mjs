@@ -13,11 +13,16 @@ const env = Object.fromEntries(
     .filter(Boolean)
     .map((m) => [m[1], m[2]])
 );
-const PROVIDERS = [
-  { name: "b.ai", base: env.LLM_BASE_URL || "https://api.b.ai/v1", key: env.LLM_API_KEY, model: env.LLM_MODEL || "glm-5.3-flash" },
-  { name: "bynara", base: env.BYNARA_BASE_URL || "https://router.bynara.id/v1", key: env.BYNARA_API_KEY, model: env.BYNARA_MODEL || "agnes-2.5-flash" },
+let PROVIDERS = [
+  { name: "b.ai", base: env.LLM_BASE_URL || "https://api.b.ai/v1", key: env.LLM_API_KEY, model: env.LLM_MODEL || "glm-5.3-flash", api: "openai" },
+  { name: "bynara", base: env.BYNARA_BASE_URL || "https://router.bynara.id/v1", key: env.BYNARA_API_KEY, model: env.BYNARA_MODEL || "agnes-2.5-flash", api: "openai" },
+  { name: "agentrouter-glm", base: env.AGENTROUTER_BASE_URL || "https://agentrouter.org", key: env.AGENTROUTER_API_KEY, model: "glm-5.3", api: "anthropic" },
+  { name: "agentrouter-ds", base: env.AGENTROUTER_BASE_URL || "https://agentrouter.org", key: env.AGENTROUTER_API_KEY, model: "deepseek-v4-flash", api: "anthropic" },
 ].filter((p) => p.key);
-if (!PROVIDERS.length) { console.error("Missing LLM_API_KEY / BYNARA_API_KEY in .env.local"); process.exit(1); }
+const onlyProviders = (process.env.ONLY_PROVIDERS || "").split(",").filter(Boolean);
+if (onlyProviders.length) PROVIDERS = PROVIDERS.filter((p) => onlyProviders.includes(p.name));
+if (!PROVIDERS.length) { console.error("No providers configured (set LLM_API_KEY / BYNARA_API_KEY / AGENTROUTER_API_KEY)"); process.exit(1); }
+console.log("Providers:", PROVIDERS.map((p) => p.name).join(", "));
 
 const db = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
 
@@ -44,7 +49,23 @@ async function llm(messages, maxTokens = 8000, startProvider = 0) {
   for (let attempt = 0; attempt < 8; attempt++) {
     const p = PROVIDERS[(startProvider + attempt) % PROVIDERS.length];
     try {
-      const res = await fetch(`${p.base}/chat/completions`, {
+      let res;
+      if (p.api === "anthropic") {
+        // Anthropic-style endpoint; strip system role into system param
+        const system = messages.filter((m) => m.role === "system").map((m) => m.content).join("\n");
+        const msgs = messages.filter((m) => m.role !== "system");
+        res = await fetch(`${p.base}/v1/messages`, {
+          method: "POST",
+          headers: { "x-api-key": p.key, "anthropic-version": "2023-06-01", "user-agent": "claude-cli/2.0.0 (external, cli)", "Content-Type": "application/json" },
+          body: JSON.stringify({ model: p.model, max_tokens: maxTokens, ...(system ? { system } : {}), messages: msgs }),
+        });
+        if (res.status === 429) { await sleep(3000 * (attempt + 1)); continue; }
+        if (!res.ok) throw new Error(`${p.name} ${res.status}: ${(await res.text()).slice(0, 200)}`);
+        const json = await res.json();
+        const text = (json.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
+        return text;
+      }
+      res = await fetch(`${p.base}/chat/completions`, {
         method: "POST",
         headers: { Authorization: `Bearer ${p.key}`, "Content-Type": "application/json" },
         body: JSON.stringify({ model: p.model, messages, max_tokens: maxTokens }),
@@ -97,7 +118,7 @@ ${questions.map((q, i) => `${i + 1}. "${q.question}"\n   Options: ${JSON.stringi
 Respond with ONLY a JSON array, one object per question in order, no markdown fences:
 [{"i":1,"verdict":"pass|fail","reason":"one short sentence"},...]`;
 
-const PARALLEL = 8; // workers 0-1 -> b.ai (max 2 parallel streams), workers 2-7 -> bynara
+const PARALLEL = parseInt(process.env.PARALLEL || "8", 10);
 const PER_CATEGORY = parseInt(process.env.PER_CATEGORY || "0", 10); // if set, target N per category
 
 async function main() {
@@ -136,7 +157,7 @@ async function main() {
 
   async function worker(id) {
     await sleep(id * 2500); // stagger workers
-    const homeProvider = id < 2 ? 0 : 1; // workers 0-1 -> b.ai (max 2 streams), 2-7 -> bynara
+    const homeProvider = id % PROVIDERS.length; // spread workers across all providers
     while (true) {
       const item = work[workIdx];
       if (!item) return;
