@@ -18,6 +18,9 @@ export async function GET(req: NextRequest) {
 
   const db = serviceClient();
 
+  // Per-player identity: needed to derive a stable unique option shuffle.
+  const pid = req.cookies.get("quizora_pid")?.value ?? "anon";
+
   const { data: gq } = await db
     .from("game_questions")
     .select("id, question_id, started_at, deadline_at, closed_at")
@@ -37,6 +40,26 @@ export async function GET(req: NextRequest) {
     .select("player_id", { count: "exact", head: true })
     .eq("game_question_id", gq.id);
 
+  // Deterministic per-player shuffle of A-D: same question shows different
+  // option orders to different players (kills screenshot answer-sharing).
+  // Seed from pid+question so refreshes keep the same order for this player.
+  const seedStr = `${pid}:${gq!.id}`;
+  let h = 2166136261;
+  for (let i = 0; i < seedStr.length; i++) {
+    h ^= seedStr.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  const rand = () => {
+    h ^= h << 13; h ^= h >>> 17; h ^= h << 5;
+    return ((h >>> 0) % 10000) / 10000;
+  };
+  const shuffledIndex = [0, 1, 2, 3];
+  for (let i = shuffledIndex.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [shuffledIndex[i], shuffledIndex[j]] = [shuffledIndex[j], shuffledIndex[i]];
+  }
+  const shuffledOptions = (opts: string[]) => shuffledIndex.map((i) => opts[i]);
+
   const base = {
     roundNumber: round,
     startedAt: gq.started_at,
@@ -50,7 +73,7 @@ export async function GET(req: NextRequest) {
           category: question.category,
           subcategory: question.subcategory,
           difficulty: question.difficulty,
-          options: question.options,
+          options: shuffledOptions(question.options as string[]),
         }
       : null,
   };
@@ -81,13 +104,23 @@ export async function GET(req: NextRequest) {
     );
   const nameMap = new Map((players ?? []).map((p: { id: string; display_name: string }) => [p.id, p.display_name]));
 
+  // Post-reveal is also in the player's shuffled display space: map the real
+  // correct letter and other players' real letters to display positions.
+  const displayLetters = ["A", "B", "C", "D"];
+  const realToDisplay = (real: string | null | undefined) => {
+    if (!real || !"ABCD".includes(real)) return real ?? null;
+    const realIdx = shuffledIndex.indexOf("ABCD".indexOf(real));
+    return displayLetters[realIdx];
+  };
+
   return NextResponse.json({
     ...base,
     revealed: true,
-    correctOption: fullQuestion?.correct_option,
+    correctOption: realToDisplay(fullQuestion?.correct_option),
     explanation: fullQuestion?.explanation,
     answers: (answers ?? []).map((a: Record<string, unknown>) => ({
       ...a,
+      option: realToDisplay(a.option as string),
       display_name: nameMap.get(a.player_id as string) ?? "Player",
     })),
   });

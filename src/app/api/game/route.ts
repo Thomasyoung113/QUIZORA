@@ -149,12 +149,54 @@ export async function POST(req: NextRequest) {
         option: input.option ?? input.option,
       });
       if (!a.success) return NextResponse.json({ error: "Invalid answer" }, { status: 400 });
+
+      // Anti-cheat: client submits the option's DISPLAY position (A-D of their
+      // per-player shuffled view). Map it back to the real option letter using
+      // the same deterministic shuffle the round API used.
+      const { data: gqRow } = await db
+        .from("game_questions")
+        .select("id, question_id")
+        .eq("game_id", a.data.gameId)
+        .eq("round_number", a.data.roundNumber)
+        .single();
+      const { data: qRow } = await db
+        .from("questions")
+        .select("options")
+        .eq("id", gqRow?.question_id ?? "")
+        .single();
+      if (!gqRow || !qRow) return NextResponse.json({ error: "Round not found" }, { status: 404 });
+
+      const { data: playerRow } = await db
+        .from("room_players")
+        .select("id")
+        .eq("id", playerId)
+        .single();
+      if (!playerRow) return NextResponse.json({ error: "Player not found" }, { status: 403 });
+
+      const seedStr = `${playerId}:${gqRow.id}`;
+      let h = 2166136261;
+      for (let i = 0; i < seedStr.length; i++) {
+        h ^= seedStr.charCodeAt(i);
+        h = Math.imul(h, 16777619);
+      }
+      const rand = () => {
+        h ^= h << 13; h ^= h >>> 17; h ^= h << 5;
+        return ((h >>> 0) % 10000) / 10000;
+      };
+      const idx = [0, 1, 2, 3];
+      for (let i = idx.length - 1; i > 0; i--) {
+        const j = Math.floor(rand() * (i + 1));
+        [idx[i], idx[j]] = [idx[j], idx[i]];
+      }
+      // Display position "A"=0, "B"=1... → original index → real option letter
+      const realOption = ["A", "B", "C", "D"][idx["ABCD".indexOf(a.data.option as string)]];
+
       const result = await submitAnswer(
         db,
         a.data.gameId,
         a.data.roundNumber,
         playerId,
-        a.data.option as PlayerOption
+        realOption as PlayerOption
       );
       if (!result.ok) return NextResponse.json({ error: result.error }, { status: 400 });
       return NextResponse.json({ ok: true });

@@ -195,13 +195,14 @@ export async function closeRound(
 
   const { data: answers } = await db
     .from("answers")
-    .select("id, player_id, option, response_ms")
+    .select("id, player_id, option, response_ms, forfeited")
     .eq("game_question_id", gq.id);
 
   for (const a of answers ?? []) {
-    const correct = a.option === question.correct_option;
-    const streak = correct ? (streaks[a.player_id] ?? 0) + 1 : 0;
-    const points = computePoints(correct, a.response_ms, settings.timer_seconds * 1000, streak, settings);
+    // Forfeited (deliberate page-leave): 0 points, streak reset.
+    const correct = !a.forfeited && a.option === question.correct_option;
+    const streak = a.forfeited ? 0 : correct ? (streaks[a.player_id] ?? 0) + 1 : 0;
+    const points = a.forfeited ? 0 : computePoints(correct, a.response_ms, settings.timer_seconds * 1000, streak, settings);
     await db
       .from("answers")
       .update({ is_correct: correct, points })

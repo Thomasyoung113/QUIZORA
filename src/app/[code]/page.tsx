@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useRoomState, useRound } from "@/lib/client/store";
+import { useAntiCheat } from "@/lib/client/anticheat";
 import JoinGate from "@/components/join-gate";
 
 const OPTION_LABELS = ["A", "B", "C", "D"];
@@ -255,6 +256,7 @@ function GameView({
 
   const { roundState, refresh: refreshRound } = useRound(game.id, round);
   const revealed = !!roundState?.closedAt;
+  const { blurred, switchesRef } = useAntiCheat(game.id, myPid);
 
   useEffect(() => {
     if (revealed) setMyAnswer(null);
@@ -343,7 +345,10 @@ function GameView({
   }
 
   return (
-    <div className="mx-auto max-w-md p-5 space-y-4">
+    <div
+      className="mx-auto max-w-md p-5 space-y-4 select-none"
+      style={blurred ? { filter: "blur(14px)", pointerEvents: "none" } : undefined}
+    >
       <header className="flex items-center justify-between pt-4 text-sm">
         <button onClick={() => router.push("/")} className="text-slate-500">Exit</button>
         <span className="font-mono text-slate-300">
