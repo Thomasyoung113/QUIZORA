@@ -68,6 +68,7 @@ export interface RoundView {
   closedAt: string | null;
   answerCount: number;
   question: {
+    id: string;
     question: string;
     category: string;
     subcategory: string | null;

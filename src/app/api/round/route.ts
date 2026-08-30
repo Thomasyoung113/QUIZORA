@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
 
   const { data: question } = await db
     .from("questions")
-    .select("question, category, subcategory, difficulty, options")
+    .select("id, question, category, subcategory, difficulty, options")
     .eq("id", gq.question_id)
     .single();
 
@@ -45,6 +45,7 @@ export async function GET(req: NextRequest) {
     answerCount: answerCount ?? 0,
     question: question
       ? {
+          id: question.id,
           question: question.question,
           category: question.category,
           subcategory: question.subcategory,

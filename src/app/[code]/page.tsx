@@ -317,6 +317,24 @@ function GameView({
   }, [state.scores, state.players]);
 
   const myResult = roundState?.answers?.find((a) => a.player_id === myPid);
+  const [reportState, setReportState] = useState<"idle" | "open" | "sent" | "error">("idle");
+  const [reportReason, setReportReason] = useState("wrong_answer");
+  const [reportDetails, setReportDetails] = useState("");
+
+  async function submitReport() {
+    const res = await fetch("/api/reports", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        questionId: roundState?.question?.id,
+        gameId: game.id,
+        playerId: myPid,
+        reason: reportReason,
+        details: reportDetails || null,
+      }),
+    });
+    setReportState(res.ok ? "sent" : "error");
+  }
 
   return (
     <div className="mx-auto max-w-md p-5 space-y-4">
@@ -367,6 +385,45 @@ function GameView({
           )}
           {!revealed && myAnswer && (
             <p className="text-center text-xs text-slate-400">Answer locked in — waiting for others…</p>
+          )}
+          {revealed && (
+            <div className="flex items-center justify-between text-xs text-slate-500">
+              <span>Questions are checked, but mistakes happen.</span>
+              {reportState === "idle" && (
+                <button onClick={() => setReportState("open")} className="text-indigo-300 underline underline-offset-2 shrink-0 ml-2">
+                  Report question
+                </button>
+              )}
+              {reportState === "sent" && <span className="text-emerald-400 shrink-0 ml-2">Reported — thanks!</span>}
+              {reportState === "error" && <span className="text-rose-400 shrink-0 ml-2">Failed — try again</span>}
+            </div>
+          )}
+          {reportState === "open" && (
+            <div className="rounded-xl bg-white/5 border border-white/10 p-3 space-y-2">
+              <div className="flex flex-wrap gap-1.5">
+                {([["wrong_answer", "Wrong answer"], ["unclear", "Unclear"], ["typo", "Typo"], ["inappropriate", "Inappropriate"], ["other", "Other"]] as const).map(([value, label]) => (
+                  <button key={value} onClick={() => setReportReason(value)}
+                    className={`rounded-full px-2.5 py-1 text-xs border ${reportReason === value ? "bg-indigo-500 border-indigo-400" : "border-white/15 text-slate-400"}`}>
+                    {label}
+                  </button>
+                ))}
+              </div>
+              <textarea
+                value={reportDetails}
+                onChange={(e) => setReportDetails(e.target.value.slice(0, 500))}
+                placeholder="Optional details…"
+                rows={2}
+                className="w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2 text-sm outline-none focus:border-indigo-400/60 placeholder:text-slate-500"
+              />
+              <div className="flex gap-2 justify-end">
+                <button onClick={() => setReportState("idle")} className="rounded-lg px-3 py-1.5 text-xs border border-white/15 text-slate-400">
+                  Cancel
+                </button>
+                <button onClick={submitReport} className="rounded-lg px-3 py-1.5 text-xs bg-indigo-500 font-semibold">
+                  Submit report
+                </button>
+              </div>
+            </div>
           )}
         </section>
       )}
