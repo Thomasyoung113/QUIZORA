@@ -58,6 +58,16 @@ export default function LegalPage() {
           </p>
         </section>
 
+        <section className="space-y-3">
+          <h2 className="text-xl font-bold text-white">Credits</h2>
+          <p>
+            Some trivia questions are sourced from{" "}
+            <a href="https://opentdb.com" className="text-amber-400 underline underline-offset-2">Open Trivia DB</a>,
+            licensed under{" "}
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="text-amber-400 underline underline-offset-2">CC-BY-SA 4.0</a>.
+          </p>
+        </section>
+
         <footer className="pt-4 pb-10 text-slate-500 text-xs">
           <a href="/" className="text-indigo-300 underline underline-offset-2">← Back to QUIZORA</a>
         </footer>
