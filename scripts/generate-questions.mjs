@@ -13,11 +13,12 @@ const env = Object.fromEntries(
     .filter(Boolean)
     .map((m) => [m[1], m[2]])
 );
-const LLM_KEY = env.LLM_API_KEY;
-const LLM_BASE = env.LLM_BASE_URL || "https://api.b.ai/v1";
-const LLM_MODEL = env.LLM_MODEL || "glm-5.3-flash";
+const PROVIDERS = [
+  { name: "b.ai", base: env.LLM_BASE_URL || "https://api.b.ai/v1", key: env.LLM_API_KEY, model: env.LLM_MODEL || "glm-5.3-flash" },
+  { name: "bynara", base: env.BYNARA_BASE_URL || "https://router.bynara.id/v1", key: env.BYNARA_API_KEY, model: env.BYNARA_MODEL || "agnes-2.5-flash" },
+].filter((p) => p.key);
+if (!PROVIDERS.length) { console.error("Missing LLM_API_KEY / BYNARA_API_KEY in .env.local"); process.exit(1); }
 
-if (!LLM_KEY) { console.error("Missing LLM_API_KEY in .env.local"); process.exit(1); }
 const db = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
 
 const targetCount = parseInt(process.argv[2] || "500", 10);
@@ -39,22 +40,29 @@ const CATEGORIES = {
 const norm = (s) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function llm(messages, maxTokens = 8000) {
-  for (let attempt = 0; attempt < 6; attempt++) {
-    const res = await fetch(`${LLM_BASE}/chat/completions`, {
-      method: "POST",
-      headers: { Authorization: `Bearer ${LLM_KEY}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ model: LLM_MODEL, messages, max_tokens: maxTokens }),
-    });
-    if (res.status === 429) {
-      await sleep(5000 * (attempt + 1));
-      continue;
+async function llm(messages, maxTokens = 8000, startProvider = 0) {
+  for (let attempt = 0; attempt < 8; attempt++) {
+    const p = PROVIDERS[(startProvider + attempt) % PROVIDERS.length];
+    try {
+      const res = await fetch(`${p.base}/chat/completions`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${p.key}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ model: p.model, messages, max_tokens: maxTokens }),
+      });
+      if (res.status === 429) {
+        await sleep(3000 * (attempt + 1));
+        continue;
+      }
+      if (!res.ok) throw new Error(`${p.name} ${res.status}: ${(await res.text()).slice(0, 200)}`);
+      const json = await res.json();
+      return json.choices?.[0]?.message?.content || "";
+    } catch (e) {
+      if (attempt === 7) throw e;
+      console.error(`  [llm] ${e.message} — switching provider`);
+      await sleep(2000);
     }
-    if (!res.ok) throw new Error(`LLM ${res.status}: ${(await res.text()).slice(0, 200)}`);
-    const json = await res.json();
-    return json.choices?.[0]?.message?.content || "";
   }
-  throw new Error("LLM rate-limited after 6 retries");
+  throw new Error("LLM failed after 8 attempts");
 }
 
 function parseJsonLoose(text) {
@@ -78,67 +86,121 @@ STRICT RULES:
 Return ONLY a JSON array, no markdown fences, with objects:
 {"question":"...","options":["A-option","B-option","C-option","D-option"],"correct":"A|B|C|D","difficulty":"easy|medium|hard","explanation":"..."}`;
 
-const FACTCHECK_PROMPT = (q) => `You are a skeptical fact-checker for a trivia game. Try to DISPROVE this question.
+const FACTCHECK_PROMPT = (questions) => `You are a fact-checker for a pub-quiz trivia game. Judge each question by NORMAL trivia standards — not academic rigor.
 
-Question: "${q.question}"
-Options: ${JSON.stringify(q.options)}
-Claimed correct: ${q.correct} (${q.options["ABCD".indexOf(q.correct)]})
+FAIL a question ONLY if: (a) the claimed answer is factually WRONG, or (b) another option is EQUALLY correct.
+DO NOT fail for: simplified phrasing, missing edge-case qualifiers, "approximately", common conventions (e.g. pH 7, Newton's third law), or mild ambiguity that a quiz player would resolve easily. Pub quizzes accept standard simplifications.
 
-Check: (1) Is the claimed answer actually correct? (2) Is any OTHER option also defensible? (3) Is the wording ambiguous?
+Questions:
+${questions.map((q, i) => `${i + 1}. "${q.question}"\n   Options: ${JSON.stringify(q.options)}\n   Claimed correct: ${q.correct} (${q.options["ABCD".indexOf(q.correct)]})`).join("\n")}
 
-Respond with ONLY JSON: {"verdict":"pass|fail","reason":"one short sentence"}`;
+Respond with ONLY a JSON array, one object per question in order, no markdown fences:
+[{"i":1,"verdict":"pass|fail","reason":"one short sentence"},...]`;
+
+const PARALLEL = 8; // workers 0-1 -> b.ai (max 2 parallel streams), workers 2-7 -> bynara
+const PER_CATEGORY = parseInt(process.env.PER_CATEGORY || "0", 10); // if set, target N per category
 
 async function main() {
-  // Build work queue
+  // Load existing counts per category (paginated past the 1,000-row cap)
+  const existingRows = [];
+  let from = 0;
+  while (true) {
+    const { data, error } = await db.from("questions").select("question, category").range(from, from + 999);
+    if (error) { console.error(`Load error: ${error.message}`); break; }
+    if (!data?.length) break;
+    existingRows.push(...data);
+    if (data.length < 1000) break;
+    from += 1000;
+  }
+  const seen = new Set(existingRows.map((q) => norm(q.question)));
+  const catCounts = {};
+  for (const q of existingRows) catCounts[q.category] = (catCounts[q.category] || 0) + 1;
+  console.log(`Existing questions: ${seen.size}`);
+
+  // Build work queue — per-category deficits vs target
   const work = [];
   for (const [cat, subs] of Object.entries(CATEGORIES)) {
     if (onlyCategory && cat !== onlyCategory) continue;
-    for (const sub of subs) work.push({ cat, sub, rounds: Math.ceil((targetCount * (sub ? 1 : 1)) / (Object.keys(CATEGORIES).length * subs.length) / 10) });
+    const target = PER_CATEGORY > 0 ? PER_CATEGORY : targetCount;
+    const deficit = Math.max(0, target - (catCounts[cat] || 0));
+    if (deficit === 0) { console.log(`[${cat}] already at ${catCounts[cat] || 0} >= ${target}, skipping`); continue; }
+    const roundsTotal = Math.ceil(deficit / 10 / subs.length);
+    console.log(`[${cat}] have ${catCounts[cat] || 0}, deficit ${deficit} -> ${roundsTotal} rounds/sub × ${subs.length} subs`);
+    for (const sub of subs) work.push({ cat, sub, rounds: roundsTotal });
+  }
+  if (!work.length) { console.log("Nothing to do."); return; }
+
+  const stats = { generated: 0, passed: 0, failed: 0, dupes: 0, inserted: 0 };
+  const catInserted = {};
+  let workIdx = 0;
+
+  async function worker(id) {
+    await sleep(id * 2500); // stagger workers
+    const homeProvider = id < 2 ? 0 : 1; // workers 0-1 -> b.ai (max 2 streams), 2-7 -> bynara
+    while (true) {
+      const item = work[workIdx];
+      if (!item) return;
+      // Skip subcategories that already hit their per-category target
+      const target = PER_CATEGORY > 0 ? PER_CATEGORY : Infinity;
+      if ((catInserted[item.cat] || 0) >= item.rounds * 10 * item.subsLeft) { workIdx++; continue; }
+      workIdx++;
+      const { cat, sub, rounds } = item;
+      for (let r = 0; r < rounds; r++) {
+        if ((catInserted[cat] || 0) >= (PER_CATEGORY > 0 ? PER_CATEGORY - (catCounts[cat] || 0) : Infinity)) break;
+        const before = stats.inserted;
+        await runRound(cat, sub, r, rounds, stats, seen, homeProvider);
+        catInserted[cat] = (catInserted[cat] || 0) + (stats.inserted - before);
+      }
+    }
   }
 
-  const { data: existing } = await db.from("questions").select("question");
-  const seen = new Set((existing ?? []).map((q) => norm(q.question)));
-  console.log(`Existing questions: ${seen.size}`);
-
-  let generated = 0, passed = 0, failed = 0, dupes = 0, inserted = 0;
-
-  for (const { cat, sub, rounds } of work) {
-    for (let r = 0; r < rounds; r++) {
-      if (inserted >= targetCount) break;
-
+  async function runRound(cat, sub, r, rounds, stats, seen, homeProvider) {
       // 1. Generate batch of 10
       let raw;
       try {
-        raw = await llm([{ role: "user", content: GEN_PROMPT(cat, sub, 10) }]);
+        raw = await llm([{ role: "user", content: GEN_PROMPT(cat, sub, 10) }], 8000, homeProvider);
       } catch (e) {
         console.error(`Gen failed (${cat}/${sub}): ${e.message}`);
         await sleep(3000);
-        continue;
+        return;
       }
       const questions = parseJsonLoose(raw);
-      if (!questions?.length) { console.error(`Parse failed (${cat}/${sub})`); continue; }
-      generated += questions.length;
+      if (!questions?.length) { console.error(`Parse failed (${cat}/${sub})`); return; }
+      stats.generated += questions.length;
 
-      // 2. Fact-check each individually
+      // 2. Filter valid + non-dupe, then fact-check the whole batch in ONE call
+      const candidates = [];
       for (const q of questions) {
-        if (!q?.question || !Array.isArray(q.options) || q.options.length !== 4 || !"ABCD".includes(q.correct)) { failed++; continue; }
+        if (!q?.question || !Array.isArray(q.options) || q.options.length !== 4 || !"ABCD".includes(q.correct)) { stats.failed++; continue; }
         const key = norm(q.question);
-        if (seen.has(key) || key.length < 10) { dupes++; continue; }
+        if (seen.has(key) || key.length < 10) { stats.dupes++; continue; }
         seen.add(key);
+        candidates.push(q);
+      }
+      if (!candidates.length) { console.log(`[${cat}/${sub}] round ${r + 1}/${rounds} — no candidates (all dupes/invalid)`); return; }
 
-        try {
-          const fcRaw = await llm([{ role: "user", content: FACTCHECK_PROMPT(q) }], 3000);
-          const fc = parseJsonLoose(fcRaw) || JSON.parse(fcRaw.match(/\{[\s\S]*\}/)?.[0] || "null");
-          if (fc?.verdict !== "pass") { failed++; console.log(`  FAIL: ${fc?.reason || "?"} — ${q.question.slice(0, 60)}`); continue; }
-        } catch (e) {
-          console.error(`Fact-check error (skipping question): ${e.message}`);
-          failed++;
-          continue;
-        }
+      let verdicts = [];
+      try {
+        const fcRaw = await llm([{ role: "user", content: FACTCHECK_PROMPT(candidates) }], 8000, homeProvider);
+        verdicts = parseJsonLoose(fcRaw) || [];
+      } catch (e) {
+        console.error(`Fact-check batch error (skipping ${candidates.length}): ${e.message}`);
+        stats.failed += candidates.length;
+        return;
+      }
 
-        let ins = null;
-        try {
-          const { data, error: upErr } = await db.from("questions").upsert({
+      const toInsert = [];
+      candidates.forEach((q, idx) => {
+        const fc = verdicts.find((v) => v && String(v.i) === String(idx + 1));
+        if (fc?.verdict !== "pass") { stats.failed++; if (fc?.reason) console.log(`  FAIL: ${fc.reason} — ${q.question.slice(0, 60)}`); return; }
+        toInsert.push(q);
+      });
+      if (!toInsert.length) { console.log(`[${cat}/${sub}] round ${r + 1}/${rounds} — all failed fact-check`); return; }
+
+      let ins = null;
+      try {
+        const { data, error: upErr } = await db.from("questions").upsert(
+          toInsert.map((q) => ({
             question: q.question,
             category: cat,
             subcategory: sub,
@@ -147,27 +209,29 @@ async function main() {
             options: q.options,
             correct_option: q.correct,
             explanation: q.explanation || null,
-            source: `${LLM_MODEL}+factcheck`,
+            source: "llm+factcheck",
             source_url: null,
             license: null,
             status: "approved",
-          }, { onConflict: "question", ignoreDuplicates: true }).select("id");
-          if (upErr) { console.error(`Insert error: ${upErr.message}`); continue; }
-          ins = data;
-        } catch (e) {
-          console.error(`Insert failed (network, skipping): ${e.message}`);
-          continue;
-        }
-        if (!ins?.length) { dupes++; continue; } // raced with another importer
-        passed++;
-        inserted++;
+          })),
+          { onConflict: "question", ignoreDuplicates: true }
+        ).select("id");
+        if (upErr) { console.error(`Insert error: ${upErr.message}`); return; }
+        ins = data;
+      } catch (e) {
+        console.error(`Insert failed (network, skipping): ${e.message}`);
+        return;
       }
-      console.log(`[${cat}/${sub}] round ${r + 1}/${rounds} — gen:${generated} pass:${passed} fail:${failed} dup:${dupes} inserted:${inserted}/${targetCount}`);
-    }
-    if (inserted >= targetCount) break;
+      const insertedNow = ins?.length ?? 0;
+      stats.dupes += toInsert.length - insertedNow;
+      stats.passed += insertedNow;
+      stats.inserted += insertedNow;
+      console.log(`[${cat}/${sub}] round ${r + 1}/${rounds} — batch:${toInsert.length} ok:${insertedNow} total:${stats.inserted}`);
   }
 
-  console.log(`DONE. generated:${generated} factcheck-passed+inserted:${inserted} failed:${failed} dupes:${dupes}`);
+  await Promise.all(Array.from({ length: PARALLEL }, (_, i) => worker(i)));
+
+  console.log(`DONE. generated:${stats.generated} factcheck-passed+inserted:${stats.inserted} failed:${stats.failed} dupes:${stats.dupes}`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });
