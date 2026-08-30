@@ -41,14 +41,6 @@ export default function Home() {
             QUIZ<span className="text-amber-400">ORA</span>
           </h1>
           <p className="text-slate-400 text-sm">Think. Play. Discover.</p>
-          <AuthWidget />
-          <a href="/how-to-play" className="text-xs text-indigo-300 underline underline-offset-2 hover:text-indigo-200">
-            How to play
-          </a>
-          <p className="text-slate-600 text-[11px]">
-            By playing you agree to our{" "}
-            <a href="/legal" className="underline underline-offset-2 text-slate-400 hover:text-slate-300">Terms &amp; Privacy</a>
-          </p>
         </div>
 
         <input
@@ -91,6 +83,23 @@ export default function Home() {
         </button>
 
         {error && <p className="text-rose-400 text-sm text-center">{error}</p>}
+
+        <div className="text-center space-y-2 pt-2">
+          <a href="/how-to-play" className="block text-xs text-indigo-300 underline underline-offset-2 hover:text-indigo-200">
+            How to play
+          </a>
+          <AuthWidget />
+          <p className="text-slate-600 text-[11px]">
+            By playing you agree to our{" "}
+            <a href="/legal" className="underline underline-offset-2 text-slate-400 hover:text-slate-300">Terms &amp; Privacy</a>
+          </p>
+          <p className="text-slate-600 text-[11px]">
+            QUIZORA© 2026 · Built by{" "}
+            <a href="https://t.me/thomas_young" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-slate-400 hover:text-slate-300">
+              Thomas Young
+            </a>
+          </p>
+        </div>
       </div>
     </main>
   );

@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useRoomState, useRound } from "@/lib/client/store";
+import JoinGate from "@/components/join-gate";
 
 const OPTION_LABELS = ["A", "B", "C", "D"];
 
@@ -22,6 +23,11 @@ export default function RoomPage() {
 
   const game = state?.game ?? null;
   const inGame = game && (game.status === "active" || game.status === "finished");
+
+  if (state && !myPid) {
+    // Direct link without having joined: ask for a username first.
+    return <JoinGate code={code} onJoined={(pid) => setMyPid(pid)} />;
+  }
 
   return (
     <main className="min-h-dvh bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white">
