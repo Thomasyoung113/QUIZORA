@@ -141,17 +141,22 @@ export async function submitAnswer(
 
   const responseMs = now - new Date(gq.started_at).getTime();
 
-  const { error } = await db.from("answers").upsert(
-    {
-      game_question_id: gq.id,
-      player_id: playerId,
-      option,
-      submitted_at: new Date().toISOString(),
-      response_ms: responseMs,
-    },
-    { onConflict: "game_question_id,player_id" }
-  );
-  if (error) return { ok: false, error: "Could not submit" };
+  // SECURITY: sub-300ms responses are bot-speed; reject as suspicious.
+  if (responseMs < 300) return { ok: false, error: "Too fast" };
+
+  // SECURITY: insert-only. The DB unique constraint (game_question_id, player_id)
+  // rejects a second answer — no answer rewriting after the fact.
+  const { error } = await db.from("answers").insert({
+    game_question_id: gq.id,
+    player_id: playerId,
+    option,
+    submitted_at: new Date().toISOString(),
+    response_ms: responseMs,
+  });
+  if (error) {
+    if (error.code === "23505") return { ok: false, error: "Already answered" };
+    return { ok: false, error: "Could not submit" };
+  }
   return { ok: true };
 }
 

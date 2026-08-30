@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
-import { serviceClient } from "@/lib/server/game";
+import { serviceClient, hashToken } from "@/lib/server/game";
+import { getSessionUser } from "@/lib/server/auth";
 import {
   beginRound,
   closeRound,
@@ -13,8 +14,31 @@ import type { GameSettings, PlayerOption } from "@/lib/types";
 
 export const dynamic = "force-dynamic";
 
-function pid(req: NextRequest): string | null {
-  return req.cookies.get("quizora_pid")?.value ?? null;
+/**
+ * SECURITY: resolves the caller's player id from PROOF, not from the
+ * client-asserted quizora_pid cookie alone. The claimed pid must match
+ * the caller's guest token hash (stored on the player row) or their
+ * signed-in user id. Returns null when identity cannot be proven.
+ */
+async function pid(req: NextRequest): Promise<string | null> {
+  const claimed = req.cookies.get("quizora_pid")?.value;
+  if (!claimed) return null;
+
+  const db = serviceClient();
+  const { data: player } = await db
+    .from("room_players")
+    .select("id, user_id, guest_token_hash")
+    .eq("id", claimed)
+    .single();
+  if (!player) return null;
+
+  const user = await getSessionUser(req);
+  if (user && player.user_id === user.id) return player.id;
+
+  const guestToken = req.cookies.get("quizora_guest")?.value;
+  if (guestToken && player.guest_token_hash === hashToken(guestToken)) return player.id;
+
+  return null;
 }
 
 const settingsSchema = z.object({
@@ -51,7 +75,7 @@ export async function POST(req: NextRequest) {
   const parsed = actionSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "Invalid input" }, { status: 400 });
   const input = parsed.data;
-  const playerId = pid(req);
+  const playerId = await pid(req);
   if (!playerId) return NextResponse.json({ error: "Not in a room" }, { status: 401 });
 
   const db = serviceClient();
@@ -159,14 +183,23 @@ export async function POST(req: NextRequest) {
               })
           : false;
 
+      // SECURITY: use the game's STORED settings for scoring — never client input.
+      const { data: gameSettings } = await db
+        .from("games")
+        .select("settings, total_rounds")
+        .eq("id", input.gameId)
+        .single();
+      if (!gameSettings) return NextResponse.json({ error: "Game not found" }, { status: 404 });
+      const settings = gameSettings.settings as GameSettings;
+
       // Compute streaks from previous rounds
       const streaks = await computeStreaks(db, input.gameId, input.roundNumber);
-      const result = await closeRound(db, input.gameId, input.roundNumber, input.settings, streaks);
+      const result = await closeRound(db, input.gameId, input.roundNumber, settings, streaks);
       if (!result.ok && result.error !== "Already closed")
         return NextResponse.json({ error: result.error }, { status: 400 });
 
       // Auto-advance: next round or finish
-      if (input.roundNumber >= (input.settings.total_rounds ?? 0)) {
+      if (input.roundNumber >= (gameSettings.total_rounds ?? settings.total_rounds ?? 0)) {
         await finishGame(db, input.gameId, input.roomId);
       }
       return NextResponse.json({ ok: true });

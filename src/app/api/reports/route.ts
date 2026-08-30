@@ -1,24 +1,30 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { serviceClient } from "@/lib/server/game";
+import { rateLimit, clientIp } from "@/lib/server/rate-limit";
 
 export const dynamic = "force-dynamic";
 
 const reportSchema = z.object({
   questionId: z.string().uuid(),
   gameId: z.string().uuid().nullish(),
-  playerId: z.string().uuid().nullish(),
   reason: z.enum(["wrong_answer", "unclear", "typo", "inappropriate", "other"]),
   details: z.string().max(500).nullish(),
 });
 
 export async function POST(req: NextRequest) {
+  if (!rateLimit(`report:${clientIp(req)}`, 10, 60 * 60 * 1000)) {
+    return NextResponse.json({ error: "Too many reports. Try again later." }, { status: 429 });
+  }
+
   const body = await req.json().catch(() => null);
   const parsed = reportSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "Invalid report" }, { status: 400 });
 
   const db = serviceClient();
-  const { questionId, gameId, playerId, reason, details } = parsed.data;
+  const { questionId, gameId, reason, details } = parsed.data;
+  // Player identity comes from the httpOnly cookie — never from the body.
+  const playerId = req.cookies.get("quizora_pid")?.value || null;
 
   const { data: question, error: qErr } = await db
     .from("questions")

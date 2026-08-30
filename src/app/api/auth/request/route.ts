@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { createClient } from "@supabase/supabase-js";
+import { rateLimit, clientIp } from "@/lib/server/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -8,6 +9,10 @@ const schema = z.object({ email: z.string().email().max(200) });
 
 /** Sends a magic-link OTP code to the given email. */
 export async function POST(req: NextRequest) {
+  if (!rateLimit(`otp:${clientIp(req)}`, 5, 60 * 60 * 1000)) {
+    return NextResponse.json({ error: "Too many codes requested. Try again later." }, { status: 429 });
+  }
+
   const body = await req.json().catch(() => null);
   const parsed = schema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "Valid email required" }, { status: 400 });

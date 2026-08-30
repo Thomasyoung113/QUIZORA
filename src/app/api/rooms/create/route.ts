@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { createRoomWithCode, newGuestToken, serviceClient } from "@/lib/server/game";
 import { ensureProfile, getSessionUser } from "@/lib/server/auth";
+import { rateLimit, clientIp } from "@/lib/server/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +26,13 @@ function baseCookie() {
 }
 
 export async function POST(req: NextRequest) {
+  if (!rateLimit(`create-room:${clientIp(req)}`, 5, 60 * 60 * 1000)) {
+    return NextResponse.json({ error: "Too many rooms created. Try again later." }, { status: 429 });
+  }
+  if (!rateLimit(`create-room-name:${clientIp(req)}`, 20, 60 * 1000)) {
+    return NextResponse.json({ error: "Slow down." }, { status: 429 });
+  }
+
   const body = await req.json().catch(() => null);
   const parsed = createSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "Invalid name" }, { status: 400 });

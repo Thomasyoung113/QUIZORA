@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { hashToken, joinRoom, newGuestToken, serviceClient } from "@/lib/server/game";
 import { ensureProfile, getSessionUser } from "@/lib/server/auth";
+import { rateLimit, clientIp } from "@/lib/server/rate-limit";
 // eslint note: ensureProfile accepts any Supabase client generic
 
 export const dynamic = "force-dynamic";
@@ -27,6 +28,11 @@ function baseCookie() {
 }
 
 export async function POST(req: NextRequest) {
+  const ip = clientIp(req);
+  if (!rateLimit(`join:${ip}`, 30, 60 * 1000)) {
+    return NextResponse.json({ error: "Too many attempts. Try again later." }, { status: 429 });
+  }
+
   const body = await req.json().catch(() => null);
   const parsed = joinSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "Invalid input" }, { status: 400 });
@@ -37,7 +43,13 @@ export async function POST(req: NextRequest) {
     .select("id")
     .eq("room_code", parsed.data.code.toUpperCase())
     .single();
-  if (!room) return NextResponse.json({ error: "Room not found" }, { status: 404 });
+  if (!room) {
+    // Slower failure path: blunt room-code brute forcing
+    if (!rateLimit(`join-fail:${ip}`, 10, 10 * 60 * 1000)) {
+      return NextResponse.json({ error: "Too many failed attempts." }, { status: 429 });
+    }
+    return NextResponse.json({ error: "Room not found" }, { status: 404 });
+  }
 
   // Reuse existing guest token so reconnects map back to the same player row
   const existingToken = req.cookies.get(COOKIES.guestToken)?.value;
