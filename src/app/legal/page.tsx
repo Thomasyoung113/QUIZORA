@@ -59,6 +59,14 @@ export default function LegalPage() {
         </section>
 
         <section className="space-y-3">
+          <h2 className="text-xl font-bold text-white">Contact</h2>
+          <ul className="list-disc pl-5 space-y-1.5">
+            <li>Telegram: <a href="https://t.me/thomas_young" className="text-amber-400 underline underline-offset-2">@thomas_young</a></li>
+            <li>Email: <a href="mailto:devthomas113@gmail.com" className="text-amber-400 underline underline-offset-2">devthomas113@gmail.com</a></li>
+          </ul>
+        </section>
+
+        <section className="space-y-3">
           <h2 className="text-xl font-bold text-white">Credits</h2>
           <p>
             Some trivia questions are sourced from{" "}
