@@ -21,26 +21,36 @@ export default function AuthWidget() {
 
   async function sendCode() {
     setBusy(true); setMsg("");
-    const res = await fetch("/api/auth/request", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email }),
-    });
-    setBusy(false);
-    if (res.ok) { setStage("code"); setMsg("Check your email for the 6-digit code"); }
-    else setMsg("Could not send — try again");
+    try {
+      const res = await fetch("/api/auth/request", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      setBusy(false);
+      if (res.ok) { setStage("code"); setMsg("Check your email for the 6-digit code"); }
+      else setMsg("Could not send — try again");
+    } catch {
+      setBusy(false);
+      setMsg("Network error — check your connection");
+    }
   }
 
   async function verify() {
     setBusy(true); setMsg("");
-    const res = await fetch("/api/auth/verify", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, token: code }),
-    });
-    setBusy(false);
-    if (res.ok) {
-      const d = await res.json();
-      setUser(d.user); setStage("closed"); setMsg("");
-    } else setMsg("Wrong or expired code");
+    try {
+      const res = await fetch("/api/auth/verify", {
+        method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, token: code }),
+      });
+      setBusy(false);
+      if (res.ok) {
+        const d = await res.json();
+        setUser(d.user); setStage("closed"); setMsg("");
+      } else setMsg("Wrong or expired code");
+    } catch {
+      setBusy(false);
+      setMsg("Network error — check your connection");
+    }
   }
 
   async function signOut() {

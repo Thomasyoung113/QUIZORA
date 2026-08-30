@@ -205,7 +205,7 @@ export async function POST(req: NextRequest) {
     case "closeRound": {
       // Any connected player can trigger close when deadline passed or all answered;
       // server re-validates closed state idempotently.
-      if (!input.gameId || !input.roundNumber || !input.settings || !input.roomId)
+      if (!input.gameId || !input.roundNumber || !input.roomId)
         return NextResponse.json({ error: "Missing fields" }, { status: 400 });
       const { data: gq } = await db
         .from("game_questions")
@@ -214,25 +214,29 @@ export async function POST(req: NextRequest) {
         .eq("round_number", input.roundNumber)
         .single();
       if (!gq) return NextResponse.json({ error: "Round not found" }, { status: 404 });
-      const allBeforeDeadline =
-        new Date(gq.deadline_at).getTime() > Date.now()
-          ? await db
-              .from("answers")
-              .select("player_id", { count: "exact", head: true })
-              .eq("game_question_id", gq.id)
-              .then(({ count }: { count: number | null }) => {
-                return false; // close only on deadline or explicit host action; keep simple
-              })
-          : false;
+      // Zero-answer rounds must still close when the deadline passes, otherwise
+      // the game stalls forever (e.g. all players idle).
+      const deadlinePassed = new Date(gq.deadline_at).getTime() <= Date.now();
 
       // SECURITY: use the game's STORED settings for scoring — never client input.
       const { data: gameSettings } = await db
         .from("games")
-        .select("settings, total_rounds")
+        .select(
+          "game_mode, difficulty, categories, timer_seconds, total_rounds"
+        )
         .eq("id", input.gameId)
         .single();
       if (!gameSettings) return NextResponse.json({ error: "Game not found" }, { status: 404 });
-      const settings = gameSettings.settings as GameSettings;
+      const settings: GameSettings = {
+        game_mode: gameSettings.game_mode,
+        difficulty: gameSettings.difficulty,
+        categories: gameSettings.categories,
+        timer_seconds: gameSettings.timer_seconds,
+        total_rounds: gameSettings.total_rounds,
+        speed_bonus: true,
+        streak_bonus: true,
+        explanations: true,
+      };
 
       // Compute streaks from previous rounds
       const streaks = await computeStreaks(db, input.gameId, input.roundNumber);
@@ -241,7 +245,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ error: result.error }, { status: 400 });
 
       // Auto-advance: next round or finish
-      if (input.roundNumber >= (gameSettings.total_rounds ?? settings.total_rounds ?? 0)) {
+      if (input.roundNumber >= (gameSettings.total_rounds ?? 0)) {
         await finishGame(db, input.gameId, input.roomId);
       }
       return NextResponse.json({ ok: true });

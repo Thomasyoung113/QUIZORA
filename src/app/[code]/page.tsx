@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useRoomState, useRound } from "@/lib/client/store";
 import { useAntiCheat } from "@/lib/client/anticheat";
@@ -309,8 +309,12 @@ function GameView({
   }, [deadline, revealed]);
   const secondsLeft = deadline && !revealed ? Math.max(0, Math.ceil((deadline - now) / 1000)) : null;
 
+  const closeFiredRef = useRef<string | null>(null);
   useEffect(() => {
-    if (deadline && !revealed && secondsLeft === 0) closeAndAdvance();
+    if (deadline && !revealed && secondsLeft === 0 && closeFiredRef.current !== game?.id + round) {
+      closeFiredRef.current = game?.id + round;
+      closeAndAdvance();
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [secondsLeft, revealed, deadline]);
 

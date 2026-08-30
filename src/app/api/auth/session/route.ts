@@ -41,8 +41,17 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({ user: null });
 }
 
-/** Sign out: clear cookies. */
-export async function DELETE() {
+/** Sign out: revoke the Supabase refresh token, then clear cookies. */
+export async function DELETE(req: NextRequest) {
+  const rt = req.cookies.get("quizora_rt")?.value;
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const anon = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  if (rt && url && anon) {
+    // Best-effort revoke so a stolen refresh token dies on sign-out.
+    await createClient(url, anon, { auth: { persistSession: false } })
+      .auth.signOut({ scope: "global" })
+      .catch(() => {});
+  }
   const res = NextResponse.json({ ok: true });
   res.cookies.set("quizora_at", "", { maxAge: 0, path: "/" });
   res.cookies.set("quizora_rt", "", { maxAge: 0, path: "/" });

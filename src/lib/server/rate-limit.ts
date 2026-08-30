@@ -19,9 +19,11 @@ function sweep() {
 }
 
 export function clientIp(req: NextRequest): string {
+  // Vercel sets x-real-ip / x-vercel-forwarded-for at the edge; a client can
+  // freely spoof x-forwarded-for, so only trust edge-set headers.
   return (
     req.headers.get("x-real-ip") ||
-    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    req.headers.get("x-vercel-forwarded-for")?.split(",")[0]?.trim() ||
     "unknown"
   );
 }
