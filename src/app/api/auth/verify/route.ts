@@ -44,5 +44,13 @@ export async function POST(req: NextRequest) {
   res.cookies.set("quizora_rt", data.session.refresh_token, {
     httpOnly: true, secure: true, sameSite: "lax", path: "/", maxAge: SESSION_TTL,
   });
+
+  // Link any current guest player identity to this user (cross-device stats).
+  const db = createClient(url, process.env.SUPABASE_SERVICE_ROLE_KEY ?? anon, { auth: { persistSession: false } });
+  const playerId = req.cookies.get("quizora_pid")?.value;
+  if (playerId) {
+    await db.from("room_players").update({ user_id: data.user.id }).eq("id", playerId).is("user_id", null);
+  }
+
   return res;
 }

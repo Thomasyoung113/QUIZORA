@@ -136,27 +136,28 @@ async function main() {
           continue;
         }
 
+        let ins = null;
         try {
-
-        const { data: ins, error } = await db.from("questions").upsert({
-          question: q.question,
-          category: cat,
-          subcategory: sub,
-          difficulty: ["easy", "medium", "hard"].includes(q.difficulty) ? q.difficulty : "medium",
-          type: "mcq",
-          options: q.options,
-          correct_option: q.correct,
-          explanation: q.explanation || null,
-          source: `${LLM_MODEL}+factcheck`,
-          source_url: null,
-          license: null,
-          status: "approved",
-        }, { onConflict: "question", ignoreDuplicates: true }).select("id");
+          const { data, error: upErr } = await db.from("questions").upsert({
+            question: q.question,
+            category: cat,
+            subcategory: sub,
+            difficulty: ["easy", "medium", "hard"].includes(q.difficulty) ? q.difficulty : "medium",
+            type: "mcq",
+            options: q.options,
+            correct_option: q.correct,
+            explanation: q.explanation || null,
+            source: `${LLM_MODEL}+factcheck`,
+            source_url: null,
+            license: null,
+            status: "approved",
+          }, { onConflict: "question", ignoreDuplicates: true }).select("id");
+          if (upErr) { console.error(`Insert error: ${upErr.message}`); continue; }
+          ins = data;
         } catch (e) {
           console.error(`Insert failed (network, skipping): ${e.message}`);
           continue;
         }
-        if (error) { console.error(`Insert error: ${error.message}`); continue; }
         if (!ins?.length) { dupes++; continue; } // raced with another importer
         passed++;
         inserted++;

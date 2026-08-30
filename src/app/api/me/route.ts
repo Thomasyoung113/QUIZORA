@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getSessionUser } from "@/lib/server/auth";
 
 export const dynamic = "force-dynamic";
 
-/** Returns the caller's player id from the cookie (null if not in a room). */
-export async function GET(_req: NextRequest) {
-  const playerId = _req.cookies.get("quizora_pid")?.value ?? null;
-  return NextResponse.json({ playerId });
+/** Returns the caller's player id (cookie) and signed-in user (null for guests). */
+export async function GET(req: NextRequest) {
+  const playerId = req.cookies.get("quizora_pid")?.value ?? null;
+  const user = await getSessionUser(req);
+  return NextResponse.json({ playerId, user });
 }

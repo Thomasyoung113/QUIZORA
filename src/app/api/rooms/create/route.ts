@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { createRoomWithCode, newGuestToken, serviceClient } from "@/lib/server/game";
+import { ensureProfile, getSessionUser } from "@/lib/server/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -29,8 +30,10 @@ export async function POST(req: NextRequest) {
   if (!parsed.success) return NextResponse.json({ error: "Invalid name" }, { status: 400 });
 
   const db = serviceClient();
+  const user = await getSessionUser(req);
+  if (user) await ensureProfile(db, user.id, user.email, parsed.data.displayName);
   const guest = newGuestToken();
-  const { room, player } = await createRoomWithCode(db, parsed.data.displayName, null, guest.hash);
+  const { room, player } = await createRoomWithCode(db, parsed.data.displayName, user?.id ?? null, guest.hash);
 
   const res = NextResponse.json({ roomCode: room.room_code, playerId: player.id });
   const c = baseCookie();
