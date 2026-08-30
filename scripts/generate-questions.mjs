@@ -131,11 +131,14 @@ async function main() {
           const fc = parseJsonLoose(fcRaw) || JSON.parse(fcRaw.match(/\{[\s\S]*\}/)?.[0] || "null");
           if (fc?.verdict !== "pass") { failed++; console.log(`  FAIL: ${fc?.reason || "?"} — ${q.question.slice(0, 60)}`); continue; }
         } catch (e) {
-          console.error(`Fact-check error: ${e.message}`);
+          console.error(`Fact-check error (skipping question): ${e.message}`);
+          failed++;
           continue;
         }
 
-        const { error } = await db.from("questions").insert({
+        try {
+
+        const { data: ins, error } = await db.from("questions").upsert({
           question: q.question,
           category: cat,
           subcategory: sub,
@@ -148,8 +151,13 @@ async function main() {
           source_url: null,
           license: null,
           status: "approved",
-        }).select("id");
+        }, { onConflict: "question", ignoreDuplicates: true }).select("id");
+        } catch (e) {
+          console.error(`Insert failed (network, skipping): ${e.message}`);
+          continue;
+        }
         if (error) { console.error(`Insert error: ${error.message}`); continue; }
+        if (!ins?.length) { dupes++; continue; } // raced with another importer
         passed++;
         inserted++;
       }

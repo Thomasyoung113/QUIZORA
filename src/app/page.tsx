@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import AuthWidget from "@/components/auth-widget";
 
 export default function Home() {
   const router = useRouter();
@@ -40,6 +41,7 @@ export default function Home() {
             QUIZ<span className="text-amber-400">ORA</span>
           </h1>
           <p className="text-slate-400 text-sm">Think. Play. Discover.</p>
+          <AuthWidget />
           <p className="text-slate-600 text-[11px]">
             By playing you agree to our{" "}
             <a href="/legal" className="underline underline-offset-2 text-slate-400 hover:text-slate-300">Terms &amp; Privacy</a>
