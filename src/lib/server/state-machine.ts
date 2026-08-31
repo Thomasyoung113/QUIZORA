@@ -54,10 +54,9 @@ export async function startGame(
   const active = (players ?? []).filter(
     (p: { connected: boolean }) => p.connected
   );
-  if (active.length < 1) return { ok: false, error: "No players" };
-  // Host may always start; other connected players who haven't readied up
-  // simply play without the ready bonus. This prevents a single idle
-  // joiner from deadlocking the room.
+  if (active.length < 2) return { ok: false, error: "Need at least 2 players to start" };
+  // Host may always start once 2+ players are present; other connected
+  // players who haven't readied up simply play without the ready bonus.
 
   const { data: game, error: gErr } = await db
     .from("games")

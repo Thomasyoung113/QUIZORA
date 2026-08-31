@@ -17,10 +17,20 @@ export async function GET(req: NextRequest) {
 
   const { data: room } = await db
     .from("rooms")
-    .select("id, room_code, status, max_players")
+    .select("id, room_code, status, max_players, closed_at")
     .eq("room_code", code)
     .single();
   if (!room) return NextResponse.json({ error: "Room not found" }, { status: 404 });
+
+  // Closed rooms are dead after the 30-minute grace window: 410 Gone tells
+  // the client to redirect home. Within the grace window the room still
+  // resolves (host can undo an accidental close by re-opening).
+  if (room.status === "closed") {
+    const closedAt = room.closed_at ? new Date(room.closed_at).getTime() : 0;
+    if (Date.now() - closedAt > 30 * 60_000) {
+      return NextResponse.json({ error: "Room closed" }, { status: 410 });
+    }
+  }
 
   const { data: players } = await db
     .from("room_players")

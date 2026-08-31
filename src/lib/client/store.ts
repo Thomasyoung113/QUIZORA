@@ -36,6 +36,12 @@ export function useRoomState(code: string, intervalMs = 1500) {
   const refresh = useCallback(async () => {
     try {
       const res = await fetch(`/api/room-state?code=${code}`, { cache: "no-store" });
+      if (res.status === 410) {
+        // Room closed (grace elapsed): signal caller to redirect home.
+        setState(null);
+        setError("ROOM_CLOSED");
+        return;
+      }
       if (!res.ok) throw new Error((await res.json().catch(() => ({}))).error ?? "Failed");
       const data = await res.json();
       setState(data);

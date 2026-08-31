@@ -12,7 +12,7 @@ export default function RoomPage() {
   const params = useParams<{ code: string }>();
   const router = useRouter();
   const code = (params.code as string)?.toUpperCase();
-  const { state, refresh } = useRoomState(code);
+  const { state, error, refresh } = useRoomState(code);
   const [myPid, setMyPid] = useState<string | null>(null);
 
   useEffect(() => {
@@ -24,6 +24,11 @@ export default function RoomPage() {
 
   const game = state?.game ?? null;
   const inGame = game && (game.status === "active" || game.status === "finished");
+
+  // Closed room (grace elapsed): dead code, bounce to home.
+  useEffect(() => {
+    if (error === "ROOM_CLOSED") router.replace("/");
+  }, [error, router]);
 
   if (state && !myPid) {
     // Direct link without having joined: ask for a username first.
@@ -57,6 +62,17 @@ function Lobby({
   const router = useRouter();
   const me = state.players.find((p) => p.id === myPid);
   const isHost = me?.is_host ?? false;
+  const connectedCount = state.players.filter((p) => p.connected).length;
+
+  async function closeRoom() {
+    if (!confirm("Close this room? The code will stop working for everyone.")) return;
+    await fetch("/api/rooms/close", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ roomId: state.room.id }),
+    }).catch(() => {});
+    router.push("/");
+  }
 
   const [settings, setSettings] = useState({
     game_mode: "classic",
@@ -213,10 +229,16 @@ function Lobby({
 
       <div className="pb-8">
         {isHost ? (
-          <button onClick={startGame}
-            className="w-full rounded-xl bg-amber-400 hover:bg-amber-300 active:scale-[0.98] text-slate-950 font-bold py-4 text-lg transition">
-            Start Game
-          </button>
+          <>
+            <button onClick={startGame} disabled={connectedCount < 2}
+              className="w-full rounded-xl bg-amber-400 hover:bg-amber-300 active:scale-[0.98] disabled:opacity-40 text-slate-950 font-bold py-4 text-lg transition">
+              {connectedCount < 2 ? "Waiting for players (min 2)…" : "Start Game"}
+            </button>
+            <button onClick={closeRoom}
+              className="mt-2 w-full rounded-xl border border-rose-400/30 text-rose-300/80 text-xs py-2 active:scale-[0.99] transition">
+              Close room
+            </button>
+          </>
         ) : me ? (
           <button onClick={() => setReady(!me.is_ready)}
             className={`w-full rounded-xl font-bold py-4 text-lg transition active:scale-[0.98] ${me.is_ready ? "bg-emerald-500 text-slate-950" : "bg-white/10 border border-white/15"}`}>
