@@ -100,6 +100,17 @@ export async function POST(req: NextRequest) {
         { onConflict: "tournament_id,user_id" }
       );
       if (error) return NextResponse.json({ error: "Join failed" }, { status: 400 });
+      // Capacity re-check after insert (atomic-ish guard against parallel
+      // join floods racing past the pre-check): evict the just-added row if
+      // the tournament is somehow over capacity.
+      const { count: postCount } = await db
+        .from("tournament_entries")
+        .select("id", { count: "exact", head: true })
+        .eq("tournament_id", t.id);
+      if ((postCount ?? 0) > t.size) {
+        await db.from("tournament_entries").delete().eq("tournament_id", t.id).eq("user_id", user.id);
+        return NextResponse.json({ error: "Tournament full" }, { status: 400 });
+      }
       return NextResponse.json({ ok: true, tournamentId: t.id });
     }
 

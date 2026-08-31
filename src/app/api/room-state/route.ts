@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { serviceClient } from "@/lib/server/game";
+import { clientIp, rateLimit } from "@/lib/server/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +10,10 @@ export const dynamic = "force-dynamic";
  * Never exposes correct answers.
  */
 export async function GET(req: NextRequest) {
+  // Rate limit polling (clients poll every ~1s; 90/min gives headroom).
+  if (!rateLimit(`rs:${clientIp(req)}`, 90, 60_000)) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
   const { searchParams } = new URL(req.url);
   const code = searchParams.get("code")?.toUpperCase();
   if (!code) return NextResponse.json({ error: "Missing code" }, { status: 400 });

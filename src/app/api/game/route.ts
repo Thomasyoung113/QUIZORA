@@ -11,6 +11,7 @@ import {
   submitAnswer,
 } from "@/lib/server/state-machine";
 import type { GameSettings, PlayerOption } from "@/lib/types";
+import { clientIp, rateLimit } from "@/lib/server/rate-limit";
 
 export const dynamic = "force-dynamic";
 
@@ -71,6 +72,10 @@ const actionSchema = z.object({
 });
 
 export async function POST(req: NextRequest) {
+  // Rate limit: answers/closes are frequent but bounded (40/min per IP).
+  if (!rateLimit(`game:${clientIp(req)}`, 40, 60_000)) {
+    return NextResponse.json({ error: "Too many requests" }, { status: 429 });
+  }
   const body = await req.json().catch(() => null);
   const parsed = actionSchema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: "Invalid input" }, { status: 400 });
@@ -310,27 +315,40 @@ export async function POST(req: NextRequest) {
     case "finish": {
       if (!input.gameId || !input.roomId)
         return NextResponse.json({ error: "Missing fields" }, { status: 400 });
-      // ANTI-CHEAT: only the host can end a game prematurely (griefing guard).
-      const { data: room } = await db
-        .from("rooms")
-        .select("id, room_players(display_name, is_host)")
-        .eq("id", input.roomId)
-        .single();
-      if (!room) return NextResponse.json({ error: "Room not found" }, { status: 404 });
-      const { data: game } = await db
-        .from("games")
-        .select("status")
-        .eq("id", input.gameId)
-        .single();
-      if (game?.status === "active") {
-        return NextResponse.json({ error: "Use closeRound to advance; finish is host-only at game end" }, { status: 403 });
-      }
+      // SECURITY: only the host may end a game (griefing guard).
+      const pid = req.cookies.get("quizora_pid")?.value ?? "";
+      const { data: hostRow } = await db
+        .from("room_players")
+        .select("id, user_id, is_host")
+        .eq("room_id", input.roomId)
+        .eq("is_host", true)
+        .maybeSingle();
+      const host = hostRow as { id: string; user_id: string | null } | null;
+      const caller = await getSessionUser(req);
+      const isHost =
+        (!!caller && !!host && host.user_id === caller.id) ||
+        (!!pid && !!host && host.id === pid);
+      if (!isHost) return NextResponse.json({ error: "Host only" }, { status: 403 });
       await finishGame(db, input.gameId, input.roomId);
       return NextResponse.json({ ok: true });
     }
 
     case "rematch": {
       if (!input.roomId) return NextResponse.json({ error: "Missing room" }, { status: 400 });
+      // SECURITY: host-only (prevents score-freeze griefing via reseed).
+      const pid = req.cookies.get("quizora_pid")?.value ?? "";
+      const { data: hostRow } = await db
+        .from("room_players")
+        .select("id, user_id, is_host")
+        .eq("room_id", input.roomId)
+        .eq("is_host", true)
+        .maybeSingle();
+      const host = hostRow as { id: string; user_id: string | null } | null;
+      const caller = await getSessionUser(req);
+      const isHost =
+        (!!caller && !!host && host.user_id === caller.id) ||
+        (!!pid && !!host && host.id === pid);
+      if (!isHost) return NextResponse.json({ error: "Host only" }, { status: 403 });
       const result = await rematch(db, input.roomId);
       if (!result.ok) return NextResponse.json({ error: result.error }, { status: 400 });
       return NextResponse.json({ ok: true });
