@@ -109,12 +109,14 @@ export async function POST(req: NextRequest) {
       };
 
       // Select questions server-side: approved + matching filters, excluding used-in-game.
+      // PostgREST can't do ORDER BY random(), so pull a wide sample then
+      // shuffle client-side and take what we need.
       let query = db
         .from("questions")
         .select("id")
         .eq("status", "approved")
         .in("category", settings.categories)
-        .limit(settings.total_rounds);
+        .limit(400);
       if (settings.difficulty !== "adaptive") {
         query = query.eq("difficulty", settings.difficulty);
       }
@@ -124,8 +126,13 @@ export async function POST(req: NextRequest) {
           { error: `Not enough questions (${qs?.length ?? 0}/${settings.total_rounds}). Add more or widen filters.` },
           { status: 400 }
         );
-      // Shuffle
-      const shuffled = [...qs].sort(() => Math.random() - 0.5).slice(0, settings.total_rounds);
+      // Fisher-Yates shuffle for uniform randomness
+      const pool = [...qs];
+      for (let i = pool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [pool[i], pool[j]] = [pool[j], pool[i]];
+      }
+      const shuffled = pool.slice(0, settings.total_rounds);
 
       const result = await startGame(db, s.data.roomId, playerId, settings, shuffled.map((q: { id: string }) => q.id));
       if (!result.ok) return NextResponse.json({ error: result.error }, { status: 400 });

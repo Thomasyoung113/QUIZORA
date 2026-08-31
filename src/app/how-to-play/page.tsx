@@ -92,6 +92,23 @@ export default function HowToPlayPage() {
           </p>
         </section>
 
+        <section className="space-y-3">
+          <h2 className="text-xl font-bold text-white">🏆 Tournament mode</h2>
+          <p>
+            Tournaments are knockout brackets for <strong className="text-white">signed-in players only</strong> — no guests. Create one from the Tournament page (4 or 8 players) and share the code; friends join with it.
+          </p>
+          <ol className="list-decimal list-inside space-y-1.5 text-slate-300">
+            <li><strong className="text-white">Lobby</strong> — everyone joins by code until the bracket is full. The host taps Start.</li>
+            <li><strong className="text-white">Round 1</strong> — players are randomly seeded into head-to-head matches (1v4, 2v3 in a 4-player bracket). Each match is a private 2-player room with the same question settings.</li>
+            <li><strong className="text-white">Play your match</strong> — same rules as a normal game. Winner = higher total points. If your opponent never shows, you win by walkover.</li>
+            <li><strong className="text-white">Advance</strong> — as soon as both matches in a round finish, winners are placed into the next round automatically. The bracket updates live.</li>
+            <li><strong className="text-white">Final</strong> — last two standing. The champion is crowned on the bracket when they win.</li>
+          </ol>
+          <p className="text-slate-400">
+            Every match uses a fresh random question set, and answers are shuffled differently for each player — no screenshot sharing. Ties in a match go to the higher seed.
+          </p>
+        </section>
+
         <footer className="pt-4 pb-10 text-slate-500 text-xs">
           <a href="/" className="text-indigo-300 underline underline-offset-2">← Back to QUIZORA</a>
           <span className="mx-2">·</span>
