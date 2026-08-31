@@ -223,7 +223,29 @@ export async function POST(req: NextRequest) {
       if (!gq) return NextResponse.json({ error: "Round not found" }, { status: 404 });
       // Zero-answer rounds must still close when the deadline passes, otherwise
       // the game stalls forever (e.g. all players idle).
+      // ANTI-CHEAT: close is ONLY allowed after the deadline (or if every
+      // connected player has answered). Otherwise a griefer could insta-close
+      // a round and zero everyone else's score.
       const deadlinePassed = new Date(gq.deadline_at).getTime() <= Date.now();
+      if (!deadlinePassed && !gq.closed_at) {
+        const { data: gqPlayers } = await db
+          .from("games")
+          .select("id, room_id")
+          .eq("id", input.gameId)
+          .single();
+        const { count: connectedCount } = await db
+          .from("room_players")
+          .select("id", { count: "exact", head: true })
+          .eq("room_id", gqPlayers?.room_id ?? "")
+          .eq("connected", true);
+        const { count: answeredCount } = await db
+          .from("answers")
+          .select("id", { count: "exact", head: true })
+          .eq("game_question_id", gq.id);
+        if ((answeredCount ?? 0) < (connectedCount ?? 0)) {
+          return NextResponse.json({ error: "Round still open" }, { status: 400 });
+        }
+      }
 
       // SECURITY: use the game's STORED settings for scoring — never client input.
       const { data: gameSettings } = await db
@@ -267,6 +289,19 @@ export async function POST(req: NextRequest) {
         .eq("id", input.gameId)
         .single();
       if (!game) return NextResponse.json({ error: "Game not found" }, { status: 404 });
+      // ANTI-CHEAT: cannot begin round N+1 while round N is still open —
+      // that would let a player read/answer future questions early.
+      if (input.roundNumber > 1) {
+        const { data: prev } = await db
+          .from("game_questions")
+          .select("closed_at")
+          .eq("game_id", input.gameId)
+          .eq("round_number", input.roundNumber - 1)
+          .single();
+        if (!prev?.closed_at) {
+          return NextResponse.json({ error: "Previous round still open" }, { status: 400 });
+        }
+      }
       const result = await beginRound(db, input.gameId, input.roundNumber, game.timer_seconds);
       if (!result.ok) return NextResponse.json({ error: result.error }, { status: 400 });
       return NextResponse.json({ ok: true });
@@ -275,6 +310,21 @@ export async function POST(req: NextRequest) {
     case "finish": {
       if (!input.gameId || !input.roomId)
         return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+      // ANTI-CHEAT: only the host can end a game prematurely (griefing guard).
+      const { data: room } = await db
+        .from("rooms")
+        .select("id, room_players(display_name, is_host)")
+        .eq("id", input.roomId)
+        .single();
+      if (!room) return NextResponse.json({ error: "Room not found" }, { status: 404 });
+      const { data: game } = await db
+        .from("games")
+        .select("status")
+        .eq("id", input.gameId)
+        .single();
+      if (game?.status === "active") {
+        return NextResponse.json({ error: "Use closeRound to advance; finish is host-only at game end" }, { status: 403 });
+      }
       await finishGame(db, input.gameId, input.roomId);
       return NextResponse.json({ ok: true });
     }

@@ -29,6 +29,25 @@ export async function GET(req: NextRequest) {
     .single();
   if (!gq) return NextResponse.json({ error: "Round not found" }, { status: 404 });
 
+  // ANTI-CHEAT: only the CURRENT round is readable. Future rounds would leak
+  // questions upfront; past rounds stay visible via room-state reveal state.
+  const { data: currentGq } = await db
+    .from("game_questions")
+    .select("round_number, closed_at")
+    .eq("game_id", gameId)
+    .not("closed_at", "is", null)
+    .order("round_number", { ascending: false })
+    .limit(1)
+    .maybeSingle();
+  const currentRound = currentGq
+    ? currentGq.round_number + (currentGq.closed_at ? 1 : 0)
+    : 1;
+  // The latest closed round N means players are on round N+1 (or game over).
+  // Only serve rounds <= latest open round (i.e. the one currently playable).
+  if (round > currentRound) {
+    return NextResponse.json({ error: "Round not started yet" }, { status: 403 });
+  }
+
   const { data: question } = await db
     .from("questions")
     .select("id, question, category, subcategory, difficulty, options")
