@@ -3,7 +3,7 @@ import { z } from "zod";
 import { getSessionUser } from "@/lib/server/auth";
 import { serviceClient } from "@/lib/server/game";
 import { seedBracket, tryAdvance } from "@/lib/server/tournament";
-import { clientIp, rateLimit } from "@/lib/server/rate-limit";
+import { rateLimit } from "@/lib/server/rate-limit";
 
 export const dynamic = "force-dynamic";
 

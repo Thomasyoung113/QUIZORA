@@ -7,7 +7,6 @@ export const dynamic = "force-dynamic";
 
 const schema = z.object({ email: z.string().email(), token: z.string().min(6).max(10) });
 
-const SESSION_COOKIE = "quizora_session";
 const SESSION_TTL = 60 * 60 * 24 * 30; // 30 days
 
 /**

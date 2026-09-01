@@ -282,7 +282,7 @@ function GameView({
 
   const { roundState, refresh: refreshRound } = useRound(game.id, round);
   const revealed = !!roundState?.closedAt;
-  const { blurred, switchesRef } = useAntiCheat(game.id, myPid);
+  const { blurred } = useAntiCheat(game.id, myPid);
 
   useEffect(() => {
     if (revealed) {
