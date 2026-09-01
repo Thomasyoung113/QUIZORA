@@ -182,7 +182,7 @@ export default function TournamentPage() {
     return (
       <main className="min-h-dvh bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white flex flex-col items-center justify-center p-6">
         <div className="w-full max-w-sm space-y-6">
-          <h1 className="text-3xl font-black text-center">🏆 Tournament</h1>
+          <h1 className="text-3xl font-black text-center">Tournament</h1>
           <div className="flex gap-2">
             {[4, 8].map((n) => (
               <button key={n} onClick={() => createTournament(n)} disabled={busy}
@@ -217,7 +217,7 @@ export default function TournamentPage() {
     <main className="min-h-dvh bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white p-4">
       <div className="max-w-md mx-auto space-y-5 py-4">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-black">🏆 {t.size}P Tournament</h1>
+          <h1 className="text-2xl font-black">{t.size}P Tournament</h1>
           <button onClick={() => { navigator.clipboard?.writeText(`${location.origin}/tournament/${t.code}`).catch(() => {}); }}
             className="rounded-lg bg-white/10 border border-white/15 px-3 py-1.5 text-sm font-mono tracking-widest active:scale-95">
             {t.code} ⧉
@@ -287,7 +287,7 @@ export default function TournamentPage() {
         )}
 
         <button onClick={() => { tournamentIdRef.current = null; setState(null); }}
-          className="w-full text-slate-500 text-xs py-2">← New / join another</button>
+          className="w-full text-slate-500 text-xs py-2">New / join another</button>
       </div>
     </main>
   );

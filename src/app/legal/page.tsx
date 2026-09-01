@@ -78,7 +78,7 @@ export default function LegalPage() {
         </section>
 
         <footer className="pt-4 pb-10 text-slate-500 text-xs">
-          <Link href="/" className="text-indigo-300 underline underline-offset-2">← Back to QUIZORA</Link>
+          <Link href="/" className="text-indigo-300 underline underline-offset-2">Back to QUIZORA</Link>
         </footer>
       </div>
     </main>

@@ -7,10 +7,10 @@ export const metadata: Metadata = {
 };
 
 const features = [
-  { icon: "⚡", title: "Live 1v1 battles", text: "Real-time quiz duels over SSE — no refresh, no lag." },
-  { icon: "🏆", title: "Tournaments", text: "4-player bracket play for the crown." },
-  { icon: "🧠", title: "24k+ questions", text: "10 categories, from history to hard science." },
-  { icon: "📱", title: "Lightweight", text: "Under 150 KB. Instant install, no bloat." },
+  { title: "Live 1v1 battles", text: "Real-time quiz duels over SSE — no refresh, no lag." },
+  { title: "Tournaments", text: "4-player bracket play for the crown." },
+  { title: "24k+ questions", text: "10 categories, from history to hard science." },
+  { title: "Lightweight", text: "Under 150 KB. Instant install, no bloat." },
 ];
 
 export default function DownloadPage() {
@@ -29,7 +29,7 @@ export default function DownloadPage() {
           download="QUIZORA.apk"
           className="block w-full rounded-xl bg-amber-400 hover:bg-amber-300 active:scale-[0.98] text-slate-950 font-bold py-4 text-lg text-center transition"
         >
-          ⬇ Download for Android
+          Download for Android
         </a>
         <p className="text-center text-xs text-slate-500">
           v1.0 · Android 5.0+ · ~130 KB
@@ -37,12 +37,9 @@ export default function DownloadPage() {
 
         <div className="space-y-3">
           {features.map((f) => (
-            <div key={f.title} className="rounded-xl bg-white/5 border border-white/10 px-4 py-3 flex gap-3 items-start">
-              <span className="text-xl leading-none mt-0.5">{f.icon}</span>
-              <div>
-                <p className="font-semibold text-sm">{f.title}</p>
-                <p className="text-slate-400 text-xs">{f.text}</p>
-              </div>
+            <div key={f.title} className="rounded-xl bg-white/5 border border-white/10 px-4 py-3">
+              <p className="font-semibold text-sm">{f.title}</p>
+              <p className="text-slate-400 text-xs">{f.text}</p>
             </div>
           ))}
         </div>
@@ -59,7 +56,7 @@ export default function DownloadPage() {
 
         <div className="text-center space-y-2 pt-2">
           <Link href="/" className="block text-xs text-indigo-300 underline underline-offset-2 hover:text-indigo-200">
-            ← Back to play in browser
+            Back to play in browser
           </Link>
           <p className="text-slate-600 text-[11px]">QUIZORA© 2026</p>
         </div>

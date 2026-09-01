@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AuthWidget from "@/components/auth-widget";
 
 export default function Home() {
@@ -11,18 +11,35 @@ export default function Home() {
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState<"create" | "join" | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [user, setUser] = useState<{ id: string; email: string | null } | null>(undefined as unknown as { id: string; email: string | null } | null); // undefined = loading
+
+  useEffect(() => {
+    fetch("/api/me")
+      .then((r) => r.json())
+      .then((d) => setUser(d.user ?? null))
+      .catch(() => setUser(null));
+  }, []);
+
+  const canPlay = user ? true : name.trim().length >= 2;
 
   async function submit(action: "create" | "join") {
+    if (!canPlay) {
+      setError(user === null ? "Enter a username or log in first" : "Enter a username");
+      return;
+    }
     setBusy(action);
     setError(null);
     try {
+      const fallbackName = user?.email?.split("@")[0].slice(0, 24) ?? "";
+      const displayName = name.trim() || fallbackName;
+      if (!displayName) throw new Error("Enter a username first");
       const res = await fetch(`/api/rooms/${action}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(
           action === "create"
-            ? { displayName: name.trim() || "Host" }
-            : { code: code.trim().toUpperCase(), displayName: name.trim() || "Player" }
+            ? { displayName }
+            : { code: code.trim().toUpperCase(), displayName }
         ),
       });
       const data = await res.json();
@@ -47,14 +64,14 @@ export default function Home() {
         <input
           value={name}
           onChange={(e) => setName(e.target.value.slice(0, 24))}
-          placeholder="Your name"
+          placeholder={user ? "Display name (optional)" : "Your username"}
           maxLength={24}
           className="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center text-lg outline-none focus:border-amber-400/60 placeholder:text-slate-500"
         />
 
         <button
           onClick={() => submit("create")}
-          disabled={busy !== null}
+          disabled={busy !== null || !canPlay}
           className="w-full rounded-xl bg-amber-400 hover:bg-amber-300 active:scale-[0.98] disabled:opacity-50 text-slate-950 font-bold py-3.5 text-lg transition"
         >
           {busy === "create" ? "Creating…" : "Create Room"}
@@ -77,7 +94,7 @@ export default function Home() {
 
         <button
           onClick={() => submit("join")}
-          disabled={busy !== null || code.length < 4}
+          disabled={busy !== null || code.length < 4 || !canPlay}
           className="w-full rounded-xl bg-white/10 hover:bg-white/15 active:scale-[0.98] disabled:opacity-40 border border-white/15 font-semibold py-3.5 text-lg transition"
         >
           {busy === "join" ? "Joining…" : "Join Room"}
@@ -87,7 +104,7 @@ export default function Home() {
 
         <div className="text-center space-y-2 pt-2">
           <Link href="/download" className="block text-xs text-amber-400/90 font-semibold underline underline-offset-2 hover:text-amber-300">
-            📱 Get the Android app
+            Get the Android app
           </Link>
           <Link href="/how-to-play" className="block text-xs text-indigo-300 underline underline-offset-2 hover:text-indigo-200">
             How to play

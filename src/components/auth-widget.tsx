@@ -11,6 +11,13 @@ export default function AuthWidget() {
   const [stage, setStage] = useState<"closed" | "email" | "code">("closed");
   const [msg, setMsg] = useState("");
   const [busy, setBusy] = useState(false);
+  const [resendIn, setResendIn] = useState(0);
+
+  useEffect(() => {
+    if (resendIn <= 0) return;
+    const t = setInterval(() => setResendIn((s) => (s <= 1 ? 0 : s - 1)), 1000);
+    return () => clearInterval(t);
+  }, [resendIn]);
 
   useEffect(() => {
     fetch("/api/auth/session")
@@ -27,7 +34,7 @@ export default function AuthWidget() {
         body: JSON.stringify({ email }),
       });
       setBusy(false);
-      if (res.ok) { setStage("code"); setMsg("Check your email for the 6-digit code"); }
+      if (res.ok) { setStage("code"); setMsg("Check your email for the 6-digit code"); setResendIn(60); }
       else setMsg("Could not send — try again");
     } catch {
       setBusy(false);
@@ -76,35 +83,40 @@ export default function AuthWidget() {
         </button>
       )}
       {stage === "email" && (
-        <div className="space-y-1.5">
-          <div className="flex gap-1.5">
-            <input
-              type="email" value={email} onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@email.com"
-              className="rounded-lg bg-white/10 border border-white/15 px-2.5 py-1.5 w-44 outline-none focus:border-indigo-400/60 placeholder:text-slate-500"
-            />
-            <button onClick={sendCode} disabled={busy || !email.includes("@")}
-              className="rounded-lg bg-indigo-500 px-3 py-1.5 font-semibold disabled:opacity-40">
-              {busy ? "…" : "Send code"}
-            </button>
-          </div>
-          {msg && <p className="text-slate-400">{msg}</p>}
+        <div className="w-full space-y-2">
+          <input
+            type="email" value={email} onChange={(e) => setEmail(e.target.value)}
+            placeholder="you@email.com"
+            className="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center outline-none focus:border-indigo-400/60 placeholder:text-slate-500"
+          />
+          <button onClick={sendCode} disabled={busy || !email.includes("@")}
+            className="w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 py-3 font-semibold disabled:opacity-40 transition">
+            {busy ? "Sending…" : "Send code"}
+          </button>
+          {msg && <p className="text-slate-400 text-xs text-center">{msg}</p>}
         </div>
       )}
       {stage === "code" && (
-        <div className="space-y-1.5">
-          <div className="flex gap-1.5">
-            <input
-              value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, "").slice(0, 6))}
-              placeholder="123456" inputMode="numeric"
-              className="rounded-lg bg-white/10 border border-white/15 px-2.5 py-1.5 w-32 tracking-widest outline-none focus:border-indigo-400/60 placeholder:text-slate-500"
-            />
-            <button onClick={verify} disabled={busy || code.length < 6}
-              className="rounded-lg bg-indigo-500 px-3 py-1.5 font-semibold disabled:opacity-40">
-              {busy ? "…" : "Verify"}
-            </button>
-          </div>
-          {msg && <p className="text-slate-400">{msg}</p>}
+        <div className="w-full space-y-2">
+          <input
+            value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, "").slice(0, 6))}
+            placeholder="123456" inputMode="numeric" autoFocus
+            className="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center text-lg tracking-[0.4em] outline-none focus:border-indigo-400/60 placeholder:text-slate-500"
+          />
+          <button onClick={verify} disabled={busy || code.length < 6}
+            className="w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 py-3 font-semibold disabled:opacity-40 transition">
+            {busy ? "Verifying…" : "Verify"}
+          </button>
+          {msg && <p className="text-slate-400 text-xs text-center">{msg}</p>}
+          <p className="text-xs text-slate-500 text-center">
+            {resendIn > 0 ? (
+              `Resend code in ${resendIn}s`
+            ) : (
+              <button onClick={sendCode} disabled={busy} className="underline underline-offset-2 hover:text-slate-300 disabled:opacity-40">
+                Didn&apos;t get it? Resend code
+              </button>
+            )}
+          </p>
         </div>
       )}
     </div>

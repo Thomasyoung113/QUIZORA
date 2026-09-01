@@ -94,7 +94,7 @@ export default function HowToPlayPage() {
         </section>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-bold text-white">🏆 Tournament mode</h2>
+          <h2 className="text-xl font-bold text-white">Tournament mode</h2>
           <p>
             Tournaments are knockout brackets for <strong className="text-white">signed-in players only</strong> — no guests. Create one from the Tournament page (4 or 8 players) and share the code; friends join with it.
           </p>
@@ -111,7 +111,7 @@ export default function HowToPlayPage() {
         </section>
 
         <footer className="pt-4 pb-10 text-slate-500 text-xs">
-          <Link href="/" className="text-indigo-300 underline underline-offset-2">← Back to QUIZORA</Link>
+          <Link href="/" className="text-indigo-300 underline underline-offset-2">Back to QUIZORA</Link>
           <span className="mx-2">·</span>
           <Link href="/legal" className="text-indigo-300 underline underline-offset-2">Terms &amp; Privacy</Link>
         </footer>
