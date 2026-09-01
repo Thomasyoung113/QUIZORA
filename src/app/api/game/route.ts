@@ -114,18 +114,31 @@ export async function POST(req: NextRequest) {
       };
 
       // Select questions server-side: approved + matching filters, excluding used-in-game.
-      // PostgREST can't do ORDER BY random(), so pull a wide sample then
-      // shuffle client-side and take what we need.
+      // PostgREST can't do ORDER BY random(), so pull a wide sample from a random
+      // offset window, then shuffle client-side and take what we need.
+      let baseFilter = db
+        .from("questions")
+        .select("id", { count: "exact", head: true })
+        .eq("status", "approved")
+        .in("category", settings.categories);
+      if (settings.difficulty !== "adaptive") {
+        baseFilter = baseFilter.eq("difficulty", settings.difficulty);
+      }
+      const { count: poolCount } = await baseFilter;
+      const total = poolCount ?? 0;
+      const window = Math.min(400, Math.max(total, 1));
+      const maxOffset = Math.max(0, total - window);
+      const offset = Math.floor(Math.random() * (maxOffset + 1));
       let query = db
         .from("questions")
         .select("id")
         .eq("status", "approved")
         .in("category", settings.categories)
-        .limit(400);
+        .range(offset, offset + window - 1);
       if (settings.difficulty !== "adaptive") {
         query = query.eq("difficulty", settings.difficulty);
       }
-      const { data: qs, error: qErr } = await query;
+      const { data: qs, error: qErr } = await query.order("id", { ascending: true });
       if (qErr || !qs || qs.length < settings.total_rounds)
         return NextResponse.json(
           { error: `Not enough questions (${qs?.length ?? 0}/${settings.total_rounds}). Add more or widen filters.` },
