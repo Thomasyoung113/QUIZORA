@@ -1,5 +1,5 @@
 // LLM question generation pipeline for QUIZORA.
-// Usage: node scripts/generate-questions.mjs [targetCount] [category]
+// Usage: PER_CATEGORY=N node scripts/generate-questions.mjs [category]
 // Two-stage: generate -> fact-check (a second pass tries to disprove the answer).
 // Only survivors are inserted with status='published'; failures are logged.
 
@@ -26,8 +26,7 @@ console.log("Providers:", PROVIDERS.map((p) => p.name).join(", "));
 
 const db = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
 
-const targetCount = parseInt(process.argv[2] || "500", 10);
-const onlyCategory = process.argv[3] || null;
+const onlyCategory = process.argv[2] || null;
 
 const CATEGORIES = {
   Science: ["Physics", "Chemistry", "Biology", "Astronomy", "Medicine", "Earth Science"],
