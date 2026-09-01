@@ -54,16 +54,74 @@ export function useRoomState(code: string, intervalMs = 1500) {
   useEffect(() => {
     if (!code) return;
     activeRef.current = true;
-    // Defer initial fetch past mount to avoid cascading-render lint error;
-    // state settles one tick later which is fine for a poller.
+    let es: EventSource | null = null;
+    let pollTimer: ReturnType<typeof setInterval> | null = null;
+    let fallbackTimer: ReturnType<typeof setTimeout> | null = null;
+    let disposed = false;
+
+    function startPolling() {
+      if (pollTimer || disposed) return;
+      // Fallback: poll like before (also used when SSE is unavailable).
+      pollTimer = setInterval(() => {
+        if (activeRef.current && document.visibilityState !== "hidden") refresh();
+      }, intervalMs);
+    }
+
+    // Primary: SSE push stream (auto-reconnect handled by EventSource).
+    if (typeof EventSource !== "undefined") {
+      es = new EventSource(`/api/stream?code=${encodeURIComponent(code)}`);
+      es.addEventListener("state", (ev) => {
+        try {
+          setState(JSON.parse((ev as MessageEvent).data));
+          setError(null);
+        } catch {
+          // malformed event: ignore, next event corrects
+        }
+      });
+      es.addEventListener("closed", () => {
+        setState(null);
+        setError("ROOM_CLOSED");
+        es?.close();
+      });
+      es.addEventListener("round", () => {
+        // Round started/closed: nudge the round hook to refetch instantly.
+        window.dispatchEvent(new Event("quizora:round-event"));
+      });
+      es.addEventListener("gone", () => {
+        setState(null);
+        setError("ROOM_CLOSED");
+        es?.close();
+      });
+      es.onerror = () => {
+        // EventSource retries on its own; also poll as a belt-and-braces
+        // fallback while the connection is down.
+        startPolling();
+      };
+      // If SSE connects cleanly, stop the fallback poller.
+      es.onopen = () => {
+        if (pollTimer) {
+          clearInterval(pollTimer);
+          pollTimer = null;
+        }
+      };
+    } else {
+      startPolling();
+    }
+
+    // Defer initial fetch past mount to avoid cascading-render lint error.
     const init = setTimeout(() => refresh(), 0);
-    const t = setInterval(() => {
-      if (activeRef.current && document.visibilityState !== "hidden") refresh();
-    }, intervalMs);
+    fallbackTimer = setTimeout(() => {
+      // If no SSE state arrived within 5s, make sure polling is running.
+      startPolling();
+    }, 5000);
+
     return () => {
+      disposed = true;
       activeRef.current = false;
       clearTimeout(init);
-      clearInterval(t);
+      if (fallbackTimer) clearTimeout(fallbackTimer);
+      if (pollTimer) clearInterval(pollTimer);
+      es?.close();
     };
   }, [code, refresh, intervalMs]);
 
@@ -105,13 +163,20 @@ export function useRound(gameId: string | null | undefined, round: number | null
     if (res.ok) setRoundState(await res.json());
   }, [gameId, round]);
 
+  // Listen for room-level SSE `round` events (started/closed) and refresh
+  // the round view immediately. Falls back to light polling.
   useEffect(() => {
     if (!gameId || !round) return;
+    const onRound = () => {
+      refresh();
+    };
+    window.addEventListener("quizora:round-event", onRound);
     const init = setTimeout(() => refresh(), 0);
     const t = setInterval(() => {
       if (document.visibilityState !== "hidden") refresh();
     }, intervalMs);
     return () => {
+      window.removeEventListener("quizora:round-event", onRound);
       clearTimeout(init);
       clearInterval(t);
     };
