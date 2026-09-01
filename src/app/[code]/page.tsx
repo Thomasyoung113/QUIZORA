@@ -42,7 +42,7 @@ export default function RoomPage() {
         <Lobby code={code} state={state} myPid={myPid} refresh={refresh} />
       )}
       {state && inGame && game && (
-        <GameView code={code} state={state} myPid={myPid} refresh={refresh} />
+        <GameView state={state} myPid={myPid} refresh={refresh} />
       )}
     </main>
   );
@@ -256,12 +256,10 @@ function Lobby({
 }
 
 function GameView({
-  code,
   state,
   myPid,
   refresh,
 }: {
-  code: string;
   state: NonNullable<ReturnType<typeof useRoomState>["state"]>;
   myPid: string | null;
   refresh: () => Promise<void>;

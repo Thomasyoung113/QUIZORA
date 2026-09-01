@@ -142,7 +142,7 @@ async function main() {
   const work = [];
   for (const [cat, subs] of Object.entries(CATEGORIES)) {
     if (onlyCategory && cat !== onlyCategory) continue;
-    const target = PER_CATEGORY > 0 ? PER_CATEGORY : targetCount;
+
     const deficit = Math.max(0, target - (catCounts[cat] || 0));
     if (deficit === 0) { console.log(`[${cat}] already at ${catCounts[cat] || 0} >= ${target}, skipping`); continue; }
     const roundsTotal = Math.ceil(deficit / 10 / subs.length);
@@ -162,7 +162,6 @@ async function main() {
       const item = work[workIdx];
       if (!item) return;
       // Skip subcategories that already hit their per-category target
-      const target = PER_CATEGORY > 0 ? PER_CATEGORY : Infinity;
       if ((catInserted[item.cat] || 0) >= item.rounds * 10 * item.subsLeft) { workIdx++; continue; }
       workIdx++;
       const { cat, sub, rounds } = item;
