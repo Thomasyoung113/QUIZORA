@@ -1,6 +1,7 @@
 import type { PlayerOption } from "../types";
 import { computePoints, serviceClient } from "./game";
 import type { GameSettings } from "../types";
+import { recordGameEnd } from "./stats";
 
 type DB = ReturnType<typeof serviceClient>;
 
@@ -219,6 +220,9 @@ export async function closeRound(
 export async function finishGame(db: DB, gameId: string, roomId: string): Promise<TransitionResult> {
   await db.from("games").update({ status: "finished", ended_at: new Date().toISOString() }).eq("id", gameId);
   await db.from("rooms").update({ status: "finished", ended_at: new Date().toISOString() }).eq("id", roomId);
+  // Stats/achievements are written after the finish stamp so reads see status='finished'.
+  // recordGameEnd swallows its own errors — game end must never break.
+  await recordGameEnd(db, gameId, roomId);
   return { ok: true };
 }
 
