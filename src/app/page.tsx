@@ -86,6 +86,9 @@ export default function Home() {
         {error && <p className="text-rose-400 text-sm text-center">{error}</p>}
 
         <div className="text-center space-y-2 pt-2">
+          <Link href="/download" className="block text-xs text-amber-400/90 font-semibold underline underline-offset-2 hover:text-amber-300">
+            📱 Get the Android app
+          </Link>
           <Link href="/how-to-play" className="block text-xs text-indigo-300 underline underline-offset-2 hover:text-indigo-200">
             How to play
           </Link>
