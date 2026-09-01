@@ -28,7 +28,7 @@ export interface RoomStateView {
  * Polling-based realtime (works reliably on mobile networks without websocket config).
  * Polls room state; question state is polled only during an active round.
  */
-export function useRoomState(code: string, intervalMs = 1500) {
+export function useRoomState(code: string, intervalMs = 5000) {
   const [state, setState] = useState<RoomStateView | null>(null);
   const [error, setError] = useState<string | null>(null);
   const activeRef = useRef(true);
@@ -154,7 +154,7 @@ export interface RoundView {
   }[];
 }
 
-export function useRound(gameId: string | null | undefined, round: number | null | undefined, intervalMs = 1000) {
+export function useRound(gameId: string | null | undefined, round: number | null | undefined, intervalMs = 5000) {
   const [roundState, setRoundState] = useState<RoundView | null>(null);
 
   const refresh = useCallback(async () => {

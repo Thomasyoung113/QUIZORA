@@ -333,7 +333,9 @@ function GameView({
   const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     if (!deadline || revealed) return;
-    const t = setInterval(() => setNow(Date.now()), 250);
+    // 1s tick is enough — display is whole seconds; 250ms caused 4x/s
+    // full-page re-renders (noticeable lag on low-end phones).
+    const t = setInterval(() => setNow(Date.now()), 1000);
     return () => clearInterval(t);
   }, [deadline, revealed]);
   const secondsLeft = deadline && !revealed ? Math.max(0, Math.ceil((deadline - now) / 1000)) : null;
