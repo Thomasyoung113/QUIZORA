@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { track } from "@/components/analytics-provider";
 import AuthWidget from "@/components/auth-widget";
 
 export default function Home() {
@@ -44,6 +45,7 @@ export default function Home() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Something went wrong");
+      track(`room_${action}`, { code: data.roomCode ?? code.trim().toUpperCase(), authenticated: !!user });
       router.push(`/${data.roomCode ?? code.trim().toUpperCase()}`);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Error");

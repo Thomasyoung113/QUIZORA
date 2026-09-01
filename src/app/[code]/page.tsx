@@ -5,6 +5,7 @@ import { useParams, useRouter } from "next/navigation";
 import { useRoomState, useRound } from "@/lib/client/store";
 import { useAntiCheat } from "@/lib/client/anticheat";
 import JoinGate from "@/components/join-gate";
+import ShareCard from "@/components/share-card";
 
 const OPTION_LABELS = ["A", "B", "C", "D"];
 
@@ -42,7 +43,7 @@ export default function RoomPage() {
         <Lobby code={code} state={state} myPid={myPid} refresh={refresh} />
       )}
       {state && inGame && game && (
-        <GameView state={state} myPid={myPid} refresh={refresh} />
+        <GameView state={state} myPid={myPid} refresh={refresh} code={code} />
       )}
     </main>
   );
@@ -263,6 +264,7 @@ function GameView({
   state: NonNullable<ReturnType<typeof useRoomState>["state"]>;
   myPid: string | null;
   refresh: () => Promise<void>;
+  code: string;
 }) {
   const game = state.game!;
   const finished = game.status === "finished";
@@ -356,6 +358,20 @@ function GameView({
   }, [state.scores, state.players]);
 
   const myResult = roundState?.answers?.find((a) => a.player_id === myPid);
+
+  // Track my correct/answered across rounds for the share card.
+  const [tally, setTally] = useState({ correct: 0, answered: 0 });
+  const tallyKey = finished ? null : `${game.id}:${round}:${revealed ? "r" : "o"}`;
+  const lastTallyKey = useRef<string | null>(null);
+  useEffect(() => {
+    if (!tallyKey || !revealed || !myResult || lastTallyKey.current === tallyKey) return;
+    lastTallyKey.current = tallyKey;
+    setTally((t) => ({
+      correct: t.correct + (myResult.is_correct ? 1 : 0),
+      answered: t.answered + 1,
+    }));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tallyKey, revealed]);
   const [reportState, setReportState] = useState<"idle" | "open" | "sent" | "error">("idle");
   const [reportReason, setReportReason] = useState("wrong_answer");
   const [reportDetails, setReportDetails] = useState("");
@@ -510,6 +526,15 @@ function GameView({
 
       {finished && (
         <div className="space-y-2 pb-8">
+          <ShareCard
+            playerName={state.players.find((p) => p.id === myPid)?.display_name ?? "Player"}
+            rank={scores.findIndex((s) => s.player!.id === myPid) + 1 || scores.length}
+            playerCount={scores.length}
+            points={scores.find((s) => s.player!.id === myPid)?.pts ?? 0}
+            correct={tally.correct}
+            answered={tally.answered}
+            roomCode={state.room.room_code}
+          />
           <button onClick={async () => {
             await fetch("/api/game", {
               method: "POST",
