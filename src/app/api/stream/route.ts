@@ -90,6 +90,7 @@ export async function GET(req: NextRequest) {
             .from("game_questions")
             .select("round_number, started_at, deadline_at, closed_at")
             .eq("game_id", game.id)
+            .not("started_at", "is", null)
             .order("round_number", { ascending: false })
             .limit(1)
             .maybeSingle();
