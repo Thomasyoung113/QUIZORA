@@ -41,3 +41,13 @@ yarn-error.log*
 next-env.d.ts
 gen-*.log
 keeper.log
+
+# project artifacts / data files
+/sess.json
+/dupes-to-delete.json
+/dupes-backup-*.json
+/pacific-dupes.json
+/same-answer-dupes.json
+/delete-failures.json
+/gen-*.log
+/keeper.log

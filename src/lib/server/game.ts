@@ -1,6 +1,6 @@
-import { createHash, randomBytes, randomUUID } from "crypto";
+import { createHash, randomBytes } from "crypto";
 import { createClient } from "@supabase/supabase-js";
-import type { GameSettings, PlayerOption, RoomPlayer } from "../types";
+import type { GameSettings, RoomPlayer } from "../types";
 import {
   POINTS_CORRECT,
   SPEED_BONUS_MAX,
@@ -150,15 +150,4 @@ export function computePoints(
     points += Math.min(STREAK_BONUS_CAP, (streak - 1) * STREAK_BONUS_STEP);
   }
   return points;
-}
-
-export function isCorrectAnswer(
-  submitted: PlayerOption,
-  correct: PlayerOption
-): boolean {
-  return submitted === correct;
-}
-
-export function newGameId(): string {
-  return randomUUID();
 }

@@ -94,12 +94,7 @@ export default function Home() {
             By playing you agree to our{" "}
             <Link href="/legal" className="underline underline-offset-2 text-slate-400 hover:text-slate-300">Terms &amp; Privacy</Link>
           </p>
-          <p className="text-slate-600 text-[11px]">
-            QUIZORA© 2026 · Built by{" "}
-            <a href="https://t.me/thomas_young" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 text-slate-400 hover:text-slate-300">
-              Thomas Young
-            </a>
-          </p>
+          <p className="text-slate-600 text-[11px]">QUIZORA© 2026</p>
         </div>
       </div>
     </main>

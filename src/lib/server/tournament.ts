@@ -1,4 +1,3 @@
-import { randomUUID } from "crypto";
 import type { SupabaseClient } from "@supabase/supabase-js";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -237,8 +236,4 @@ async function computeWinner(db: Db, match: { game_id: string | null; room_id: s
   }
   const winnerUserId = ptsA > ptsB ? rpA.user_id : rpB.user_id;
   return entryByUser[winnerUserId] ?? null;
-}
-
-export function newMatchId(): string {
-  return randomUUID();
 }

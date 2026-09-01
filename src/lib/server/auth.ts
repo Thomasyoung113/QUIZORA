@@ -1,9 +1,7 @@
 import { NextRequest } from "next/server";
-import { createClient, SupabaseClient } from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 
 export type SessionUser = { id: string; email: string | null };
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type Db = SupabaseClient<any, "public", "public", any, any>;
 
 /**
  * Resolves the signed-in user from httpOnly auth cookies, refreshing the
@@ -49,14 +47,4 @@ export async function ensureProfile(
   }
   // Last resort: fully random suffix
   await db.from("profiles").insert({ id: userId, username: `${base}${Date.now().toString(36)}` }).then(() => {});
-}
-
-/** Set auth cookies on a response (30-day session). */
-export function setAuthCookiesOn(
-  res: { cookies: { set: (opts: { name: string; value: string; httpOnly: boolean; secure: boolean; sameSite: "lax"; path: string; maxAge: number }) => void } },
-  accessToken: string,
-  refreshToken: string
-): void {
-  res.cookies.set({ name: "quizora_at", value: accessToken, httpOnly: true, secure: true, sameSite: "lax", path: "/", maxAge: 60 * 60 });
-  res.cookies.set({ name: "quizora_rt", value: refreshToken, httpOnly: true, secure: true, sameSite: "lax", path: "/", maxAge: 60 * 60 * 24 * 30 });
 }
