@@ -169,6 +169,28 @@ export async function tryAdvance(db: Db, tournamentId: string, matchId: string):
       .from("tournaments")
       .update({ status: "finished", champion_user_id: champ?.user_id ?? null, finished_at: new Date().toISOString() })
       .eq("id", tournamentId);
+    // Champion achievements: increment counter + unlock tiered tournament badges.
+    if (champ?.user_id) {
+      try {
+        const { data: prof } = await db
+          .from("profiles")
+          .select("tournaments_won")
+          .eq("id", champ.user_id)
+          .single();
+        const won = ((prof as { tournaments_won?: number } | null)?.tournaments_won ?? 0) + 1;
+        await db.from("profiles").update({ tournaments_won: won }).eq("id", champ.user_id);
+        const earned: string[] = ["bracket_breaker"];
+        if (won >= 10) earned.push("champion");
+        await db
+          .from("profile_achievements")
+          .upsert(
+            earned.map((achievement_id) => ({ user_id: champ.user_id, achievement_id, progress: 100 })),
+            { onConflict: "user_id,achievement_id", ignoreDuplicates: true }
+          );
+      } catch (e) {
+        console.error("[tournament] champion achievement eval failed", e);
+      }
+    }
     return { ok: true, advanced: true, tournamentFinished: true };
   }
 

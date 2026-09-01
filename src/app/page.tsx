@@ -112,6 +112,11 @@ export default function Home() {
             How to play
           </Link>
           <AuthWidget />
+          {user && (
+            <Link href="/profile" className="block text-xs text-amber-400/90 font-semibold underline underline-offset-2 hover:text-amber-300">
+              Profile &amp; stats
+            </Link>
+          )}
           <p className="text-slate-600 text-[11px]">
             By playing you agree to our{" "}
             <Link href="/legal" className="underline underline-offset-2 text-slate-400 hover:text-slate-300">Terms &amp; Privacy</Link>

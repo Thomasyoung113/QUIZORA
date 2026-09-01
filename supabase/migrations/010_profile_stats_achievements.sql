@@ -136,3 +136,6 @@ grant update (username, avatar_url, avatar_preset) on public.profiles to authent
 grant select on public.profiles to authenticated;
 grant select on public.game_results, public.player_category_stats,
   public.achievement_catalog, public.profile_achievements to authenticated, anon;
+
+-- Tournament championships counter (incremented by tournament.ts on crown)
+alter table public.profiles add column if not exists tournaments_won integer not null default 0;
