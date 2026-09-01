@@ -2,6 +2,7 @@ import { NextRequest } from "next/server";
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
 export type SessionUser = { id: string; email: string | null };
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Db = SupabaseClient<any, "public", "public", any, any>;
 
 /**

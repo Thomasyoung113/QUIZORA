@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -110,9 +111,9 @@ export default function HowToPlayPage() {
         </section>
 
         <footer className="pt-4 pb-10 text-slate-500 text-xs">
-          <a href="/" className="text-indigo-300 underline underline-offset-2">← Back to QUIZORA</a>
+          <Link href="/" className="text-indigo-300 underline underline-offset-2">← Back to QUIZORA</Link>
           <span className="mx-2">·</span>
-          <a href="/legal" className="text-indigo-300 underline underline-offset-2">Terms &amp; Privacy</a>
+          <Link href="/legal" className="text-indigo-300 underline underline-offset-2">Terms &amp; Privacy</Link>
         </footer>
       </div>
     </main>

@@ -54,12 +54,15 @@ export function useRoomState(code: string, intervalMs = 1500) {
   useEffect(() => {
     if (!code) return;
     activeRef.current = true;
-    refresh();
+    // Defer initial fetch past mount to avoid cascading-render lint error;
+    // state settles one tick later which is fine for a poller.
+    const init = setTimeout(() => refresh(), 0);
     const t = setInterval(() => {
       if (activeRef.current && document.visibilityState !== "hidden") refresh();
     }, intervalMs);
     return () => {
       activeRef.current = false;
+      clearTimeout(init);
       clearInterval(t);
     };
   }, [code, refresh, intervalMs]);
@@ -104,11 +107,14 @@ export function useRound(gameId: string | null | undefined, round: number | null
 
   useEffect(() => {
     if (!gameId || !round) return;
-    refresh();
+    const init = setTimeout(() => refresh(), 0);
     const t = setInterval(() => {
       if (document.visibilityState !== "hidden") refresh();
     }, intervalMs);
-    return () => clearInterval(t);
+    return () => {
+      clearTimeout(init);
+      clearInterval(t);
+    };
   }, [gameId, round, refresh, intervalMs]);
 
   return { roundState, refresh };

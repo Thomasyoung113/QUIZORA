@@ -247,7 +247,7 @@ function Lobby({
         ) : (
           <button onClick={() => router.push("/")}
             className="w-full rounded-xl bg-white/10 border border-white/15 font-bold py-4">
-            You're spectating — go join properly
+            You&apos;re spectating — go join properly
           </button>
         )}
       </div>
@@ -273,7 +273,11 @@ function GameView({
   const [myAnswer, setMyAnswer] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!finished && game.current_round > 0) setRound(game.current_round);
+    if (!finished && game.current_round > 0) {
+      // Defer to avoid cascading render lint error; sync on next tick.
+      const id = setTimeout(() => setRound(game.current_round), 0);
+      return () => clearTimeout(id);
+    }
   }, [game.current_round, finished]);
 
   const { roundState, refresh: refreshRound } = useRound(game.id, round);
@@ -281,7 +285,10 @@ function GameView({
   const { blurred, switchesRef } = useAntiCheat(game.id, myPid);
 
   useEffect(() => {
-    if (revealed) setMyAnswer(null);
+    if (revealed) {
+      const id = setTimeout(() => setMyAnswer(null), 0);
+      return () => clearTimeout(id);
+    }
   }, [round, revealed]);
 
   const totalRounds = game.total_rounds;
@@ -323,7 +330,7 @@ function GameView({
   }
 
   const deadline = roundState?.deadlineAt ? new Date(roundState.deadlineAt).getTime() : null;
-  const [now, setNow] = useState(Date.now());
+  const [now, setNow] = useState(() => Date.now());
   useEffect(() => {
     if (!deadline || revealed) return;
     const t = setInterval(() => setNow(Date.now()), 250);

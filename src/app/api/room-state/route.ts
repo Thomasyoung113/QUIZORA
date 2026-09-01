@@ -53,7 +53,7 @@ export async function GET(req: NextRequest) {
     .maybeSingle();
 
   // Live scores: sum of points per player for the latest game
-  let scores: Record<string, number> = {};
+  const scores: Record<string, number> = {};
   if (game) {
     const { data: gqs } = await db
       .from("game_questions")

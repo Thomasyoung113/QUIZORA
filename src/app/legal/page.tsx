@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -77,7 +78,7 @@ export default function LegalPage() {
         </section>
 
         <footer className="pt-4 pb-10 text-slate-500 text-xs">
-          <a href="/" className="text-indigo-300 underline underline-offset-2">← Back to QUIZORA</a>
+          <Link href="/" className="text-indigo-300 underline underline-offset-2">← Back to QUIZORA</Link>
         </footer>
       </div>
     </main>

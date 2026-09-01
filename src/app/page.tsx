@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -85,13 +86,13 @@ export default function Home() {
         {error && <p className="text-rose-400 text-sm text-center">{error}</p>}
 
         <div className="text-center space-y-2 pt-2">
-          <a href="/how-to-play" className="block text-xs text-indigo-300 underline underline-offset-2 hover:text-indigo-200">
+          <Link href="/how-to-play" className="block text-xs text-indigo-300 underline underline-offset-2 hover:text-indigo-200">
             How to play
-          </a>
+          </Link>
           <AuthWidget />
           <p className="text-slate-600 text-[11px]">
             By playing you agree to our{" "}
-            <a href="/legal" className="underline underline-offset-2 text-slate-400 hover:text-slate-300">Terms &amp; Privacy</a>
+            <Link href="/legal" className="underline underline-offset-2 text-slate-400 hover:text-slate-300">Terms &amp; Privacy</Link>
           </p>
           <p className="text-slate-600 text-[11px]">
             QUIZORA© 2026 · Built by{" "}
