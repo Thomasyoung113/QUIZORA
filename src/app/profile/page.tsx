@@ -228,24 +228,21 @@ export default function ProfilePage() {
                   <img src={presetAvatarDataUriClient(slug)} alt="" className="w-14 h-14" />
                 </button>
               ))}
-              <button
-                onClick={() => fileRef.current?.click()}
-                disabled={saving}
-                className="shrink-0 w-14 h-14 rounded-xl bg-white/10 border border-dashed border-white/25 text-[10px] font-semibold text-slate-300"
-              >
+              <label className="shrink-0 w-14 h-14 rounded-xl bg-white/10 border border-dashed border-white/25 text-[10px] font-semibold text-slate-300 flex items-center justify-center cursor-pointer">
                 Upload
-              </button>
-              <input
-                ref={fileRef}
-                type="file"
-                accept="image/png,image/jpeg,image/webp"
-                className="hidden"
-                onChange={(e) => {
-                  const f = e.target.files?.[0];
-                  if (f) uploadAvatar(f);
-                  e.target.value = "";
-                }}
-              />
+                <input
+                  ref={fileRef}
+                  type="file"
+                  accept="image/png,image/jpeg,image/webp"
+                  className="sr-only"
+                  disabled={saving}
+                  onChange={(e) => {
+                    const f = e.target.files?.[0];
+                    if (f) uploadAvatar(f);
+                    e.target.value = "";
+                  }}
+                />
+              </label>
             </div>
           </section>
         )}
