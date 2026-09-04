@@ -1,26 +1,116 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* QUIZORA — Ink Arena design language
+   ink stage + paper cards + hard shadows + electric accents */
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-ink: #14121f;
+  --color-ink-2: #1d1a2e;
+  --color-ink-3: #2a2542;
+  --color-paper: #f4efe3;
+  --color-lime: #c8f135;
+  --color-vio: #8f7bff;
+  --color-amberq: #ffc24b;
+  --color-coral: #ff5d5d;
+  --color-mint: #3edc97;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  /* faint arena grid over a vignette */
+  background-image:
+    radial-gradient(120% 90% at 50% 0%, rgba(143, 123, 255, 0.12), transparent 60%),
+    linear-gradient(rgba(244, 239, 227, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 239, 227, 0.035) 1px, transparent 1px);
+  background-size: auto, 36px 36px, 36px 36px;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+::selection {
+  background: var(--color-lime);
+  color: var(--color-ink);
+}
+
+@layer components {
+  /* paper card with hard offset shadow */
+  .q-card {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    border: 2px solid var(--color-ink);
+    box-shadow: 5px 5px 0 var(--color-ink);
+  }
+  /* dark panel for ambient zones */
+  .q-panel {
+    background: var(--color-ink-2);
+    border: 2px solid rgba(244, 239, 227, 0.18);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.45);
+  }
+  .q-btn {
+    border: 2px solid var(--color-ink);
+    box-shadow: 4px 4px 0 var(--color-ink);
+    transition: transform 0.06s ease, box-shadow 0.06s ease, background-color 0.15s ease;
+  }
+  .q-btn:active:not(:disabled) {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 var(--color-ink);
+  }
+  .q-btn-primary {
+    background: var(--color-lime);
+    color: var(--color-ink);
+    font-weight: 800;
+  }
+  .q-btn-primary:hover:not(:disabled) {
+    background: #d6fa5c;
+  }
+  .q-btn-ghost {
+    background: transparent;
+    color: var(--color-paper);
+    border-color: rgba(244, 239, 227, 0.28);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.45);
+    font-weight: 600;
+  }
+  .q-btn-ghost:hover:not(:disabled) {
+    background: rgba(244, 239, 227, 0.08);
+  }
+  .q-chip {
+    display: inline-flex;
+    align-items: center;
+    border: 2px solid var(--color-ink);
+    font-size: 10px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: var(--color-paper);
+    color: var(--color-ink);
+  }
+  .q-chip-dark {
+    border-color: rgba(244, 239, 227, 0.25);
+    background: rgba(244, 239, 227, 0.06);
+    color: var(--color-paper);
+  }
+  .q-input {
+    background: rgba(244, 239, 227, 0.06);
+    border: 2px solid rgba(244, 239, 227, 0.25);
+    color: var(--color-paper);
+    outline: none;
+    transition: border-color 0.15s ease;
+  }
+  .q-input:focus {
+    border-color: var(--color-lime);
+  }
+  .q-input::placeholder {
+    color: rgba(244, 239, 227, 0.35);
+  }
+  /* big display headline */
+  .q-display {
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
+  }
 }

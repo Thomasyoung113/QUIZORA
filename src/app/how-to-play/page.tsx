@@ -35,17 +35,17 @@ const steps = [
 
 export default function HowToPlayPage() {
   return (
-    <main className="min-h-dvh bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white">
-      <div className="mx-auto max-w-2xl px-6 py-12 space-y-10 text-sm leading-relaxed text-slate-300">
+    <main className="min-h-dvh ">
+      <div className="mx-auto max-w-2xl px-6 py-12 space-y-10 text-sm leading-relaxed text-paper/75">
         <header>
           <h1 className="text-3xl font-black text-white">How to Play</h1>
-          <p className="mt-2 text-slate-400">Everything you need to know in 2 minutes.</p>
+          <p className="mt-2 text-paper/50">Everything you need to know in 2 minutes.</p>
         </header>
 
         <section className="space-y-5">
           {steps.map((s) => (
             <div key={s.n} className="flex gap-4">
-              <div className="shrink-0 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center font-bold text-white">
+              <div className="shrink-0 w-8 h-8 rounded-full bg-vio flex items-center justify-center font-bold text-ink">
                 {s.n}
               </div>
               <div>
@@ -73,7 +73,7 @@ export default function HowToPlayPage() {
             <li><strong className="text-white">Streak bonus</strong> (if enabled): 2 correct in a row starts a streak. Every extra consecutive answer adds +25, capped at +100. Chain 5+ correct answers to max it out.</li>
             <li><strong className="text-white">Wrong or no answer:</strong> 0 points, and your streak resets.</li>
           </ul>
-          <p className="text-slate-400">Example: answer correctly at full speed on a 4-answer streak with both bonuses on → 100 + 50 + 75 = <strong className="text-white">225 points</strong> in one round.</p>
+          <p className="text-paper/50">Example: answer correctly at full speed on a 4-answer streak with both bonuses on → 100 + 50 + 75 = <strong className="text-white">225 points</strong> in one round.</p>
         </section>
 
         <section className="space-y-3">
@@ -81,7 +81,7 @@ export default function HowToPlayPage() {
           <p>
             Questions span 10 categories — Science, Technology, Geography, History, Nature, Space, Culture, Business, Logic, and General Knowledge — with thousands of questions in the bank and new ones added daily. Every question shows an explanation after the reveal (if the host has explanations on), so you learn something even when you get it wrong.
           </p>
-          <p className="text-slate-400">
+          <p className="text-paper/50">
             Spotted a mistake? Tap <strong className="text-white">Report question</strong> right after the reveal — reports go straight to our review queue.
           </p>
         </section>
@@ -98,22 +98,22 @@ export default function HowToPlayPage() {
           <p>
             Tournaments are knockout brackets for <strong className="text-white">signed-in players only</strong> — no guests. Create one from the Tournament page (4 or 8 players) and share the code; friends join with it.
           </p>
-          <ol className="list-decimal list-inside space-y-1.5 text-slate-300">
+          <ol className="list-decimal list-inside space-y-1.5 text-paper/75">
             <li><strong className="text-white">Lobby</strong> — everyone joins by code until the bracket is full. The host taps Start.</li>
             <li><strong className="text-white">Round 1</strong> — players are randomly seeded into head-to-head matches (1v4, 2v3 in a 4-player bracket). Each match is a private 2-player room with the same question settings.</li>
             <li><strong className="text-white">Play your match</strong> — same rules as a normal game. Winner = higher total points. If your opponent never shows, you win by walkover.</li>
             <li><strong className="text-white">Advance</strong> — as soon as both matches in a round finish, winners are placed into the next round automatically. The bracket updates live.</li>
             <li><strong className="text-white">Final</strong> — last two standing. The champion is crowned on the bracket when they win.</li>
           </ol>
-          <p className="text-slate-400">
+          <p className="text-paper/50">
             Every match uses a fresh random question set, and answers are shuffled differently for each player — no screenshot sharing. Ties in a match go to the higher seed.
           </p>
         </section>
 
-        <footer className="pt-4 pb-10 text-slate-500 text-xs">
-          <Link href="/" className="text-indigo-300 underline underline-offset-2">Back to QUIZORA</Link>
+        <footer className="pt-4 pb-10 text-paper/40 text-xs">
+          <Link href="/" className="text-vio underline underline-offset-2">Back to QUIZORA</Link>
           <span className="mx-2">·</span>
-          <Link href="/legal" className="text-indigo-300 underline underline-offset-2">Terms &amp; Privacy</Link>
+          <Link href="/legal" className="text-vio underline underline-offset-2">Terms &amp; Privacy</Link>
         </footer>
       </div>
     </main>

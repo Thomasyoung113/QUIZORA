@@ -180,29 +180,29 @@ export default function TournamentPage() {
 
   if (!state) {
     return (
-      <main className="min-h-dvh bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white flex flex-col items-center justify-center p-6">
+      <main className="min-h-dvh  flex flex-col items-center justify-center p-6">
         <div className="w-full max-w-sm space-y-6">
           <h1 className="text-3xl font-black text-center">Tournament</h1>
           <div className="flex gap-2">
             {[4, 8].map((n) => (
               <button key={n} onClick={() => createTournament(n)} disabled={busy}
-                className="flex-1 rounded-xl bg-amber-400 hover:bg-amber-300 active:scale-[0.98] disabled:opacity-50 text-slate-950 font-bold py-3 transition">
+                className="flex-1 rounded-xl bg-lime hover:bg-[#d6fa5c] active:scale-[0.98] disabled:opacity-50 text-ink font-bold py-3 transition">
                 {busy ? "…" : `${n} players`}
               </button>
             ))}
           </div>
-          <div className="flex items-center gap-3 text-slate-500 text-xs">
-            <div className="h-px flex-1 bg-white/10" />OR JOIN<div className="h-px flex-1 bg-white/10" />
+          <div className="flex items-center gap-3 text-paper/40 text-xs">
+            <div className="h-px flex-1 bg-paper/10" />OR JOIN<div className="h-px flex-1 bg-paper/10" />
           </div>
           <input value={joinCode} onChange={(e) => setJoinCode(e.target.value.toUpperCase().replace(/[^A-Z0-9]/g, "").slice(0, 6))}
             placeholder="TOURNAMENT CODE" inputMode="text" autoCapitalize="characters"
-            className="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center text-lg tracking-widest outline-none focus:border-amber-400/60 placeholder:text-slate-500" />
+            className="w-full rounded-xl bg-paper/10 border border-paper/20 px-4 py-3 text-center text-lg tracking-widest outline-none focus:border-lime/60 placeholder:text-paper/40" />
           <button onClick={joinByCode} disabled={busy || joinCode.length !== 6}
-            className="w-full rounded-xl bg-white/10 hover:bg-white/15 active:scale-[0.98] disabled:opacity-40 border border-white/15 font-bold py-3 transition">
+            className="w-full rounded-xl bg-paper/10 hover:bg-white/15 active:scale-[0.98] disabled:opacity-40 border border-paper/20 font-bold py-3 transition">
             Join Tournament
           </button>
-          {error && <p className="text-rose-400 text-sm text-center">⚠ {error}</p>}
-          <p className="text-slate-500 text-xs text-center">Login required — no guests in tournaments.</p>
+          {error && <p className="text-coral text-sm text-center">⚠ {error}</p>}
+          <p className="text-paper/40 text-xs text-center">Login required — no guests in tournaments.</p>
         </div>
       </main>
     );
@@ -214,34 +214,34 @@ export default function TournamentPage() {
   const rounds = [...new Set(state.matches.map((x) => x.bracket_round))].sort();
 
   return (
-    <main className="min-h-dvh bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white p-4">
+    <main className="min-h-dvh  p-4">
       <div className="max-w-md mx-auto space-y-5 py-4">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-black">{t.size}P Tournament</h1>
           <button onClick={() => { navigator.clipboard?.writeText(`${location.origin}/tournament/${t.code}`).catch(() => {}); }}
-            className="rounded-lg bg-white/10 border border-white/15 px-3 py-1.5 text-sm font-mono tracking-widest active:scale-95">
+            className="rounded-lg bg-paper/10 border border-paper/20 px-3 py-1.5 text-sm font-mono tracking-widest active:scale-95">
             {t.code} ⧉
           </button>
         </div>
 
         {champion && (
-          <div className="rounded-2xl bg-amber-400/10 border border-amber-400/40 p-4 text-center">
-            <p className="text-amber-300 text-xs uppercase tracking-wider">Champion</p>
+          <div className="rounded-2xl bg-lime/10 border border-lime/40 p-4 text-center">
+            <p className="text-lime text-xs uppercase tracking-wider">Champion</p>
             <p className="text-2xl font-black text-amber-200">{champion.display_name}</p>
           </div>
         )}
 
         {t.status === "lobby" && (
-          <div className="rounded-2xl bg-white/5 border border-white/10 p-4 space-y-3">
-            <p className="text-sm text-slate-300">{state.entries.length}/{t.size} joined</p>
+          <div className="rounded-2xl bg-paper/5 border border-paper/15 p-4 space-y-3">
+            <p className="text-sm text-paper/75">{state.entries.length}/{t.size} joined</p>
             <div className="flex flex-wrap gap-2">
               {state.entries.map((e) => (
-                <span key={e.id} className="rounded-full bg-white/10 px-3 py-1 text-sm">{e.display_name}</span>
+                <span key={e.id} className="rounded-full bg-paper/10 px-3 py-1 text-sm">{e.display_name}</span>
               ))}
             </div>
             {isHost && (
               <button onClick={startTournament} disabled={busy || state.entries.length !== t.size}
-                className="w-full rounded-xl bg-amber-400 disabled:opacity-40 text-slate-950 font-bold py-3">
+                className="w-full rounded-xl bg-lime disabled:opacity-40 text-ink font-bold py-3">
                 {state.entries.length === t.size ? "Start Tournament" : `Waiting for ${t.size - state.entries.length} more…`}
               </button>
             )}
@@ -249,16 +249,16 @@ export default function TournamentPage() {
         )}
 
         {m && (
-          <div className="rounded-2xl bg-emerald-400/10 border border-emerald-400/40 p-4 space-y-3">
-            <p className="text-emerald-300 text-xs uppercase tracking-wider">Your match — {ROUND_NAMES[m.bracket_round - 1] ?? `Round ${m.bracket_round}`}</p>
+          <div className="rounded-2xl bg-mint/10 border border-mint/40 p-4 space-y-3">
+            <p className="text-mint text-xs uppercase tracking-wider">Your match — {ROUND_NAMES[m.bracket_round - 1] ?? `Round ${m.bracket_round}`}</p>
             <div className="flex items-center justify-between text-sm">
-              <span className={entryUserId(m.player_a_id) === myUserId ? "font-black text-emerald-200" : ""}>{entryName(m.player_a_id)}</span>
-              <span className="text-slate-500">vs</span>
-              <span className={entryUserId(m.player_b_id) === myUserId ? "font-black text-emerald-200" : ""}>{entryName(m.player_b_id)}</span>
+              <span className={entryUserId(m.player_a_id) === myUserId ? "font-black text-mint" : ""}>{entryName(m.player_a_id)}</span>
+              <span className="text-paper/40">vs</span>
+              <span className={entryUserId(m.player_b_id) === myUserId ? "font-black text-mint" : ""}>{entryName(m.player_b_id)}</span>
             </div>
             {m.room && (
               <button onClick={() => router.push(`/${m.room!.room_code}`)}
-                className="w-full rounded-xl bg-emerald-400 text-slate-950 font-bold py-3 active:scale-[0.98]">
+                className="w-full rounded-xl bg-mint text-ink font-bold py-3 active:scale-[0.98]">
                 {m.room.status === "lobby" ? "Enter Match Room" : "Back to Match"}
               </button>
             )}
@@ -267,14 +267,14 @@ export default function TournamentPage() {
 
         {rounds.map((r) => (
           <div key={r} className="space-y-2">
-            <p className="text-xs uppercase tracking-wider text-slate-400">{ROUND_NAMES[r - 1] ?? `Round ${r}`}</p>
+            <p className="text-xs uppercase tracking-wider text-paper/50">{ROUND_NAMES[r - 1] ?? `Round ${r}`}</p>
             {state.matches.filter((x) => x.bracket_round === r).map((x) => (
-              <div key={x.id} className="rounded-xl bg-white/5 border border-white/10 px-4 py-3 flex items-center justify-between text-sm">
-                <span className={x.winner_entry_id === x.player_a_id ? "font-bold text-emerald-300" : x.winner_entry_id ? "text-slate-500 line-through" : ""}>
+              <div key={x.id} className="rounded-xl bg-paper/5 border border-paper/15 px-4 py-3 flex items-center justify-between text-sm">
+                <span className={x.winner_entry_id === x.player_a_id ? "font-bold text-mint" : x.winner_entry_id ? "text-paper/40 line-through" : ""}>
                   {entryName(x.player_a_id)}
                 </span>
-                <span className="text-slate-600 text-xs">vs</span>
-                <span className={x.winner_entry_id === x.player_b_id ? "font-bold text-emerald-300 text-right" : x.winner_entry_id ? "text-slate-500 line-through text-right" : "text-right"}>
+                <span className="text-paper/30 text-xs">vs</span>
+                <span className={x.winner_entry_id === x.player_b_id ? "font-bold text-mint text-right" : x.winner_entry_id ? "text-paper/40 line-through text-right" : "text-right"}>
                   {entryName(x.player_b_id)}
                 </span>
               </div>
@@ -283,11 +283,11 @@ export default function TournamentPage() {
         ))}
 
         {t.status === "running" && !m && (
-          <p className="text-slate-500 text-sm text-center">Waiting for other matches to finish…</p>
+          <p className="text-paper/40 text-sm text-center">Waiting for other matches to finish…</p>
         )}
 
         <button onClick={() => { tournamentIdRef.current = null; setState(null); }}
-          className="w-full text-slate-500 text-xs py-2">New / join another</button>
+          className="w-full text-paper/40 text-xs py-2">New / join another</button>
       </div>
     </main>
   );

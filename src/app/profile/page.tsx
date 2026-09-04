@@ -39,8 +39,8 @@ type ProfileData = {
 
 const TIER_STYLES: Record<string, string> = {
   Bronze: "border-amber-700/60 text-amber-600",
-  Silver: "border-slate-300/60 text-slate-200",
-  Gold: "border-amber-400/70 text-amber-400",
+  Silver: "border-paper/50 text-paper/85",
+  Gold: "border-amberq/70 text-amberq",
   Epic: "border-fuchsia-400/70 text-fuchsia-400",
 };
 
@@ -136,11 +136,11 @@ export default function ProfilePage() {
 
   if (state === "loading") {
     return (
-      <main className="min-h-dvh bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white p-6">
+      <main className="min-h-dvh  p-6">
         <div className="max-w-sm mx-auto space-y-4 animate-pulse">
-          <div className="h-24 rounded-xl bg-white/5" />
-          <div className="h-32 rounded-xl bg-white/5" />
-          <div className="h-40 rounded-xl bg-white/5" />
+          <div className="h-24 rounded-xl bg-paper/5" />
+          <div className="h-32 rounded-xl bg-paper/5" />
+          <div className="h-40 rounded-xl bg-paper/5" />
         </div>
       </main>
     );
@@ -148,13 +148,13 @@ export default function ProfilePage() {
 
   if (state === "guest" || state === "error") {
     return (
-      <main className="min-h-dvh bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white flex items-center justify-center p-6">
+      <main className="min-h-dvh  flex items-center justify-center p-6">
         <div className="text-center space-y-3 max-w-xs">
           <h1 className="text-2xl font-bold">{state === "guest" ? "Log in to see your profile" : "Could not load profile"}</h1>
-          <p className="text-slate-400 text-sm">
+          <p className="text-paper/50 text-sm">
             {state === "guest" ? "Your stats, achievements and rank live here once you are signed in." : "Try again in a moment."}
           </p>
-          <Link href="/" className="inline-block rounded-xl bg-amber-400 text-slate-950 font-bold px-6 py-3">
+          <Link href="/" className="inline-block rounded-xl bg-lime text-ink font-bold px-6 py-3">
             Back to home
           </Link>
         </div>
@@ -167,15 +167,15 @@ export default function ProfilePage() {
   const unlockedCount = achievements.filter((a) => a.unlocked).length;
 
   return (
-    <main className="min-h-dvh bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white p-6">
+    <main className="min-h-dvh  p-6">
       <div className="max-w-sm mx-auto space-y-5 py-6">
         {/* Header card */}
-        <section className="rounded-2xl bg-white/5 border border-white/10 p-4 flex items-center gap-4">
+        <section className="rounded-2xl bg-paper/5 border border-paper/15 p-4 flex items-center gap-4">
           {profile.avatarUrl ? (
             // eslint-disable-next-line @next/next/no-img-element
             <img src={profile.avatarUrl} alt="" className="w-16 h-16 rounded-xl object-cover" />
           ) : (
-            <div className="w-16 h-16 rounded-xl bg-white/10" />
+            <div className="w-16 h-16 rounded-xl bg-paper/10" />
           )}
           <div className="flex-1 min-w-0">
             {editing ? (
@@ -183,13 +183,13 @@ export default function ProfilePage() {
                 <input
                   value={nameDraft}
                   onChange={(e) => setNameDraft(e.target.value.replace(/[^a-zA-Z0-9_]/g, "").slice(0, 24))}
-                  className="w-full rounded-lg bg-white/10 border border-white/15 px-3 py-2 text-sm outline-none focus:border-amber-400/60"
+                  className="w-full rounded-lg bg-paper/10 border border-paper/20 px-3 py-2 text-sm outline-none focus:border-lime/60"
                 />
                 <div className="flex gap-2">
-                  <button onClick={() => save({ username: nameDraft })} disabled={saving || nameDraft.length < 3} className="rounded-lg bg-amber-400 text-slate-950 font-bold px-3 py-1.5 text-xs disabled:opacity-40">
+                  <button onClick={() => save({ username: nameDraft })} disabled={saving || nameDraft.length < 3} className="rounded-lg bg-lime text-ink font-bold px-3 py-1.5 text-xs disabled:opacity-40">
                     Save
                   </button>
-                  <button onClick={() => { setEditing(false); setNameDraft(profile.username); }} className="rounded-lg bg-white/10 px-3 py-1.5 text-xs">
+                  <button onClick={() => { setEditing(false); setNameDraft(profile.username); }} className="rounded-lg bg-paper/10 px-3 py-1.5 text-xs">
                     Cancel
                   </button>
                 </div>
@@ -204,31 +204,31 @@ export default function ProfilePage() {
             )}
           </div>
           {!editing && (
-            <button onClick={() => setEditing(true)} className="rounded-lg bg-white/10 border border-white/15 px-3 py-1.5 text-xs font-semibold">
+            <button onClick={() => setEditing(true)} className="rounded-lg bg-paper/10 border border-paper/20 px-3 py-1.5 text-xs font-semibold">
               Edit
             </button>
           )}
         </section>
 
-        {msg && <p className="text-center text-xs text-slate-400">{msg}</p>}
+        {msg && <p className="text-center text-xs text-paper/50">{msg}</p>}
 
         {/* Avatar picker (edit mode) */}
         {editing && (
-          <section className="rounded-2xl bg-white/5 border border-white/10 p-4 space-y-3">
-            <p className="text-xs font-semibold text-slate-300 tracking-wide">AVATAR</p>
+          <section className="rounded-2xl bg-paper/5 border border-paper/15 p-4 space-y-3">
+            <p className="text-xs font-semibold text-paper/75 tracking-wide">AVATAR</p>
             <div className="flex gap-2 overflow-x-auto pb-1">
               {AVATAR_PRESET_SLUGS.map((slug) => (
                 <button
                   key={slug}
                   onClick={() => save({ avatar: slug })}
                   disabled={saving}
-                  className={`shrink-0 rounded-xl overflow-hidden border-2 ${profile.avatarRaw === slug ? "border-amber-400" : "border-transparent"}`}
+                  className={`shrink-0 rounded-xl overflow-hidden border-2 ${profile.avatarRaw === slug ? "border-lime" : "border-transparent"}`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={presetAvatarDataUriClient(slug)} alt="" className="w-14 h-14" />
                 </button>
               ))}
-              <label className="shrink-0 w-14 h-14 rounded-xl bg-white/10 border border-dashed border-white/25 text-[10px] font-semibold text-slate-300 flex items-center justify-center cursor-pointer">
+              <label className="shrink-0 w-14 h-14 rounded-xl bg-paper/10 border border-dashed border-white/25 text-[10px] font-semibold text-paper/75 flex items-center justify-center cursor-pointer">
                 Upload
                 <input
                   ref={fileRef}
@@ -248,15 +248,15 @@ export default function ProfilePage() {
         )}
 
         {/* Rank card */}
-        <section className="rounded-2xl bg-white/5 border border-white/10 p-4 space-y-2">
+        <section className="rounded-2xl bg-paper/5 border border-paper/15 p-4 space-y-2">
           <div className="flex items-baseline justify-between">
             <p className="text-sm font-bold" style={{ color: rank.color }}>{rank.tier}</p>
-            <p className="text-xs text-slate-400">{rank.rating} RP</p>
+            <p className="text-xs text-paper/50">{rank.rating} RP</p>
           </div>
-          <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+          <div className="h-2 rounded-full bg-paper/10 overflow-hidden">
             <div className="h-full rounded-full" style={{ width: `${rank.progress}%`, backgroundColor: "#FBBF24" }} />
           </div>
-          <p className="text-[11px] text-slate-500">{rank.nextTier ? `${rank.progress}% to ${rank.nextTier}` : "Top tier"}</p>
+          <p className="text-[11px] text-paper/40">{rank.nextTier ? `${rank.progress}% to ${rank.nextTier}` : "Top tier"}</p>
         </section>
 
         {/* Stats grid */}
@@ -269,9 +269,9 @@ export default function ProfilePage() {
             { label: "Avg answer", value: profile.avgAnswerMs != null ? `${(profile.avgAnswerMs / 1000).toFixed(1)}s` : "-" },
             { label: "XP", value: profile.xp },
           ].map((s) => (
-            <div key={s.label} className="rounded-xl bg-white/5 border border-white/10 p-3 text-center">
+            <div key={s.label} className="rounded-xl bg-paper/5 border border-paper/15 p-3 text-center">
               <p className="text-lg font-black">{s.value}</p>
-              <p className="text-[10px] text-slate-500 tracking-wide">{s.label.toUpperCase()}</p>
+              <p className="text-[10px] text-paper/40 tracking-wide">{s.label.toUpperCase()}</p>
             </div>
           ))}
         </section>
@@ -280,17 +280,17 @@ export default function ProfilePage() {
         <section className="space-y-2">
           <div className="flex items-baseline justify-between px-1">
             <h2 className="text-sm font-bold tracking-wide">ACHIEVEMENTS</h2>
-            <p className="text-xs text-slate-500">{unlockedCount}/{achievements.length}</p>
+            <p className="text-xs text-paper/40">{unlockedCount}/{achievements.length}</p>
           </div>
           <div className="grid grid-cols-3 gap-2">
             {achievements.map((a) => (
               <div
                 key={a.id}
-                className={`rounded-xl border p-2.5 text-center ${a.unlocked ? TIER_STYLES[a.tier] ?? "border-white/20 text-white" : "border-white/10 bg-white/5 opacity-50"}`}
+                className={`rounded-xl border p-2.5 text-center ${a.unlocked ? TIER_STYLES[a.tier] ?? "border-white/20 text-paper" : "border-paper/15 bg-paper/5 opacity-50"}`}
               >
                 <p className="text-[11px] font-bold leading-tight">{a.name}</p>
-                <p className="text-[9px] text-slate-500 mt-0.5 tracking-widest">{a.unlocked ? a.tier.toUpperCase() : "LOCKED"}</p>
-                <p className="text-[9px] text-slate-500 mt-1 leading-snug">{a.description}</p>
+                <p className="text-[9px] text-paper/40 mt-0.5 tracking-widest">{a.unlocked ? a.tier.toUpperCase() : "LOCKED"}</p>
+                <p className="text-[9px] text-paper/40 mt-1 leading-snug">{a.description}</p>
               </div>
             ))}
           </div>
@@ -299,27 +299,27 @@ export default function ProfilePage() {
         {/* Recent games */}
         <section className="space-y-2">
           <h2 className="text-sm font-bold tracking-wide px-1">RECENT GAMES</h2>
-          {games.length === 0 && <p className="text-xs text-slate-500 px-1">No games yet — play one to start your history.</p>}
+          {games.length === 0 && <p className="text-xs text-paper/40 px-1">No games yet — play one to start your history.</p>}
           {games.map((g) => (
-            <div key={g.id} className="rounded-xl bg-white/5 border border-white/10 px-3 py-2.5 flex items-center gap-3">
-              <span className={`rounded-md px-2 py-0.5 text-[10px] font-black ${g.won ? "bg-amber-400 text-slate-950" : "bg-white/10 text-slate-400"}`}>
+            <div key={g.id} className="rounded-xl bg-paper/5 border border-paper/15 px-3 py-2.5 flex items-center gap-3">
+              <span className={`rounded-md px-2 py-0.5 text-[10px] font-black ${g.won ? "bg-lime text-ink" : "bg-paper/10 text-paper/50"}`}>
                 {g.won ? "W" : "L"}
               </span>
               <div className="flex-1 min-w-0">
                 <p className="text-xs font-semibold truncate">
-                  {g.score} pts <span className="text-slate-500 font-normal">vs {g.opponent_name ?? "?"}</span>
+                  {g.score} pts <span className="text-paper/40 font-normal">vs {g.opponent_name ?? "?"}</span>
                 </p>
-                <p className="text-[10px] text-slate-500">
+                <p className="text-[10px] text-paper/40">
                   {g.correct}/{g.answered} correct
                   {g.avg_answer_ms != null ? ` · ${(g.avg_answer_ms / 1000).toFixed(1)}s avg` : ""}
                 </p>
               </div>
-              <span className="text-[10px] text-slate-500 shrink-0">{relTime(g.finished_at)}</span>
+              <span className="text-[10px] text-paper/40 shrink-0">{relTime(g.finished_at)}</span>
             </div>
           ))}
         </section>
 
-        <Link href="/" className="block text-center text-xs text-indigo-300 underline underline-offset-2 hover:text-indigo-200 pt-2">
+        <Link href="/" className="block text-center text-xs text-vio underline underline-offset-2 hover:text-paper pt-2">
           Back to QUIZORA
         </Link>
       </div>

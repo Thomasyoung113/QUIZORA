@@ -39,12 +39,13 @@ export default function JoinGate({
   }
 
   return (
-    <div className="min-h-dvh flex flex-col items-center justify-center p-6 bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white">
+    <div className="min-h-dvh flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-sm space-y-5 text-center">
         <div>
-          <h1 className="text-3xl font-black">Join room</h1>
-          <p className="mt-1 text-slate-400">
-            Room <span className="font-mono font-bold text-amber-400">{code}</span>
+          <div className="inline-flex q-chip mb-3">Brain battle</div>
+          <h1 className="q-display text-3xl">Join room</h1>
+          <p className="mt-1 text-paper/50">
+            Room <span className="font-mono font-bold text-lime">{code}</span>
           </p>
         </div>
 
@@ -53,22 +54,22 @@ export default function JoinGate({
           onChange={(e) => setName(e.target.value.slice(0, 24))}
           placeholder="Your username"
           maxLength={24}
-          className="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center text-lg outline-none focus:border-amber-400/60 placeholder:text-slate-500"
+          className="q-input w-full rounded-xl px-4 py-3 text-center text-lg"
         />
 
-        {error && <p className="text-rose-400 text-sm">{error}</p>}
+        {error && <p className="text-coral text-sm font-semibold">{error}</p>}
 
         <button
           onClick={join}
           disabled={busy}
-          className="w-full rounded-xl bg-amber-400 hover:bg-amber-300 active:scale-[0.98] disabled:opacity-50 text-slate-950 font-bold py-3.5 text-lg transition"
+          className="q-btn q-btn-primary w-full rounded-xl py-3.5 text-lg disabled:opacity-50"
         >
           {busy ? "Joining…" : "Join"}
         </button>
 
         <button
           onClick={() => router.push("/")}
-          className="text-xs text-slate-500 underline underline-offset-2"
+          className="text-xs text-paper/40 underline underline-offset-2 hover:text-paper"
         >
           Back to home
         </button>

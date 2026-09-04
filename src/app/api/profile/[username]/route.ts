@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { serviceClient } from "@/lib/server/game";
-import { rankFor, resolveAvatarUrl } from "../route";
+import { rankFor, resolveAvatarUrl } from "@/lib/server/rank";
 
 export const dynamic = "force-dynamic";
 

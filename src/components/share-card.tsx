@@ -44,48 +44,61 @@ export default function ShareCard({
     const ctx = canvas.getContext("2d")!;
     if (!ctx) throw new Error("canvas unsupported");
 
-    // Background: slate -> indigo -> slate gradient
+    // Background: ink stage with violet glow + arena grid
     const g = ctx.createLinearGradient(0, 0, 0, CARD_H);
-    g.addColorStop(0, "#020617");
-    g.addColorStop(0.5, "#1e1b4b");
-    g.addColorStop(1, "#020617");
+    g.addColorStop(0, "#14121f");
+    g.addColorStop(0.55, "#1d1a2e");
+    g.addColorStop(1, "#14121f");
     ctx.fillStyle = g;
     ctx.fillRect(0, 0, CARD_W, CARD_H);
+    const glow = ctx.createRadialGradient(CARD_W / 2, -100, 50, CARD_W / 2, -100, 900);
+    glow.addColorStop(0, "rgba(143,123,255,0.25)");
+    glow.addColorStop(1, "rgba(143,123,255,0)");
+    ctx.fillStyle = glow;
+    ctx.fillRect(0, 0, CARD_W, 1100);
+    ctx.strokeStyle = "rgba(244,239,227,0.05)";
+    ctx.lineWidth = 2;
+    for (let x = 0; x < CARD_W; x += 72) {
+      ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, CARD_H); ctx.stroke();
+    }
+    for (let y = 0; y < CARD_H; y += 72) {
+      ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(CARD_W, y); ctx.stroke();
+    }
 
     ctx.textAlign = "center";
 
-    // Wordmark: QUIZ white + ORA amber
+    // Wordmark: QUIZ paper + ORA lime
     ctx.font = "900 110px system-ui, -apple-system, sans-serif";
     const quizW = ctx.measureText("QUIZ").width;
     const oraW = ctx.measureText("ORA").width;
     const startX = CARD_W / 2 - (quizW + oraW) / 2;
     ctx.textAlign = "left";
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = "#f4efe3";
     ctx.fillText("QUIZ", startX, 190);
-    ctx.fillStyle = "#fbbf24";
+    ctx.fillStyle = "#c8f135";
     ctx.fillText("ORA", startX + quizW, 190);
     ctx.textAlign = "center";
 
     ctx.font = "500 40px system-ui, -apple-system, sans-serif";
-    ctx.fillStyle = "#94a3b8";
+    ctx.fillStyle = "rgba(244,239,227,0.55)";
     ctx.fillText("Think. Play. Discover.", CARD_W / 2, 260);
 
     // Player name
     ctx.font = "700 72px system-ui, -apple-system, sans-serif";
-    ctx.fillStyle = "#ffffff";
+    ctx.fillStyle = "#f4efe3";
     ctx.fillText(playerName.slice(0, 24), CARD_W / 2, 470);
 
     // Big points
     ctx.font = "900 220px system-ui, -apple-system, sans-serif";
-    ctx.fillStyle = "#fbbf24";
+    ctx.fillStyle = "#c8f135";
     ctx.fillText(String(points), CARD_W / 2, 720);
     ctx.font = "600 44px system-ui, -apple-system, sans-serif";
-    ctx.fillStyle = "#94a3b8";
+    ctx.fillStyle = "rgba(244,239,227,0.55)";
     ctx.fillText("POINTS", CARD_W / 2, 790);
 
     // Rank + accuracy line
     ctx.font = "600 52px system-ui, -apple-system, sans-serif";
-    ctx.fillStyle = "#e2e8f0";
+    ctx.fillStyle = "rgba(244,239,227,0.85)";
     const rankText = `Rank #${rank} of ${playerCount}`;
     const accText = accuracy !== null ? `${correct}/${answered} correct · ${accuracy}%` : null;
     ctx.fillText(accText ? `${rankText}   ·   ${accText}` : rankText, CARD_W / 2, 900);
@@ -95,8 +108,8 @@ export default function ShareCard({
     const pillH = 110;
     const pillX = CARD_W / 2 - pillW / 2;
     const pillY = 990;
-    ctx.fillStyle = "rgba(255,255,255,0.06)";
-    ctx.strokeStyle = "rgba(255,255,255,0.15)";
+    ctx.fillStyle = "rgba(244,239,227,0.06)";
+    ctx.strokeStyle = "rgba(244,239,227,0.25)";
     ctx.lineWidth = 2;
     const r = 28;
     ctx.beginPath();
@@ -109,12 +122,12 @@ export default function ShareCard({
     ctx.fill();
     ctx.stroke();
     ctx.font = "700 48px ui-monospace, monospace";
-    ctx.fillStyle = "#fbbf24";
+    ctx.fillStyle = "#c8f135";
     ctx.fillText(`ROOM ${roomCode}`, CARD_W / 2, pillY + pillH / 2 + 16);
 
     // Footer
     ctx.font = "500 34px system-ui, -apple-system, sans-serif";
-    ctx.fillStyle = "#64748b";
+    ctx.fillStyle = "rgba(244,239,227,0.4)";
     ctx.fillText("QUIZORA© 2026 — play at quizora-phi.vercel.app", CARD_W / 2, 1240);
 
     return canvas;
@@ -181,19 +194,19 @@ export default function ShareCard({
         <button
           onClick={share}
           disabled={busy}
-          className="rounded-xl bg-amber-400 text-slate-950 font-bold py-3.5 active:scale-[0.98] disabled:opacity-50 transition"
+          className="q-btn q-btn-primary rounded-xl py-3.5 disabled:opacity-50"
         >
           {busy ? "Working…" : "Share result"}
         </button>
         <button
           onClick={save}
           disabled={busy}
-          className="rounded-xl bg-white/10 border border-white/15 font-semibold py-3.5 active:scale-[0.98] disabled:opacity-50 transition"
+          className="q-btn q-btn-ghost rounded-xl py-3.5 disabled:opacity-50"
         >
           Save image
         </button>
       </div>
-      {note && <p className="text-center text-xs text-slate-400">{note}</p>}
+      {note && <p className="text-center text-xs text-paper/50">{note}</p>}
     </div>
   );
 }

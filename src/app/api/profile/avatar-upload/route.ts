@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getSessionUser } from "@/lib/server/auth";
 import { serviceClient } from "@/lib/server/game";
-import { resolveAvatarUrl } from "../route";
+import { resolveAvatarUrl } from "@/lib/server/rank";
 
 export const dynamic = "force-dynamic";
 

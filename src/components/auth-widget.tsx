@@ -68,9 +68,9 @@ export default function AuthWidget() {
   if (user === undefined) return null;
   if (user) {
     return (
-      <div className="flex items-center gap-2 text-xs text-slate-400">
+      <div className="flex items-center gap-2 text-xs text-paper/50">
         <span className="max-w-40 truncate">{user.email}</span>
-        <button onClick={signOut} className="underline underline-offset-2 hover:text-slate-300">Sign out</button>
+        <button onClick={signOut} className="underline underline-offset-2 hover:text-paper">Sign out</button>
       </div>
     );
   }
@@ -78,7 +78,7 @@ export default function AuthWidget() {
   return (
     <div className="text-xs">
       {stage === "closed" && (
-        <button onClick={() => setStage("email")} className="text-indigo-300 underline underline-offset-2 hover:text-indigo-200">
+        <button onClick={() => setStage("email")} className="text-vio underline underline-offset-2 hover:text-paper">
           Sign in with email
         </button>
       )}
@@ -87,13 +87,13 @@ export default function AuthWidget() {
           <input
             type="email" value={email} onChange={(e) => setEmail(e.target.value)}
             placeholder="you@email.com"
-            className="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center outline-none focus:border-indigo-400/60 placeholder:text-slate-500"
+            className="q-input w-full rounded-xl px-4 py-3 text-center"
           />
           <button onClick={sendCode} disabled={busy || !email.includes("@")}
-            className="w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 py-3 font-semibold disabled:opacity-40 transition">
+            className="q-btn q-btn-primary w-full rounded-xl py-3 disabled:opacity-40">
             {busy ? "Sending…" : "Send code"}
           </button>
-          {msg && <p className="text-slate-400 text-xs text-center">{msg}</p>}
+          {msg && <p className="text-paper/50 text-xs text-center">{msg}</p>}
         </div>
       )}
       {stage === "code" && (
@@ -101,18 +101,18 @@ export default function AuthWidget() {
           <input
             value={code} onChange={(e) => setCode(e.target.value.replace(/\D/g, "").slice(0, 6))}
             placeholder="123456" inputMode="numeric" autoFocus
-            className="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center text-lg tracking-[0.4em] outline-none focus:border-indigo-400/60 placeholder:text-slate-500"
+            className="q-input w-full rounded-xl px-4 py-3 text-center text-lg tracking-[0.4em]"
           />
           <button onClick={verify} disabled={busy || code.length < 6}
-            className="w-full rounded-xl bg-indigo-500 hover:bg-indigo-400 py-3 font-semibold disabled:opacity-40 transition">
+            className="q-btn q-btn-primary w-full rounded-xl py-3 disabled:opacity-40">
             {busy ? "Verifying…" : "Verify"}
           </button>
-          {msg && <p className="text-slate-400 text-xs text-center">{msg}</p>}
-          <p className="text-xs text-slate-500 text-center">
+          {msg && <p className="text-paper/50 text-xs text-center">{msg}</p>}
+          <p className="text-xs text-paper/40 text-center">
             {resendIn > 0 ? (
               `Resend code in ${resendIn}s`
             ) : (
-              <button onClick={sendCode} disabled={busy} className="underline underline-offset-2 hover:text-slate-300 disabled:opacity-40">
+              <button onClick={sendCode} disabled={busy} className="underline underline-offset-2 hover:text-paper disabled:opacity-40">
                 Didn&apos;t get it? Resend code
               </button>
             )}

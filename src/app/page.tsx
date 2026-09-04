@@ -54,13 +54,14 @@ export default function Home() {
   }
 
   return (
-    <main className="min-h-dvh bg-gradient-to-b from-slate-950 via-indigo-950 to-slate-950 text-white flex flex-col items-center justify-center p-6">
+    <main className="min-h-dvh flex flex-col items-center justify-center p-6">
       <div className="w-full max-w-sm space-y-6">
-        <div className="text-center space-y-2">
-          <h1 className="text-5xl font-black tracking-tight">
-            QUIZ<span className="text-amber-400">ORA</span>
+        <div className="text-center space-y-3">
+          <div className="inline-flex q-chip">Real-time brain battles</div>
+          <h1 className="q-display text-6xl leading-none">
+            QUIZ<span className="text-lime">ORA</span>
           </h1>
-          <p className="text-slate-400 text-sm">Think. Play. Discover.</p>
+          <p className="text-sm tracking-[0.3em] uppercase text-paper/50">Think. Play. Discover.</p>
         </div>
 
         <input
@@ -68,21 +69,21 @@ export default function Home() {
           onChange={(e) => setName(e.target.value.slice(0, 24))}
           placeholder={user ? "Display name (optional)" : "Your username"}
           maxLength={24}
-          className="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center text-lg outline-none focus:border-amber-400/60 placeholder:text-slate-500"
+          className="q-input w-full rounded-xl px-4 py-3 text-center text-lg"
         />
 
         <button
           onClick={() => submit("create")}
           disabled={busy !== null || !canPlay}
-          className="w-full rounded-xl bg-amber-400 hover:bg-amber-300 active:scale-[0.98] disabled:opacity-50 text-slate-950 font-bold py-3.5 text-lg transition"
+          className="q-btn q-btn-primary w-full rounded-xl py-3.5 text-lg disabled:opacity-50"
         >
           {busy === "create" ? "Creating…" : "Create Room"}
         </button>
 
-        <div className="flex items-center gap-3 text-slate-500 text-xs">
-          <div className="h-px flex-1 bg-white/10" />
-          OR JOIN
-          <div className="h-px flex-1 bg-white/10" />
+        <div className="flex items-center gap-3 text-paper/35 text-xs uppercase tracking-widest">
+          <div className="h-px flex-1 bg-paper/15" />
+          Or join
+          <div className="h-px flex-1 bg-paper/15" />
         </div>
 
         <input
@@ -91,37 +92,37 @@ export default function Home() {
           placeholder="ROOM CODE"
           maxLength={6}
           autoCapitalize="characters"
-          className="w-full rounded-xl bg-white/10 border border-white/15 px-4 py-3 text-center text-2xl font-mono tracking-[0.3em] outline-none focus:border-amber-400/60 placeholder:text-slate-600"
+          className="q-input w-full rounded-xl px-4 py-3 text-center text-2xl font-mono tracking-[0.3em]"
         />
 
         <button
           onClick={() => submit("join")}
           disabled={busy !== null || code.length < 4 || !canPlay}
-          className="w-full rounded-xl bg-white/10 hover:bg-white/15 active:scale-[0.98] disabled:opacity-40 border border-white/15 font-semibold py-3.5 text-lg transition"
+          className="q-btn q-btn-ghost w-full rounded-xl py-3.5 text-lg disabled:opacity-40"
         >
           {busy === "join" ? "Joining…" : "Join Room"}
         </button>
 
-        {error && <p className="text-rose-400 text-sm text-center">{error}</p>}
+        {error && <p className="text-coral text-sm text-center font-semibold">{error}</p>}
 
         <div className="text-center space-y-2 pt-2">
-          <Link href="/download" className="block text-xs text-amber-400/90 font-semibold underline underline-offset-2 hover:text-amber-300">
+          <Link href="/download" className="block text-xs text-lime font-bold underline underline-offset-2">
             Get the Android app
           </Link>
-          <Link href="/how-to-play" className="block text-xs text-indigo-300 underline underline-offset-2 hover:text-indigo-200">
+          <Link href="/how-to-play" className="block text-xs text-vio underline underline-offset-2 hover:text-paper">
             How to play
           </Link>
           <AuthWidget />
           {user && (
-            <Link href="/profile" className="block text-xs text-amber-400/90 font-semibold underline underline-offset-2 hover:text-amber-300">
+            <Link href="/profile" className="block text-xs text-lime font-bold underline underline-offset-2">
               Profile &amp; stats
             </Link>
           )}
-          <p className="text-slate-600 text-[11px]">
+          <p className="text-paper/35 text-[11px]">
             By playing you agree to our{" "}
-            <Link href="/legal" className="underline underline-offset-2 text-slate-400 hover:text-slate-300">Terms &amp; Privacy</Link>
+            <Link href="/legal" className="underline underline-offset-2 text-paper/60 hover:text-paper">Terms &amp; Privacy</Link>
           </p>
-          <p className="text-slate-600 text-[11px]">QUIZORA© 2026</p>
+          <p className="text-paper/25 text-[11px]">QUIZORA© 2026</p>
         </div>
       </div>
     </main>
