@@ -51,3 +51,13 @@ keeper.log
 /delete-failures.json
 /gen-*.log
 /keeper.log
+
+# runtime clutter
+__pycache__/
+/frames/
+/_health_check*.txt
+/_hc_*.txt
+/audit_live.log
+/render.log
+/smoke.log
+/logs/

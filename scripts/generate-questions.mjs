@@ -18,6 +18,8 @@ let PROVIDERS = [
   { name: "bynara", base: env.BYNARA_BASE_URL || "https://router.bynara.id/v1", key: env.BYNARA_API_KEY, model: env.BYNARA_MODEL || "agnes-2.5-flash", api: "openai" },
   { name: "agentrouter-glm", base: env.AGENTROUTER_BASE_URL || "https://agentrouter.org", key: env.AGENTROUTER_API_KEY, model: "glm-5.3", api: "anthropic" },
   { name: "agentrouter-ds", base: env.AGENTROUTER_BASE_URL || "https://agentrouter.org", key: env.AGENTROUTER_API_KEY, model: "deepseek-v4-flash", api: "anthropic" },
+  { name: "nvidia-ds", base: "https://integrate.api.nvidia.com/v1", key: env.NVIDIA_API_KEY || process.env.NVIDIA_API_KEY, model: "deepseek-ai/deepseek-v4-flash-0731", api: "openai" },
+  { name: "nvidia-llama", base: "https://integrate.api.nvidia.com/v1", key: env.NVIDIA_API_KEY || process.env.NVIDIA_API_KEY, model: "mistralai/mistral-large-2-instruct", api: "openai" },
 ].filter((p) => p.key);
 const onlyProviders = (process.env.ONLY_PROVIDERS || "").split(",").filter(Boolean);
 if (onlyProviders.length) PROVIDERS = PROVIDERS.filter((p) => onlyProviders.includes(p.name));
@@ -27,6 +29,8 @@ console.log("Providers:", PROVIDERS.map((p) => p.name).join(", "));
 const db = createClient(env.NEXT_PUBLIC_SUPABASE_URL, env.SUPABASE_SERVICE_ROLE_KEY);
 
 const onlyCategory = process.argv[2] || null;
+// Multi-category support: `node generate-questions.mjs "Space,Logic"`
+const onlyCats = onlyCategory ? onlyCategory.split(",").map(s => s.trim()).filter(Boolean) : null;
 
 const CATEGORIES = {
   Science: ["Physics", "Chemistry", "Biology", "Astronomy", "Medicine", "Earth Science"],
@@ -37,6 +41,7 @@ const CATEGORIES = {
   Space: ["Solar System", "Stars & Galaxies", "Missions", "Cosmology"],
   Culture: ["Music", "Film", "Literature", "Art", "Food", "Sports", "Mythology"],
   Business: ["Companies", "Economics", "Brands", "Inventions"],
+  Sports: ["Football", "Basketball", "Cricket", "Tennis", "Olympics", "Athletics", "Boxing & MMA", "Esports"],
   Logic: ["Riddles", "Patterns", "Lateral Thinking"],
   "General Knowledge": ["Mixed"],
 };
@@ -58,13 +63,14 @@ async function llm(messages, maxTokens = 8000, startProvider = 0) {
           headers: { "x-api-key": p.key, "anthropic-version": "2023-06-01", "user-agent": "claude-cli/2.0.0 (external, cli)", "Content-Type": "application/json" },
           body: JSON.stringify({ model: p.model, max_tokens: maxTokens, ...(system ? { system } : {}), messages: msgs }),
         });
-        if (res.status === 429) { await sleep(3000 * (attempt + 1)); continue; }
+        if (res.status === 401) { console.error(`  [llm] ${p.name} 401 — removing dead provider`); PROVIDERS.splice(PROVIDERS.indexOf(p), 1); if (!PROVIDERS.length) throw new Error("all providers dead"); continue; }
+      if (res.status === 429) { await sleep(3000 * (attempt + 1)); continue; }
         if (!res.ok) throw new Error(`${p.name} ${res.status}: ${(await res.text()).slice(0, 200)}`);
         const json = await res.json();
         const text = (json.content || []).filter((b) => b.type === "text").map((b) => b.text).join("");
         return text;
       }
-      res = await fetch(`${p.base}/chat/completions`, {
+      res = await fetch(`${p.base}/chat/completions`, { signal: AbortSignal.timeout(45000),
         method: "POST",
         headers: { Authorization: `Bearer ${p.key}`, "Content-Type": "application/json" },
         body: JSON.stringify({ model: p.model, messages, max_tokens: maxTokens }),
@@ -100,6 +106,9 @@ STRICT RULES:
 - No "all of the above", no trick wording, no opinions.
 - Difficulty must be one of: easy, medium, hard.
 - Mix difficulties roughly: 40% easy, 40% medium, 20% hard.
+- AVOID famous textbook trivia that every quiz site has (capital cities of large countries, largest planet, speed of light). Prefer specific, lesser-known but verifiable facts — these are least likely to already exist in our bank.
+- Distractors must be similar in LENGTH to the correct answer (within ~30%) — the correct option must never stand out by being the longest or shortest.
+- Vary which letter is correct across questions (mix A, B, C, D evenly).
 - 10-25 words per question. Facts only, verifiable, no time-sensitive trivia that changes (e.g. "current champion").
 - explanation: 1-2 sentences explaining WHY the answer is correct.
 
@@ -118,6 +127,7 @@ Respond with ONLY a JSON array, one object per question in order, no markdown fe
 [{"i":1,"verdict":"pass|fail","reason":"one short sentence"},...]`;
 
 const PARALLEL = parseInt(process.env.PARALLEL || "8", 10);
+const BATCH = parseInt(process.env.BATCH || "15", 10); // questions per LLM round
 const PER_CATEGORY = parseInt(process.env.PER_CATEGORY || "0", 10); // if set, target N per category
 
 async function main() {
@@ -138,13 +148,14 @@ async function main() {
   console.log(`Existing questions: ${seen.size}`);
 
   // Build work queue — per-category deficits vs target
+  const target = PER_CATEGORY;
   const work = [];
   for (const [cat, subs] of Object.entries(CATEGORIES)) {
-    if (onlyCategory && cat !== onlyCategory) continue;
+    if (onlyCats && !onlyCats.includes(cat)) continue;
 
     const deficit = Math.max(0, target - (catCounts[cat] || 0));
     if (deficit === 0) { console.log(`[${cat}] already at ${catCounts[cat] || 0} >= ${target}, skipping`); continue; }
-    const roundsTotal = Math.ceil(deficit / 10 / subs.length);
+    const roundsTotal = Math.ceil(deficit / BATCH / subs.length);
     console.log(`[${cat}] have ${catCounts[cat] || 0}, deficit ${deficit} -> ${roundsTotal} rounds/sub × ${subs.length} subs`);
     for (const sub of subs) work.push({ cat, sub, rounds: roundsTotal });
   }
@@ -161,7 +172,7 @@ async function main() {
       const item = work[workIdx];
       if (!item) return;
       // Skip subcategories that already hit their per-category target
-      if ((catInserted[item.cat] || 0) >= item.rounds * 10 * item.subsLeft) { workIdx++; continue; }
+      if ((catInserted[item.cat] || 0) >= item.rounds * 25 * item.subsLeft) { workIdx++; continue; }
       workIdx++;
       const { cat, sub, rounds } = item;
       for (let r = 0; r < rounds; r++) {
@@ -177,7 +188,7 @@ async function main() {
       // 1. Generate batch of 10
       let raw;
       try {
-        raw = await llm([{ role: "user", content: GEN_PROMPT(cat, sub, 10) }], 8000, homeProvider);
+        raw = await llm([{ role: "user", content: GEN_PROMPT(cat, sub, BATCH) }], 8000, homeProvider);
       } catch (e) {
         console.error(`Gen failed (${cat}/${sub}): ${e.message}`);
         await sleep(3000);
@@ -190,7 +201,14 @@ async function main() {
       // 2. Filter valid + non-dupe, then fact-check the whole batch in ONE call
       const candidates = [];
       for (const q of questions) {
-        if (!q?.question || !Array.isArray(q.options) || q.options.length !== 4 || !"ABCD".includes(q.correct)) { stats.failed++; continue; }
+        // Normalize: uppercase the correct letter, trim all strings. LLMs
+        // sometimes emit lowercase letters or padded strings.
+        if (!q?.question || !Array.isArray(q.options) || q.options.length !== 4) { stats.failed++; continue; }
+        q.correct = String(q.correct || "").trim().toUpperCase();
+        q.options = q.options.map((o) => String(o || "").trim());
+        q.question = String(q.question || "").trim();
+        if (!"ABCD".includes(q.correct) || q.options.some((o) => !o || o.length < 1) || q.question.length < 10) { stats.failed++; continue; }
+        if (new Set(q.options.map((o) => norm(o))).size !== 4) { stats.failed++; continue; } // duplicate options within the question
         const key = norm(q.question);
         if (seen.has(key) || key.length < 10) { stats.dupes++; continue; }
         seen.add(key);
