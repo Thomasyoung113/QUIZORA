@@ -1,18 +1,33 @@
 @import "tailwindcss";
 
-/* QUIZORA — Ink Arena design language
-   ink stage + paper cards + hard shadows + electric accents */
+/* QUIZORA — Ink Arena v2 (fused)
+   Structure: Ink Arena (paper cards, hard shadows, grid stage)
+   Borrowed: Kahoot answer-tile palette + deep-purple game stage
+             Geogressr gold for rank/win moments */
 
 @theme inline {
-  --color-ink: #14121f;
-  --color-ink-2: #1d1a2e;
-  --color-ink-3: #2a2542;
+  /* stage */
+  --color-ink: #10101c;
+  --color-ink-2: #16162a;
+  --color-ink-3: #1e1e38;
+  /* violet stage accent (geoguessr/kahoot blend) */
+  --color-vio: #7950e5;
+  --color-vio-2: #4a2399;
+  /* paper + hard shadow world (kept from v1) */
   --color-paper: #f4efe3;
+  /* actions stay lime */
   --color-lime: #c8f135;
-  --color-vio: #8f7bff;
-  --color-amberq: #ffc24b;
+  /* kahoot answer tiles */
+  --color-ans-red: #e21b3c;
+  --color-ans-blue: #1368ce;
+  --color-ans-green: #26890c;
+  --color-ans-teal: #0aa3a3;
+  /* competitive gold (geoguessr) */
+  --color-gold: #d4af37;
+  /* status */
   --color-coral: #ff5d5d;
   --color-mint: #3edc97;
+  --color-amberq: #ffc24b;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -21,9 +36,9 @@ body {
   background-color: var(--color-ink);
   color: var(--color-paper);
   font-family: var(--font-sans);
-  /* faint arena grid over a vignette */
+  /* violet stage glow instead of neutral — kahoot energy on geoguessr darkness */
   background-image:
-    radial-gradient(120% 90% at 50% 0%, rgba(143, 123, 255, 0.12), transparent 60%),
+    radial-gradient(120% 90% at 50% 0%, rgba(121, 80, 229, 0.16), transparent 62%),
     linear-gradient(rgba(244, 239, 227, 0.035) 1px, transparent 1px),
     linear-gradient(90deg, rgba(244, 239, 227, 0.035) 1px, transparent 1px);
   background-size: auto, 36px 36px, 36px 36px;
@@ -35,14 +50,13 @@ body {
 }
 
 @layer components {
-  /* paper card with hard offset shadow */
+  /* paper card with hard offset shadow — unchanged, the identity */
   .q-card {
     background: var(--color-paper);
     color: var(--color-ink);
     border: 2px solid var(--color-ink);
     box-shadow: 5px 5px 0 var(--color-ink);
   }
-  /* dark panel for ambient zones */
   .q-panel {
     background: var(--color-ink-2);
     border: 2px solid rgba(244, 239, 227, 0.18);
@@ -107,10 +121,36 @@ body {
   .q-input::placeholder {
     color: rgba(244, 239, 227, 0.35);
   }
-  /* big display headline */
   .q-display {
     font-weight: 900;
     letter-spacing: -0.03em;
     text-transform: uppercase;
+  }
+  /* kahoot-style answer tiles: saturated tile + darker bottom edge (pressed look) */
+  .q-tile {
+    border: 2px solid var(--color-ink);
+    box-shadow: 4px 4px 0 var(--color-ink);
+    color: #ffffff;
+    font-weight: 700;
+    transition: transform 0.06s ease, box-shadow 0.06s ease, filter 0.15s ease;
+  }
+  .q-tile:hover:not(:disabled) {
+    filter: brightness(1.1);
+  }
+  .q-tile:active:not(:disabled) {
+    transform: translate(3px, 3px);
+    box-shadow: 1px 1px 0 var(--color-ink);
+  }
+  .q-tile-0 { background: var(--color-ans-red); }
+  .q-tile-1 { background: var(--color-ans-blue); }
+  .q-tile-2 { background: var(--color-ans-green); }
+  .q-tile-3 { background: var(--color-ans-teal); }
+  /* game-stage moment: deep violet backdrop for the live question view */
+  .q-stage {
+    background:
+      radial-gradient(100% 70% at 50% 0%, rgba(121, 80, 229, 0.25), transparent 65%),
+      var(--color-ink-2);
+    border: 2px solid rgba(121, 80, 227, 0.35);
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5);
   }
 }

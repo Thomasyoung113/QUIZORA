@@ -40,7 +40,7 @@ type ProfileData = {
 const TIER_STYLES: Record<string, string> = {
   Bronze: "border-amber-700/60 text-amber-600",
   Silver: "border-paper/50 text-paper/85",
-  Gold: "border-amberq/70 text-amberq",
+  Gold: "border-gold/70 text-gold",
   Epic: "border-fuchsia-400/70 text-fuchsia-400",
 };
 

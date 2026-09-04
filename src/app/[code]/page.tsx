@@ -426,11 +426,11 @@ function GameView({
               const isWrongPick = revealed && isMine && !isCorrect;
               return (
                 <button key={label} disabled={revealed || !!myAnswer} onClick={() => answer(label)}
-                  className={`w-full text-left rounded-xl border px-4 py-3 transition flex items-center gap-3
+                  className={`w-full text-left rounded-xl border px-4 py-3 flex items-center gap-3
                     ${revealed
                       ? isCorrect ? "border-mint bg-mint/20" : isWrongPick ? "border-coral bg-coral/20" : "border-paper/10 opacity-50"
-                      : isMine ? "border-lime bg-lime/15" : "border-paper/20 bg-paper/5 active:scale-[0.99]"}`}>
-                  <span className={`w-7 h-7 rounded-lg flex items-center justify-center text-sm font-bold ${revealed && isCorrect ? "bg-mint text-ink" : "bg-paper/10"}`}>
+                      : isMine ? "border-lime bg-lime/15" : `q-tile q-tile-${i % 4} rounded-xl px-4 py-3`}`}>
+                  <span className={`w-7 h-7 rounded-lg flex items-center justify-center text-sm font-bold ${revealed && isCorrect ? "bg-mint text-ink" : isMine ? "bg-lime text-ink" : "bg-black/25 text-white"}`}>
                     {label}
                   </span>
                   <span className="flex-1">{opt}</span>
@@ -490,7 +490,7 @@ function GameView({
 
       {finished && (
         <section className="space-y-4 pt-6 text-center">
-          <h2 className="text-2xl font-black text-lime">Final Standings</h2>
+          <h2 className="text-2xl font-black text-gold">Final Standings</h2>
         </section>
       )}
 
@@ -502,7 +502,7 @@ function GameView({
               {player!.display_name}
               {player!.id === myPid && <span className="text-paper/35"> (you)</span>}
             </span>
-            <span className="font-mono font-bold text-lime">{pts}</span>
+            <span className="font-mono font-bold text-gold">{pts}</span>
           </div>
         ))}
         {scores.length === 0 && (
